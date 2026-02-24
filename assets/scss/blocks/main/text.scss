@@ -1,0 +1,10 @@
+.main-text {
+	.customBlock {
+		padding: 0 var(--primary-horizontal-padding);
+
+		.text {
+			position: relative;
+			color: var(--color-blue);
+		}
+	}
+}

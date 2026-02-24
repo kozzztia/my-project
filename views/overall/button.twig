@@ -1,0 +1,23 @@
+{% if not link.url or link.url == '#' %}
+<button type="{{ buttonType }}" class="overallButton {{ type.style }}{% if type.options %} {{ type.options|join(' ') }}{% endif %}"{% if nonce %} data-nonce="{{ nonce }}"{% endif %}>
+{% elseif link.url %}
+<a href="{{ link.url }}"{% if link.target %} target="{{ link.target }}"{% endif%} class="overallButton {{ type.style }}{% if type.options %} {{ type.options|join(' ') }}{% endif %}"{% if nonce %} data-nonce="{{ nonce }}"{% endif %}>
+{% endif %}
+    {% if type.icon_position == 'left' and type.icon %}
+    <svg>
+        <use href="{{ svg_sprite }}#{{ type.icon }}"></use>
+    </svg>
+    {% endif %}
+    {% if link.title or title %}
+    <span>{{ link.title ?? title }}</span>
+    {% endif %}
+    {% if type.icon_position == 'right' and type.icon %}
+    <svg>
+        <use href="{{ svg_sprite }}#{{ type.icon }}"></use>
+    </svg>
+    {% endif %}
+{% if link.url and link.url != '#' %}
+</a>
+{% elseif not link.url or link.url == '#' %}
+</button>
+{% endif %}

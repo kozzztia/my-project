@@ -1,0 +1,22 @@
+{
+    "name": "vitaliikaplia/osadchyclinic",
+    "description": "",
+    "type": "application",
+    "license": "none",
+    "autoload": {},
+    "authors": [
+        {
+            "name": "Vitalii Kaplia",
+            "email": "vitalii.kaplia@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "config": {
+        "vendor-dir": "vendor",
+        "platform": {
+            "php": "8.3"
+        }
+    }
+}

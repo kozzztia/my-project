@@ -1,0 +1,24 @@
+{% extends "overall/base.twig" %}
+
+{% block base %}
+
+    {% set blocks = [
+        {'name': 'text',
+            'fields': {
+                'style': '',
+                'text': '<p>example</p>',
+            },
+        }
+    ] %}
+
+    {% for block in blocks %}
+        {% include 'blocks/main/' ~ block.name ~ '.twig' with
+            {
+                'block_group': 'main',
+                'block_name': block.name,
+                'fields': block.fields,
+            }
+        %}
+    {% endfor %}
+
+{% endblock %}

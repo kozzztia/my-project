@@ -1,0 +1,31 @@
+<div class="cookiePopupWrapper">
+    <div class="cookiePopup block-shadow">
+        <p class="title">
+            <svg>
+                <use href="{{ svg_sprite }}#cookie-icon"></use>
+            </svg>
+            <span>Цей сайт використовує файли cookie</span>
+        </p>
+        <div class="cls">
+                <div class="message">
+                    <input type="checkbox" id="cookie_text_toggle" hidden>
+                    <div class="toggledContent">
+                        <label class="button" for="cookie_text_toggle">Розкажіть мені більше про файли cookie</label>
+                        <div class="typo">
+                            Ми використовуємо файли cookie, щоб персоналізувати вміст і рекламу, надавати функції соціальних мереж і аналізувати наш трафік. Ми також надаємо інформацію про ваше використання нашого веб-сайту нашим партнерам із соціальних мереж, реклами та аналітики, які можуть поєднувати її з іншою інформацією, яку ви їм надали або зібрали під час використання вами їхніх послуг. Продовжуючи користуватися нашим сайтом, ви погоджуєтеся із використанням файлів cookie, а також приймаєте нашу Політику конфіденційності та Умови використання.
+                        </div>
+                    </div>
+                </div>
+                {% include 'overall/button.twig' with {
+                    title: 'Добре, я розумію',
+                    buttonType: 'cookie_popup_button_type',
+                    type: {
+                        'style' : 'size-xl style-gradient-white-blue',
+                        'icon_position': 'right',
+                        'icon': 'cookie-icon',
+                    },
+                }
+                %}
+        </div>
+    </div>
+</div>

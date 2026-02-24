@@ -1,9 +1,8 @@
 /* variables!
 -------------------------------------------------------------- */
-
 :root {
-
-    --color-white: #fff;
+	//color
+	--color-white: #fff;
 	--color-white-rgb: 255, 255, 255;
 	--color-black: #020E0C;
 	--color-block-rgb: ;
@@ -11,8 +10,22 @@
 	--color-green-rgb: 30, 235, 205;
 	--color-dark-green: #0E2E29;
 	--color-dark-green-rgb: 14, 46, 41;
+	--color-blue: #2AF6FF;
+	--color-blue-rgb: 42, 246, 255;
+	--color-pink: #FF63CE;
+	--color-pink-rgb: 255, 99, 206;
+	--color-violet: #A56EF4;
+	--color-violet-rgb: 165, 110, 244;
+	//gradient
+	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
 
-    --primary-horizontal-padding:  10px;
-    --primary-block-width: 1200px;
-    --primary-font-family: 'Raleway', sans-serif;
+	//other
+	--primary-border: 2px solid transparent;
+	--primary-horizontal-padding: 10px;
+	--desctop-block-padding: 23px 60px;
+	--primary-block-width: 1290px;
+	--primary-font-family: 'Raleway', sans-serif;
+	--blur-value: 40px;
+	--primary-border-radius: 10px;
+	--primary-gap: 10px;
 }

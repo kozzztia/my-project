@@ -25,3 +25,37 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "icons";
+	src: url("/assets/fonts/icons.ttf?0a4e5791cf7325a7fa0d0718034ee9d1") format("truetype"),
+	url("/assets/fonts/icons.woff?0a4e5791cf7325a7fa0d0718034ee9d1") format("woff"),
+	url("/assets/fonts/icons.woff2?0a4e5791cf7325a7fa0d0718034ee9d1") format("woff2");
+}
+
+.icon:before {
+	display: block;
+	font-family: icons;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-arrow:before {
+	content: "\f101";
+}
+.icon.icon-burger:before {
+	content: "\f102";
+}
+.icon.icon-close:before {
+	content: "\f103";
+}
+.icon.icon-decor-arrow:before {
+	content: "\f104";
+}
+.icon.icon-triangle:before {
+	content: "\f105";
+}

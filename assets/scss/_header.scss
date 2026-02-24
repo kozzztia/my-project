@@ -1,9 +1,14 @@
 /* header
 -------------------------------------------------------------- */
-
 header {
-	.container{
-		padding: 0 var(--primary-horizontal-padding);
+	padding: 0 var(--primary-horizontal-padding);
+
+	.container {
+		width: 100%;
+		padding: var(--desctop-block-padding);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 

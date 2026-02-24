@@ -1,0 +1,11 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.text %}
+    <div class="example typo {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    {{ fields.text }}
+    </div>
+    {% endif %}
+
+{% endblock %}

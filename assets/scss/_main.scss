@@ -2,8 +2,8 @@
 -------------------------------------------------------------- */
 body {
 	font-family: var(--primary-font-family), sans-serif;
-	//background-image: url("../img/example-1.webp");
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 1.6;
 	display: flex;
 	overflow-x: hidden;
@@ -12,18 +12,24 @@ body {
 	justify-content: center;
 	min-height: 100vh;
 	text-align: left;
-
-	color: var(--color-blue);
-
-	background-color: var(--color-white);
+	color: var(--color-white);
+	background-color: var(--color-black);
 	font-feature-settings: 'pnum' on, 'lnum' on;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
-main{
+
+main {
 	flex: 1;
 }
-.customBlock, .container{
+
+.customBlock{
+	position: relative;
+	max-width: var(--primary-block-width);
+	margin: 0 auto;
+}
+
+.container {
 	position: relative;
 	max-width: var(--primary-block-width);
 	margin: 0 auto;

@@ -40,7 +40,7 @@ const ASSETS_URL = HOME_URL . 'assets';
 const MINIFY_HTML = false;
 const TWIG_VIEWS_DIRNAME = 'views';
 
-const SITE_NAME = 'Osadchyclinic';
+const SITE_NAME = 'my-project';
 
 /** including core */
 $includes = [

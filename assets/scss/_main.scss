@@ -19,19 +19,9 @@ body {
 	background-repeat: no-repeat;
 	background-position: 0 0;
 	background-attachment: fixed;
-	animation: parallaxBg 30s  infinite alternate;
 	font-feature-settings: 'pnum' on, 'lnum' on;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-
-	@keyframes parallaxBg {
-		from {
-			background-size: 51%;
-		}
-		to {
-			background-size: 49%;
-		}
-	}
 }
 
 main {

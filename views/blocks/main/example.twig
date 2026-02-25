@@ -5,6 +5,16 @@
     {% if fields.text %}
     <div class="example typo {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
     {{ fields.text }}
+        {% include 'overall/button.twig' with {
+            title: 'Добре, я розумію',
+            buttonType: 'cookie_popup_button_type',
+            type: {
+                'style' : 'size-xs style-green',
+                'icon_position': 'right',
+                'icon': 'icon-triangle',
+            },
+        }
+        %}
     </div>
     {% endif %}
 

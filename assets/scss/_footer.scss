@@ -1,7 +1,17 @@
 /* footer
 -------------------------------------------------------------- */
 footer {
-	.inner{
-		padding: 0 var(--primary-horizontal-padding);
+	padding: 0 var(--primary-size) var(--primary-size);
+
+	.inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: var(--primary-block-width);
+		padding: var(--desktop-block-padding);
+		margin-inline: auto;
+		gap: var(--primary-size);
 	}
 }
+

@@ -16,17 +16,19 @@
 	--color-pink-rgb: 255, 99, 206;
 	--color-violet: #A56EF4;
 	--color-violet-rgb: 165, 110, 244;
+
 	//gradient
 	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
 
 	//other
-	--primary-border: 2px solid transparent;
-	--primary-horizontal-padding: 10px;
-	--desktop-block-padding: 23px 60px;
+	--primary-size: 10px;
 	--primary-block-width: 1290px;
+	--secondary-block-width: 1920px;
 	--primary-font-family: 'Raleway', sans-serif;
 	--primary-font-size: 24px;
-	--blur-value: 40px;
+	--primary-blur-value: 40px;
 	--primary-border-radius: 10px;
-	--primary-gap: 10px;
+
+	//desktop
+	--desktop-block-padding: 23px 60px;
 }

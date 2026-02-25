@@ -1,24 +1,23 @@
 /* header
 -------------------------------------------------------------- */
 header {
-	padding: 0 var(--primary-horizontal-padding);
+	padding: var(--primary-size) var(--primary-size) 0;
 
 	.inner {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-inline: auto;
-		max-width: var(--primary-block-width);
 		width: 100%;
+		max-width: var(--primary-block-width);
 		padding: var(--desktop-block-padding);
-		gap: var(--primary-gap);
+		margin-inline: auto;
+		gap: var(--primary-size);
+
 		nav {
-			ul{
+			ul {
 				display: flex;
 				flex-direction: row;
-				width: 100%;
-				gap: var(--primary-gap);
-				margin-left: auto;
+				gap: var(--primary-size);
 			}
 		}
 	}

@@ -394,6 +394,13 @@
 
 }
 
+.decorBorder {
+	border-radius: 10px;
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2),
+	inset 0 -1px 0 rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(5px);
+}
+
 .cookiePopupWrapper {
 	position: fixed;
 	z-index: 112244;

@@ -21,14 +21,15 @@
 	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
 
 	//other
-	--primary-size: 10px;
+	--primary-size: 20px;
 	--primary-block-width: 1290px;
 	--secondary-block-width: 1920px;
 	--primary-font-family: 'Raleway', sans-serif;
 	--primary-font-size: 24px;
 	--primary-blur-value: 5px;
-	--primary-border-radius: 10px;
+	--primary-border-radius: 5px;
+	--element-height: 80px;
 
 	//desktop
-	--desktop-block-padding: 23px 60px;
+	--desktop-inline-padding: 60px;
 }

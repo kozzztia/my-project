@@ -268,6 +268,13 @@
 		&_text-violet {
 			color: var(--color-violet);
 		}
+		&_text-blue-violet{
+			background-image: var(--gradient-blue-violet);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
 
 		&_size-xs {
 			font-size: 18px;
@@ -301,13 +308,13 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.preload * {
-	-moz-transition: none !important;
-	-ms-transition: none !important;
-	-o-transition: none !important;
-	-webkit-transition: none !important;
-	transition: none !important;
-}
+//.preload * {
+//	-moz-transition: none !important;
+//	-ms-transition: none !important;
+//	-o-transition: none !important;
+//	-webkit-transition: none !important;
+//	transition: none !important;
+//}
 
 .overallButton {
 	font-family: inherit;
@@ -369,7 +376,7 @@
 			width: 200%;
 			height: 100%;
 			content: '';
-			transition: right 0.3s ease-in-out;
+			transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 			background: linear-gradient(
 							to left,
 							rgba(var(--color-green-rgb), 1) 0%,
@@ -380,6 +387,10 @@
 
 		&:hover {
 			color: var(--color-green);
+			box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
+			inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
+			inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6),
+			1px 1px 20px 2px rgba(var(--color-green-rgb), 0.6);
 
 			&:after {
 				right: -200%;
@@ -392,8 +403,19 @@
 	border-radius: var(--primary-border-radius);
 	box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
 	inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
-	inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6);
+	inset 0 0 0 rgba(var(--color-green-rgb), 0.6);
 	backdrop-filter: blur(var(--primary-blur-value));
+
+	&.left-top{
+		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
+		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
+		inset 1px 1px 0 rgba(var(--color-green-rgb), 0.6);
+	}
+	&.left-bottom{
+		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
+		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
+		inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6);
+	}
 }
 
 .cookiePopupWrapper {

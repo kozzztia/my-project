@@ -1,11 +1,19 @@
+{% set links = [
+    {title: 'головна' , href: '/home' },
+    {title: 'проекти' , href: '/projects'},
+    {title: 'пет-проекти' , href: '/pet-projects'},
+    {title: 'про мене' , href: '/about'},
+] %}
 <header>
-    <div class="inner decorBorder">
+    <div class="inner decorBorder left-bottom">
+        <article class="title typo">
+            <a href="/"><strong><span class="mce_size-l mce_text-blue-violet">Front-end Developer</span></strong></a>
+        </article>
         <nav>
             <ul>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
-                <li>text</li>
+                {% for link in links %}
+                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+                {% endfor %}
             </ul>
         </nav>
     </div>

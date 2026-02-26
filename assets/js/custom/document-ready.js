@@ -23,5 +23,7 @@
                 down: 26,
             }
         });
+
+        startHeaderNavigation($('header'))
     });
 })(jQuery);

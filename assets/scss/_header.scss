@@ -1,7 +1,24 @@
 /* header
 -------------------------------------------------------------- */
+.headroom {
+	position: relative;
+
+	&.headroom--not-top {
+		header {
+			top: 0;
+		}
+	}
+}
+
 header {
-	padding: var(--primary-size) var(--primary-size) 0;
+	position: fixed;
+	z-index: 1000;
+	top: var(--primary-size);
+	right: 0;
+	left: 0;
+	padding: 0 var(--primary-size);
+	transition: all .3s ease-in-out;
+	will-change: top;
 
 	.inner {
 		display: flex;
@@ -9,15 +26,65 @@ header {
 		justify-content: space-between;
 		width: 100%;
 		max-width: var(--primary-block-width);
-		padding: var(--desktop-block-padding);
+		height: var(--element-height);
+		padding: var(--primary-size) var(--desktop-inline-padding);
 		margin-inline: auto;
 		gap: var(--primary-size);
 
+		.title {
+			a {
+				text-decoration: none;
+			}
+		}
+
 		nav {
+			height: 100%;
+
 			ul {
 				display: flex;
 				flex-direction: row;
-				gap: var(--primary-size);
+				height: 100%;
+				list-style-type: none;
+				position: relative;
+
+				li {
+					//border-left: 1px solid var(--color-blue);
+					position: relative;
+
+					&:last-of-type {
+						//border-right: 1px solid var(--color-blue);
+					}
+				}
+
+				a {
+					height: 100%;
+					position: relative;
+					z-index: 1;
+					font-size: 18px;
+					font-weight: 700;
+					padding: 0 var(--primary-size);
+					text-decoration: none;
+					text-transform: uppercase;
+					display: flex;
+					align-items: center;
+					mix-blend-mode: difference;
+					background-color: var(--color-green);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+					color: transparent;
+				}
+
+				.nav-ball {
+					position: absolute;
+					top: 50%;
+					border-radius: 2px;
+					transform: translateY(-50%);
+					background: var(--color-blue);
+					z-index: 0;
+					pointer-events: none;
+					transition: left .5s, width .5s, height .5s, opacity .5s ;
+				}
 			}
 		}
 	}

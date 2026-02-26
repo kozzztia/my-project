@@ -14,7 +14,7 @@ body {
 	text-align: left;
 	color: var(--color-white);
 	background-color: var(--color-black);
-	background-image: url('/assets/svg/decor-triangle.svg');
+	background-image: url('/assets/svg/decor-triangles.svg');
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -25,9 +25,9 @@ body {
 }
 
 main {
+	margin-top: calc(var(--element-height) + var(--primary-size)*2);
 	flex: 1;
 }
-
 
 //.decorBorder {
 //	position: relative;
@@ -47,7 +47,6 @@ main {
 //		mask-composite: exclude;
 //	}
 //}
-
 .customBlock {
 	position: relative;
 	max-width: var(--primary-block-width);

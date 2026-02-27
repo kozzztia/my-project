@@ -89,45 +89,6 @@
 					}
 				}
 			}
-			.work {
-				&__1 {
-				}
-
-				&__2 {
-					transform: translateX(0);
-					animation: work2 .2s ease-in-out infinite alternate;
-				}
-
-				&__3 {
-					transform: scale(1);
-					opacity: 0;
-					animation: work3 2s ease-in-out infinite alternate;
-				}
-
-				&__4 {
-
-				}
-
-				@keyframes work2 {
-					from {
-						opacity: 0;
-					}
-					to {
-						opacity: .5;
-					}
-				}
-
-				@keyframes work3 {
-					from {
-						opacity: 0;
-						transform: scale(0.5);
-					}
-					to {
-						opacity: .5;
-						transform: scale(1);
-					}
-				}
-			}
 
 			.move {
 				&__1 {

@@ -268,12 +268,13 @@
 		&_text-violet {
 			color: var(--color-violet);
 		}
-		&_text-blue-violet{
-			background-image: var(--gradient-blue-violet);
-			background-clip: text;
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
+
+		&_text-blue-violet {
 			color: transparent;
+			background-image: var(--gradient-blue-violet);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 
 		&_size-xs {
@@ -315,7 +316,6 @@
 //	-webkit-transition: none !important;
 //	transition: none !important;
 //}
-
 .overallButton {
 	font-family: inherit;
 	font-weight: 700;
@@ -327,14 +327,15 @@
 	justify-content: center;
 	cursor: pointer;
 	text-decoration: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
 	border: none;
 	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 
 	svg {
-		z-index: 100;
 		position: relative;
+		z-index: 100;
+		display: block;
 		flex-shrink: 0;
 		color: inherit;
 	}
@@ -345,6 +346,7 @@
 		transition: inherit;
 	}
 
+	//types
 	//sizes
 	&.size-xs {
 		font-size: 18px;
@@ -406,12 +408,13 @@
 	inset 0 0 0 rgba(var(--color-green-rgb), 0.6);
 	backdrop-filter: blur(var(--primary-blur-value));
 
-	&.left-top{
+	&.leftToTop {
 		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
 		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
 		inset 1px 1px 0 rgba(var(--color-green-rgb), 0.6);
 	}
-	&.left-bottom{
+
+	&.leftToBottom {
 		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
 		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
 		inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6);

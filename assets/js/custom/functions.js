@@ -1,49 +1,96 @@
-function startHeaderNavigation(header) {
+// header init
+function initHeaderNavigation(header) {
     if (!header) return;
 
-    const nav = document.querySelector('nav ul');
-    const navWrapper = document.querySelector('nav');
-    const ball = document.createElement('div');
-    ball.classList.add('nav-ball');
-    nav.appendChild(ball);
+    const nav = header.find('nav .desktop-menu')[0];
+    const navWrapper = header.find('nav')[0];
+    const thumb = header.find('.nav-thumb')[0];
 
     let activeLi = null;
-    const currentPath = window.location.pathname.replace(/\/$/, '');
+    let currentLi = null;
+    let timer = null;
+    const currentPath = '/' + window.location.pathname.split('/').filter(Boolean)[0];
 
-    const moveBall = (li) => {
+    const setThumbInstant = (li) => {
+        const rect = li.getBoundingClientRect();
+        const navRect = nav.getBoundingClientRect();
+        thumb.style.left = (rect.left - navRect.left) + 'px';
+        thumb.style.width = rect.width + 'px';
+        thumb.style.height = rect.height + 'px';
+        thumb.style.opacity = '1';
+    };
+
+    const moveThumb = (li) => {
+        if (li === currentLi) return;
+        currentLi = li;
+
         const rect = li.getBoundingClientRect();
         const navRect = nav.getBoundingClientRect();
 
-        ball.style.left = (rect.left - navRect.left) + 'px';
-        ball.style.width = rect.width + 'px';
-        ball.style.height = rect.height * 0.6  + 'px';
-        ball.style.opacity = '.6'
+        clearTimeout(timer);
 
-        setTimeout(() => {
-            ball.style.height = rect.height + 'px';
-            ball.style.opacity = '1';
+        thumb.style.left = (rect.left - navRect.left) + 'px';
+        thumb.style.width = rect.width + 'px';
+        thumb.style.height = rect.height * 0.6 + 'px';
+        thumb.style.opacity = '.6';
+
+        timer = setTimeout(() => {
+            thumb.style.height = rect.height + 'px';
+            thumb.style.opacity = '1'
         }, 150);
-
     };
 
     nav.querySelectorAll('a').forEach(a => {
         if (a.getAttribute('href') === currentPath) {
             activeLi = a.closest('li');
-            moveBall(activeLi);
+            setThumbInstant(activeLi);
+            currentLi = activeLi;
         }
     });
 
     nav.querySelectorAll('li').forEach(li => {
-        li.addEventListener('mouseenter', () => moveBall(li));
+        li.addEventListener('mouseenter', () => moveThumb(li));
     });
 
     navWrapper.addEventListener('mouseleave', () => {
-        activeLi ? moveBall(activeLi) : ball.style.width = '0px';
+        clearTimeout(timer);
+        const wasOnActive = activeLi === currentLi;
+
+        if (activeLi) {
+            wasOnActive ? setThumbInstant(activeLi) : moveThumb(activeLi);
+        } else {
+            thumb.style.width = '0px';
+        }
     });
 }
 
+function initBurger(header) {
+    if (!header) return;
+    const burger = header.find('.burger-toggler');
+    const mobileMenu = header.find('.mobile-menu');
+    const body = $('body');
 
+    const closeMenu = () => {
+        burger.removeClass('active');
+        mobileMenu.removeClass('active');
+        body.removeClass('no-scroll');
+    };
 
+    burger.on('click', function (e) {
+        e.stopPropagation();
+        $(this).toggleClass('active');
+        mobileMenu.toggleClass('active');
+        body.toggleClass('no-scroll');
+    });
 
+    mobileMenu.find('a').on('click', function () {
+        mobileMenu.css('transition', 'all .2s');
+        closeMenu();
+    });
 
-
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('header').length) {
+            closeMenu();
+        }
+    });
+}

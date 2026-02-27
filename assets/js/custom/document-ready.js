@@ -24,6 +24,11 @@
             }
         });
 
-        startHeaderNavigation($('header'))
+        if($('header')){
+            initHeaderNavigation($(this))
+            initBurger($(this))
+        }
+
+
     });
 })(jQuery);

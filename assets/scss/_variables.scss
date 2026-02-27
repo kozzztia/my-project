@@ -16,20 +16,27 @@
 	--color-pink-rgb: 255, 99, 206;
 	--color-violet: #A56EF4;
 	--color-violet-rgb: 165, 110, 244;
-
 	//gradient
 	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
-
+	--gradient-green-violet: linear-gradient(170deg, var(--color-green) 5%, var(--color-violet) 90%);
 	//other
-	--primary-size: 20px;
 	--primary-block-width: 1290px;
 	--secondary-block-width: 1920px;
 	--primary-font-family: 'Raleway', sans-serif;
-	--primary-font-size: 24px;
 	--primary-blur-value: 5px;
 	--primary-border-radius: 5px;
+	--hover-shadow: 1px 1px 20px 2px rgba(var(--color-green-rgb), 0.6);
+	--hover-drop-shadow: drop-shadow(1px 1px 2px rgba(var(--color-green-rgb), 0.6));
+	//changed  variables
+	--element-inline-padding: 60px;
+	--primary-size: 20px;
+	--primary-font-size: 24px;
 	--element-height: 80px;
-
-	//desktop
-	--desktop-inline-padding: 60px;
+	@media (max-width: 1024px) {
+		--element-inline-padding: 40px;
+	}
+	@media (max-width: 768px) {
+		--primary-size: 14px;
+		--primary-font-size: 20px;
+	}
 }

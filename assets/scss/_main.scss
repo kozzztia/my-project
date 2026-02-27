@@ -1,5 +1,9 @@
 /* main
 -------------------------------------------------------------- */
+html{
+	background-color: var(--color-black);
+}
+
 body {
 	font-family: var(--primary-font-family), sans-serif;
 	font-size: var(--primary-font-size);
@@ -13,8 +17,8 @@ body {
 	min-height: 100vh;
 	text-align: left;
 	color: var(--color-white);
-	background-color: var(--color-black);
 	background-image: url('/assets/svg/decor-triangles.svg');
+	background-color: transparent;
 	background-size: 50%;
 	background-repeat: no-repeat;
 	background-position: 0 0;
@@ -22,6 +26,11 @@ body {
 	font-feature-settings: 'pnum' on, 'lnum' on;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
+
+
+	&.no-scroll{
+		overflow: hidden;
+	}
 }
 
 main {
@@ -47,10 +56,14 @@ main {
 //		mask-composite: exclude;
 //	}
 //}
+.customBlockWrapper{
+	padding-inline: var(--primary-size);
+}
+
 .customBlock {
 	position: relative;
 	max-width: var(--primary-block-width);
-	margin: 0 auto;
+	margin-inline: auto;
 }
 
 

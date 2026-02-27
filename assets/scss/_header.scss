@@ -43,7 +43,7 @@ header {
 			height: 100%;
 
 			a {
-				font-size: 18px;
+				font-size: clamp(16px, 1.2vw, 18px);
 				font-weight: 700;
 				position: relative;
 				z-index: 1;

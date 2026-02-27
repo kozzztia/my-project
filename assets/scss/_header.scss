@@ -116,6 +116,7 @@ header {
 					transition: top .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
 					opacity: 0;
 					gap: var(--primary-size);
+					backdrop-filter: blur(var(--primary-blur-value));
 					&.active {
 						top: calc(var(--element-height) + var(--primary-size));
 						visibility: visible;
@@ -148,6 +149,7 @@ header {
 						}
 
 						&:nth-child(2) {
+							transition-delay: .3s;
 							opacity: 0.4;
 						}
 
@@ -162,15 +164,16 @@ header {
 					svg {
 						path {
 							&:nth-child(1) {
-								transform: rotate(40deg);
+								transform: rotate(40deg) translate(10%, -15%);
 							}
 
 							&:nth-child(2) {
+								transition-delay: 0s;
 								transform: translateX(-100%);
 							}
 
 							&:nth-child(3) {
-								transform: rotate(-40deg);
+								transform: rotate(-40deg) translate(10%, 15%);
 								opacity: 1;
 							}
 						}

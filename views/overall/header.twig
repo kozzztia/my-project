@@ -11,20 +11,16 @@
         </article>
         <nav>
             <ul class="desktopMenu desktop-menu">
-            {% for link in links %}
-                <li><a href="{{ link.href }}">{{ link.title }}</a></li>
-            {% endfor %}
-
+                {% for link in links %}
+                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+                {% endfor %}
                 <span class="navThumb nav-thumb"></span>
             </ul>
-
-            <ul class="mobileMenu mobile-menu decorBorder leftToBottom">
+            <ul class="mobileMenu mobile-menu decorBorder rightToTop">
                 {% for link in links %}
                     <li><a href="{{ link.href }}">{{ link.title }}</a></li>
                 {% endfor %}
             </ul>
-
-
             <button class="burger burger-toggler">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 31">
                     <path fill="currentColor"
@@ -35,8 +31,6 @@
                           d="M52.5,31h-50C1.1,31,0,29.9,0,28.5S1.1,26,2.5,26h50c1.4,0,2.5,1.1,2.5,2.5S53.9,31,52.5,31z"/>
                 </svg>
             </button>
-
-
         </nav>
     </div>
 </header>

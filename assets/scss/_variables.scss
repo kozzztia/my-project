@@ -20,7 +20,7 @@
 	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
 	--gradient-green-violet: linear-gradient(170deg, var(--color-green) 5%, var(--color-violet) 90%);
 	//other
-	--primary-block-width: 1290px;
+	--primary-block-width: 1500px;
 	--secondary-block-width: 1920px;
 	--primary-font-family: 'Raleway', sans-serif;
 	--primary-blur-value: 5px;
@@ -32,11 +32,17 @@
 	--primary-size: 20px;
 	--primary-font-size: 24px;
 	--element-height: 80px;
+
 	@media (max-width: 1024px) {
 		--element-inline-padding: 40px;
+		--primary-size: 17px;
+		--primary-font-size: 20px;
+		--element-height: 70px;
 	}
 	@media (max-width: 768px) {
 		--primary-size: 14px;
-		--primary-font-size: 20px;
+		--element-inline-padding: 20px;
+		--primary-font-size: 16px;
+		--element-height: 60px;
 	}
 }

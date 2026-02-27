@@ -9,10 +9,11 @@ footer {
 		justify-content: space-between;
 		width: 100%;
 		max-width: var(--primary-block-width);
+		min-height: var(--element-height);
+		background-color: rgba(var(--color-black-rgb), 0.8);
 		padding-inline: var(--element-inline-padding);
 		margin-inline: auto;
 		gap: var(--primary-size);
-		height: var(--element-height);
 	}
 }
 

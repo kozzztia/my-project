@@ -17,7 +17,6 @@ header {
 	right: 0;
 	left: 0;
 	transition: top .3s ease-in-out;
-	background-color: transparent;
 	padding-inline: var(--primary-size);
 	will-change: top;
 
@@ -30,6 +29,7 @@ header {
 		max-width: var(--primary-block-width);
 		height: var(--element-height);
 		padding: var(--primary-size) var(--element-inline-padding);
+		background-color: rgba(var(--color-black-rgb), 0.8);
 		margin-inline: auto;
 		gap: var(--primary-size);
 
@@ -40,11 +40,10 @@ header {
 		}
 
 		nav {
-			height: 100%;
-
 			a {
-				font-size: 18px;
+				font-size: clamp(16px, 1.2vw, 18px);
 				font-weight: 700;
+				line-height: 1.2;
 				position: relative;
 				z-index: 1;
 				display: flex;
@@ -81,7 +80,7 @@ header {
 					z-index: 0;
 					top: 50%;
 					max-height: 40px;
-					transition: left .5s, width .5s, height .5s, opacity .5s, box-shadow .5s;
+					transition: left .5s, width .5s, height .5s, opacity .5s, box-shadow .1s;
 					transform: translateY(-50%);
 					pointer-events: none;
 					opacity: 1;

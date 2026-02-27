@@ -1,2 +1,2 @@
-.main-text-or-title .customBlock .text-or-title{position:relative}
+.main-text-or-title .customBlock .text-or-title{padding:var(--primary-size) var(--element-inline-padding);position:relative}
 /*# sourceMappingURL=text-or-title.min.css.map */

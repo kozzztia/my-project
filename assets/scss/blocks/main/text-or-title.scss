@@ -1,6 +1,7 @@
 .main-text-or-title {
 	.customBlock {
 		.text-or-title {
+			padding: var(--primary-size) var(--element-inline-padding);
 			position: relative;
 		}
 	}

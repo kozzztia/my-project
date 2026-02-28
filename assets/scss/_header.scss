@@ -28,8 +28,8 @@ header {
 		width: 100%;
 		max-width: var(--primary-block-width);
 		height: var(--element-height);
-		padding: var(--primary-size) var(--element-inline-padding);
-		background-color: rgba(var(--color-black-rgb), 0.8);
+		padding: var(--primary-size) var(--secondary-size);
+		background-color: var(--element-dark-background);
 		margin-inline: auto;
 		gap: var(--primary-size);
 
@@ -40,8 +40,11 @@ header {
 		}
 
 		nav {
+			display: flex;
+			font-size: clamp(16px, 1.8vw, 24px);
+
 			a {
-				font-size: clamp(16px, 1.2vw, 18px);
+
 				font-weight: 700;
 				line-height: 1.2;
 				position: relative;
@@ -111,11 +114,12 @@ header {
 					align-items: flex-end;
 					flex-direction: column;
 					justify-content: flex-end;
-					padding: var(--primary-size) var(--element-inline-padding);
+					padding: var(--primary-size) var(--secondary-size);
 					transition: top .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
 					opacity: 0;
 					gap: var(--primary-size);
 					backdrop-filter: blur(var(--primary-blur-value));
+					background-color: var(--element-dark-background);
 					&.active {
 						top: calc(var(--element-height) + var(--primary-size));
 						visibility: visible;
@@ -126,22 +130,26 @@ header {
 
 			.burger {
 				display: none;
-				height: 100%;
+				height: auto;
+				width: 40px;
 				border: none;
 				outline: none;
 				background: transparent;
 				-webkit-appearance: none;
 				filter: var(--hover-drop-shadow);
+				flex-shrink: 0;
+				cursor: pointer;
+				padding: 0;
 
 				svg {
+					overflow: visible;
 					position: relative;
-					width: auto;
-					height: 100%;
+					width: 100%;
 					color: var(--color-green);
 					aspect-ratio: 1/1;
 
 					path {
-						transition: transform .3s ease-in-out;
+						transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
 
 						&:nth-child(1) {
 							transform-origin: 10% 0;
@@ -150,6 +158,7 @@ header {
 						&:nth-child(2) {
 							transition-delay: .3s;
 							opacity: 0.4;
+							visibility: visible;
 						}
 
 						&:nth-child(3) {
@@ -167,8 +176,10 @@ header {
 							}
 
 							&:nth-child(2) {
-								transition-delay: 0s;
+								transition-delay: 0.01s;
 								transform: translateX(-100%);
+								opacity: 0;
+								visibility: hidden;
 							}
 
 							&:nth-child(3) {

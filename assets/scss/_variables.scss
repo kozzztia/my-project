@@ -19,6 +19,8 @@
 	//gradient
 	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
 	--gradient-green-violet: linear-gradient(170deg, var(--color-green) 5%, var(--color-violet) 90%);
+	--element-dark-background: rgba(var(--color-black-rgb), 0.7);
+	--element-light-background: rgba(var(--color-white-rgb), 0.7);
 	//other
 	--primary-block-width: 1500px;
 	--secondary-block-width: 1920px;
@@ -28,21 +30,19 @@
 	--hover-shadow: 1px 1px 20px 2px rgba(var(--color-green-rgb), 0.6);
 	--hover-drop-shadow: drop-shadow(1px 1px 2px rgba(var(--color-green-rgb), 0.6));
 	//changed  variables
-	--element-inline-padding: 60px;
+	--secondary-size: 60px;
 	--primary-size: 20px;
-	--primary-font-size: 24px;
+	--primary-font-size: clamp(14px, 1.2vw, 18px);;
 	--element-height: 80px;
 
 	@media (max-width: 1024px) {
-		--element-inline-padding: 40px;
+		--secondary-size: 40px;
 		--primary-size: 17px;
-		--primary-font-size: 20px;
 		--element-height: 70px;
 	}
 	@media (max-width: 768px) {
 		--primary-size: 14px;
-		--element-inline-padding: 20px;
-		--primary-font-size: 16px;
+		--secondary-size: 20px;
 		--element-height: 60px;
 	}
 }

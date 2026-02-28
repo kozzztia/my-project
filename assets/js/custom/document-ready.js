@@ -30,5 +30,12 @@
         }
 
 
+        if($('.show').length){
+            $('.show').each(function () {
+                initShowTracking($(this));
+            })
+        }
+
+
     });
 })(jQuery);

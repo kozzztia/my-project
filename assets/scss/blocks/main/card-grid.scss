@@ -1,167 +1,18 @@
 .main-card-grid {
 	.customBlock {
-		.card-grid {
+		.cardGrid {
 			position: relative;
 			display: grid;
 			padding: var(--primary-size) 0;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			grid-template-rows: 1fr;
 			gap: var(--primary-size);
-
-
 			@media (max-width: 1024px) {
 				grid-template-columns: repeat(2, 1fr);
 			}
 
 			@media (max-width: 768px) {
-				grid-template-columns: 1fr;
-			}
-
-
-			.card {
-				position: relative;
-				width: 100%;
-				height: auto;
-
-				img {
-					display: block;
-					width: 100%;
-					height: 100%;
-					object-fit: contain;
-					object-position: center center;
-
-					&:first-child {
-						position: relative;
-					}
-
-
-					&:nth-child(1n +2) {
-						position: absolute;
-						z-index: 1;
-						top: 0;
-						left: 0;
-					}
-				}
-			}
-
-			.live {
-				&__1 {
-					transform: translateX(0);
-					animation: live1 3s ease-in-out infinite alternate;
-				}
-
-				&__2 {
-					transform: scale(1);
-					animation: live2 3s ease-in-out infinite alternate;
-				}
-
-				&__3 {
-					transform: scale(1);
-					animation: live3 3s ease-in-out infinite alternate;
-					opacity: 0.5;
-				}
-
-				&__4 {
-					transform: rotate(0);
-					animation: live4 3s ease-in-out infinite alternate;
-				}
-
-				@keyframes live1 {
-					from {
-						transform: translateX(5%);
-					}
-					to {
-						transform: translateX(-5%);
-					}
-				}
-				@keyframes live2 {
-					from {
-						transform: scale(0.95);
-					}
-					to {
-						transform: scale(1.05);
-					}
-				}
-				@keyframes live3 {
-					from {
-						opacity: 0.7;
-					}
-					to {
-						opacity: 1;
-					}
-				}
-				@keyframes live4 {
-					from {
-						transform: rotate(-5deg);
-					}
-					to {
-						transform: rotate(5deg);
-					}
-				}
-			}
-
-			.move {
-				&__1 {
-					animation: move1 .5s ease-in-out .2s forwards;
-					opacity: 0;
-				}
-
-				&__2 {
-					animation: move2 .5s ease-in-out .5s forwards;
-					transform: translate(-100%, -50%);
-					opacity: 0;
-				}
-
-				&__3 {
-					animation: move3 .5s ease-in-out 1s forwards;
-					opacity: 0;
-					transform: translateY(-100%);
-				}
-
-				&__4 {
-					animation: move4 .5s ease-in-out 1.5s forwards;
-					transform: rotate(-5deg) scale(2);
-					opacity: 0;
-				}
-
-				@keyframes move1 {
-					from {
-						opacity: 0;
-					}
-					to {
-						opacity: 1;
-					}
-				}
-				@keyframes move2 {
-					from {
-						transform: translate(-100%, -50%);
-						opacity: 0;
-					}
-					to {
-						transform: translate(0, 0);
-						opacity: 1;
-					}
-				}
-				@keyframes move3 {
-					from {
-						opacity: 0;
-						transform: translateY(-100%);
-					}
-					to {
-						transform: translateY(0);
-						opacity: 1;
-					}
-				}
-				@keyframes move4 {
-					from {
-						transform: rotate(-5deg) scale(2);
-						opacity: 0;
-					}
-					to {
-						transform: rotate(0) scale(1);
-						opacity: 1;
-					}
-				}
+				grid-template-columns: repeat(2, 1fr);
 			}
 		}
 	}

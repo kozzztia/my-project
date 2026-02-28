@@ -1,23 +1,10 @@
 {% extends "overall/block-base.twig" %}
-
 {% block block %}
     {% if fields.cards %}
-        <section class="card-grid {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
-            {% for card in fields.cards %}
-                <div class="card">
-                    {% if card.picture %}
-                        <img src="{{ card.picture }}" alt="{{ card.title }}"/>
-                    {% endif %}
-
-                    {% if card.layers  %}
-                        {% for item in card.layers %}
-                            <img src="{{ item.layer }}"
-                                 class="{% if card.animation %}{{card.animation}}{% endif %}__{{loop.index}}"
-                                 alt="{{ card.title }}"/>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            {% endfor %}
-        </section>
+    <section class="cardGrid {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    {% for card in fields.cards %}
+    {% include "overall/card-image.twig" with {image: card, class: 'cardGrid__image'} %}
+    {% endfor %}
+    </section>
     {% endif %}
 {% endblock %}

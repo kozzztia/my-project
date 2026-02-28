@@ -94,3 +94,24 @@ function initBurger(header) {
         }
     });
 }
+
+// show tracking
+
+function initShowTracking(el){
+    if(!el) return;
+
+    const domEl = el[0];
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(domEl);
+}

@@ -11,15 +11,15 @@
         </article>
         <nav>
             <ul class="desktopMenu desktop-menu">
-                {% for link in links %}
-                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
-                {% endfor %}
+            {% for link in links %}
+                <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+            {% endfor %}
                 <span class="navThumb nav-thumb"></span>
             </ul>
             <ul class="mobileMenu mobile-menu decorBorder rightToTop">
-                {% for link in links %}
-                    <li><a href="{{ link.href }}">{{ link.title }}</a></li>
-                {% endfor %}
+            {% for link in links %}
+                <li><a href="{{ link.href }}">{{ link.title }}</a></li>
+            {% endfor %}
             </ul>
             <button class="burger burger-toggler">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 31">

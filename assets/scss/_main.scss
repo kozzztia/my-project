@@ -47,6 +47,149 @@ main {
 	margin-inline: auto;
 }
 
+.cardImage {
+	position: relative;
+	width: 100%;
+	height: auto;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center center;
+
+		&:first-child {
+			position: relative;
+		}
+
+		&:nth-child(1n +2) {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.live {
+		&__1 {
+			transform: translateX(0);
+			animation: live1 3s ease-in-out infinite alternate;
+			@keyframes live1 {
+				from {
+					transform: translateX(5%);
+				}
+				to {
+					transform: translateX(-5%);
+				}
+			}
+		}
+
+		&__2 {
+			transform: scale(1);
+			animation: live2 3s ease-in-out infinite alternate;
+			@keyframes live2 {
+				from {
+					transform: scale(0.95);
+				}
+				to {
+					transform: scale(1.05);
+				}
+			}
+		}
+
+		&__3 {
+			transform: scale(1);
+			animation: live3 3s ease-in-out infinite alternate;
+			opacity: 0.5;
+			@keyframes live3 {
+				from {
+					opacity: 0.7;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		&__4 {
+			transform: rotate(0);
+			animation: live4 3s ease-in-out infinite alternate;
+			@keyframes live4 {
+				from {
+					transform: rotate(-5deg);
+				}
+				to {
+					transform: rotate(5deg);
+				}
+			}
+		}
+	}
+
+	.move {
+		&__1 {
+			animation: move1 .5s ease-in-out .2s forwards;
+			opacity: 0;
+			@keyframes move1 {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		&__2 {
+			transform: translate(-100%, -50%);
+			animation: move2 .5s ease-in-out .5s forwards;
+			opacity: 0;
+			@keyframes move2 {
+				from {
+					transform: translate(-100%, -50%);
+					opacity: 0;
+				}
+				to {
+					transform: translate(0, 0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__3 {
+			transform: translateY(-100%);
+			animation: move3 .5s ease-in-out 1s forwards;
+			opacity: 0;
+			@keyframes move3 {
+				from {
+					opacity: 0;
+					transform: translateY(-100%);
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__4 {
+			transform: rotate(-5deg) scale(2);
+			animation: move4 .5s ease-in-out 1.5s forwards;
+			opacity: 0;
+			@keyframes move4 {
+				from {
+					transform: rotate(-5deg) scale(2);
+					opacity: 0;
+				}
+				to {
+					transform: rotate(0) scale(1);
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
 
 
 

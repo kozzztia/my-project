@@ -1,0 +1,56 @@
+.main-hero-list {
+	.customBlock {
+		padding: 0 var(--primary-horizontal-padding);
+
+		.hero-list {
+			position: relative;
+			display: flex;
+			width: 100%;
+			max-width: var(--primary-block-width);
+			padding: var(--primary-size) var(--secondary-size);
+			color: var(--color-black);
+			border-radius: var(--primary-border-radius);
+			background-color: var(--element-light-background);
+			margin-inline: auto;
+			gap: var(--secondary-size);
+
+			&__image {
+				max-width: 30%;
+				@media(max-width: 768px) {
+					max-width: 100%;
+				}
+			}
+
+			&__content {
+				display: flex;
+				flex-direction: column;
+
+				.overallButton {
+					align-self: flex-end;
+					margin-top: auto;
+					text-decoration: none;
+				}
+			}
+
+			&.heroReverse {
+				flex-direction: row-reverse;
+
+				.overallButton {
+					align-self: flex-start;
+				}
+			}
+
+			@media (max-width: 768px) {
+				&, &.heroReverse {
+					-ms-flex-direction: column-reverse;
+					flex-direction: column-reverse;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+

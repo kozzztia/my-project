@@ -97,7 +97,7 @@ function initBurger(header) {
 
 // show tracking
 
-function initShowTracking(el){
+function initTracking(el){
     if(!el) return;
 
     const domEl = el[0];

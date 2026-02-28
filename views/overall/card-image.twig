@@ -1,0 +1,14 @@
+{#class for animate: show or move#}
+<div class="cardImage {% if class %} {{ class }}{% endif %}">
+    {% if image.src %}
+    <img src="{{ image.src }}" alt="{{ image.title }}">
+    {% endif %}
+
+    {% if image.layers %}
+    {% for item in image.layers %}
+    <img src="{{ item.layer }}"
+         class="{% if image.animation %}{{image.animation}}{% endif %}__{{loop.index}}"
+         alt="{{ image.title }}"/>
+    {% endfor %}
+    {% endif %}
+</div>

@@ -30,9 +30,9 @@
         }
 
 
-        if($('.show').length){
-            $('.show').each(function () {
-                initShowTracking($(this));
+        if($('.tracker').length){
+            $('.tracker').each(function () {
+                initTracking($(this));
             })
         }
 

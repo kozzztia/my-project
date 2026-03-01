@@ -1,3 +1,5 @@
+
+{# white  is hteme  of  block  rtacker  is animation  in show  #}
 {% extends "overall/base.twig" %}
 
 {% block base %}
@@ -6,10 +8,11 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'heroReverse tracker',
+            'class': 'tracker',
             'image': {
+                'image_position': 'right',
                 'title': 'search',
-                'animation': 'live',
+                'animation': 'move',
                 'layers' : [
                     {'layer': svg_folder ~'animation/search-1.svg'},
                     {'layer': svg_folder ~'animation/search-2.svg'},
@@ -30,7 +33,7 @@
                         'url': '/about',
                     },
                     'type': {
-                        'style' : 'size-xs style-green',
+                        'style' : 'size-xs style-green-transparent',
                         'icon_position': 'right',
                         'icon': 'icon-triangle',
                     },
@@ -50,7 +53,7 @@
                 'title': '<h2><strong><span class="mce_size-l">Про мене</span></strong></h2>',
                 'subtitle': '<h3><strong><span class="mce_size-s">Про мене</span></strong></h3>',
                 'text': '
-                    <ul>
+                    <ul class="mce_list-type-green">
                         <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
                         <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
                         <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
@@ -62,7 +65,35 @@
                         'url': '/about',
                     },
                     'type': {
-                        'style' : 'size-xs style-green',
+                        'style' : 'size-xs style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+            },
+        },
+        },
+        {'name': 'hero-article',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': ' tracker',
+            'content': {
+                'title': '<h2><strong><span class="mce_size-l">Про мене</span></strong></h2>',
+                'subtitle': '<h3><strong><span class="mce_size-s">Про мене</span></strong></h3>',
+                'text': '
+                    <ul class="mce_list-type-green">
+                        <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
+                        <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
+                        <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
+                        <li>З 2024 року працюю як фрилансер — беру проєкти де можна зробити щось справді цікаве.</li>
+                    </ul>',
+                'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': '/about',
+                    },
+                    'type': {
+                        'style' : 'size-xs style-green-transparent',
                         'icon_position': 'right',
                         'icon': 'icon-triangle',
                     },

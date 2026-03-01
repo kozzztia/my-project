@@ -29,33 +29,29 @@
 				flex-direction: column;
 			}
 
-			&:has(.hero-article__content + .hero-article__image) {
-				.hero-article__content {
-					.overallButton {
-						align-self: flex-start;
-						@media(max-width: 768px) {
-							align-self: center;
-						}
-					}
-				}
-			}
-
-			&:has(.hero-article__image + .hero-article__content) {
-				.hero-article__content {
-					.overallButton {
-						align-self: flex-end;
-						@media(max-width: 768px) {
-							align-self: center;
-						}
-					}
-				}
-			}
-
 			.overallButton {
 				align-self: flex-end;
 				margin-top: auto;
 				@media(max-width: 768px) {
 					align-self: center;
+				}
+			}
+
+			&:has(.hero-article__content + .hero-article__image) {
+				.overallButton {
+					align-self: flex-start;
+					@media(max-width: 768px) {
+						align-self: center;
+					}
+				}
+			}
+
+			&:has(.hero-article__image + .hero-article__content) {
+				.overallButton {
+					align-self: flex-end;
+					@media(max-width: 768px) {
+						align-self: center;
+					}
 				}
 			}
 

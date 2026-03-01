@@ -4,7 +4,7 @@
 
     {% if fields.content %}
     {%  set isImage = fields.image.src or fields.image.layers %}
-    <div class="hero-article {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    <section class="hero-article {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
         {% if fields.image.image_position != 'right' and isImage %}
         {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
         {% endif %}
@@ -16,7 +16,7 @@
         {% if fields.image.image_position == 'right' and isImage %}
         {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
         {% endif %}
-    </div>
+    </section>
     {% endif %}
 
 {% endblock %}

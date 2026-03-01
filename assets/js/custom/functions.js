@@ -9,7 +9,8 @@ function initHeaderNavigation(header) {
     let activeLi = null;
     let currentLi = null;
     let timer = null;
-    const currentPath = '/' + window.location.pathname.split('/').filter(Boolean)[0];
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const currentPath = segments.length ? '/' + segments[0] : '/';
 
     const setThumbInstant = (li) => {
         const rect = li.getBoundingClientRect();
@@ -36,17 +37,29 @@ function initHeaderNavigation(header) {
 
         timer = setTimeout(() => {
             thumb.style.height = rect.height + 'px';
-            thumb.style.opacity = '1'
+            thumb.style.opacity = '1';
         }, 150);
     };
 
-    nav.querySelectorAll('a').forEach(a => {
-        if (a.getAttribute('href') === currentPath) {
-            activeLi = a.closest('li');
-            setThumbInstant(activeLi);
-            currentLi = activeLi;
-        }
-    });
+    const resetThumb = () => {
+        clearTimeout(timer);
+        currentLi = null;
+        thumb.style.width = '0px';
+        thumb.style.opacity = '0';
+        activeLi = null;
+    };
+
+    const initActive = () => {
+        nav.querySelectorAll('a').forEach(a => {
+            if (a.getAttribute('href') === currentPath) {
+                activeLi = a.closest('li');
+                setThumbInstant(activeLi);
+                currentLi = activeLi;
+            }
+        });
+    };
+
+    initActive();
 
     nav.querySelectorAll('li').forEach(li => {
         li.addEventListener('mouseenter', () => moveThumb(li));
@@ -62,8 +75,33 @@ function initHeaderNavigation(header) {
             thumb.style.width = '0px';
         }
     });
+
+    // Resize
+    let resizeTimer = null;
+    let wasDesktop = window.innerWidth > 1024;
+
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const isDesktop = window.innerWidth > 1024;
+
+            if (isDesktop) {
+                if (!wasDesktop) {
+                    resetThumb();
+                    initActive();
+                } else {
+                    if (activeLi) setThumbInstant(activeLi);
+                }
+            } else {
+                resetThumb();
+            }
+
+            wasDesktop = isDesktop;
+        }, 50);
+    });
 }
 
+// init burger
 function initBurger(header) {
     if (!header) return;
     const burger = header.find('.burger-toggler');
@@ -93,12 +131,21 @@ function initBurger(header) {
             closeMenu();
         }
     });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 1024) {
+                closeMenu();
+            }
+        }, 50);
+    });
 }
 
 // show tracking
-
-function initTracking(el){
-    if(!el) return;
+function initTracking(el) {
+    if (!el) return;
 
     const domEl = el[0];
 
@@ -110,7 +157,7 @@ function initTracking(el){
             }
         });
     }, {
-        threshold: 0.2
+        threshold: 0.3
     });
 
     observer.observe(domEl);

@@ -40,11 +40,10 @@ header {
 		}
 
 		nav {
-			display: flex;
 			font-size: clamp(16px, 1.8vw, 24px);
+			display: flex;
 
 			a {
-
 				font-weight: 700;
 				line-height: 1.2;
 				position: relative;
@@ -115,14 +114,15 @@ header {
 					flex-direction: column;
 					justify-content: flex-end;
 					padding: var(--primary-size) var(--secondary-size);
-					transition: top .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
 					opacity: 0;
+					background-color: var(--element-dark-background);
 					gap: var(--primary-size);
 					backdrop-filter: blur(var(--primary-blur-value));
-					background-color: var(--element-dark-background);
+					transition: top .1s ease-in-out, opacity .1s ease-in-out, visibility .1s ease-in-out;
 					&.active {
 						top: calc(var(--element-height) + var(--primary-size));
 						visibility: visible;
+						transition: top .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
 						opacity: 1;
 					}
 				}
@@ -130,20 +130,22 @@ header {
 
 			.burger {
 				display: none;
-				height: auto;
+				flex-shrink: 0;
 				width: 40px;
+				height: auto;
+				padding: 0;
+				cursor: pointer;
 				border: none;
 				outline: none;
 				background: transparent;
 				-webkit-appearance: none;
 				filter: var(--hover-drop-shadow);
-				flex-shrink: 0;
-				cursor: pointer;
-				padding: 0;
+				-webkit-text-fill-color: transparent;
+				-webkit-tap-highlight-color: transparent;
 
 				svg {
-					overflow: visible;
 					position: relative;
+					overflow: visible;
 					width: 100%;
 					color: var(--color-green);
 					aspect-ratio: 1/1;
@@ -156,9 +158,9 @@ header {
 						}
 
 						&:nth-child(2) {
+							visibility: visible;
 							transition-delay: .3s;
 							opacity: 0.4;
-							visibility: visible;
 						}
 
 						&:nth-child(3) {
@@ -176,10 +178,10 @@ header {
 							}
 
 							&:nth-child(2) {
+								visibility: hidden;
 								transition-delay: 0.01s;
 								transform: translateX(-100%);
 								opacity: 0;
-								visibility: hidden;
 							}
 
 							&:nth-child(3) {

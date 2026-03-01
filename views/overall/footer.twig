@@ -1,5 +1,18 @@
+{% set links = [
+    {'id': '1', 'href': '#', 'title': 'facebook', 'icon': 'facebook'},
+    {'id': '2', 'href': '#', 'title': 'telegram', 'icon': 'telegram'},
+    {'id': '3', 'href': '#', 'title': 'github', 'icon': 'github'},
+] %}
+
+
 <footer>
-    <div class="inner decorBorder leftToTop">
-        footer
+    <div class="inner decorBorder leftToTop tracker up">
+        <div class="left">
+            information
+        </div>
+
+        <div class="right">
+            {% include "overall/social-icons.twig" with {links: links, class: 'footer__social-icons'}%}
+        </div>
     </div>
 </footer>

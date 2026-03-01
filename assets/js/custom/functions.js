@@ -9,7 +9,8 @@ function initHeaderNavigation(header) {
     let activeLi = null;
     let currentLi = null;
     let timer = null;
-    const currentPath = '/' + window.location.pathname.split('/').filter(Boolean)[0];
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const currentPath = segments.length ? '/' + segments[0] : '/';
 
     const setThumbInstant = (li) => {
         const rect = li.getBoundingClientRect();
@@ -36,17 +37,29 @@ function initHeaderNavigation(header) {
 
         timer = setTimeout(() => {
             thumb.style.height = rect.height + 'px';
-            thumb.style.opacity = '1'
+            thumb.style.opacity = '1';
         }, 150);
     };
 
-    nav.querySelectorAll('a').forEach(a => {
-        if (a.getAttribute('href') === currentPath) {
-            activeLi = a.closest('li');
-            setThumbInstant(activeLi);
-            currentLi = activeLi;
-        }
-    });
+    const resetThumb = () => {
+        clearTimeout(timer);
+        currentLi = null;
+        thumb.style.width = '0px';
+        thumb.style.opacity = '0';
+        activeLi = null;
+    };
+
+    const initActive = () => {
+        nav.querySelectorAll('a').forEach(a => {
+            if (a.getAttribute('href') === currentPath) {
+                activeLi = a.closest('li');
+                setThumbInstant(activeLi);
+                currentLi = activeLi;
+            }
+        });
+    };
+
+    initActive();
 
     nav.querySelectorAll('li').forEach(li => {
         li.addEventListener('mouseenter', () => moveThumb(li));
@@ -62,8 +75,33 @@ function initHeaderNavigation(header) {
             thumb.style.width = '0px';
         }
     });
+
+    // Resize
+    let resizeTimer = null;
+    let wasDesktop = window.innerWidth > 1024;
+
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const isDesktop = window.innerWidth > 1024;
+
+            if (isDesktop) {
+                if (!wasDesktop) {
+                    resetThumb();
+                    initActive();
+                } else {
+                    if (activeLi) setThumbInstant(activeLi);
+                }
+            } else {
+                resetThumb();
+            }
+
+            wasDesktop = isDesktop;
+        }, 50);
+    });
 }
 
+// init burger
 function initBurger(header) {
     if (!header) return;
     const burger = header.find('.burger-toggler');
@@ -93,12 +131,21 @@ function initBurger(header) {
             closeMenu();
         }
     });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 1024) {
+                closeMenu();
+            }
+        }, 50);
+    });
 }
 
 // show tracking
-
-function initTracking(el){
-    if(!el) return;
+function initTracking(el) {
+    if (!el) return;
 
     const domEl = el[0];
 
@@ -106,12 +153,61 @@ function initTracking(el){
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
-                observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('is-show');
             }
         });
     }, {
-        threshold: 0.2
+        threshold: [0.1, 0.3]
     });
 
     observer.observe(domEl);
+}
+
+function initCardSlider(el) {
+    if (!el) return;
+
+    const wrapper = el.find('.swiper')[0];
+    const pagination = el.find('.swiper-pagination')[0];
+    const next = el.find('.swiper-button-next')[0];
+    const prev = el.find('.swiper-button-prev')[0];
+
+    if (!wrapper) return;
+
+    new Swiper(wrapper, {
+        loop: true,
+        grabCursor: true,
+        initialSlide: 1,
+        loopAdditionalSlides: 3,
+
+        pagination: {
+            el: pagination,
+            clickable: true,
+            dynamicBullets: true,
+            dynamicMainBullets: 4,
+        },
+
+        navigation: {
+            nextEl: next,
+            prevEl: prev,
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+                centeredSlides: true,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+                centeredSlides: true,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+                centeredSlides: true,
+            },
+        },
+    });
 }

@@ -36,6 +36,12 @@
             })
         }
 
+        if ($('.cardSlider').length) {
+            $('.cardSlider').each(function () {
+                initCardSlider($(this));
+            });
+        }
+
 
     });
 })(jQuery);

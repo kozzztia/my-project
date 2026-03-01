@@ -1,0 +1,2 @@
+.main-card-slider .customBlock .cardSlider .swiper{overflow:visible}@media (max-width:1024px){.main-card-slider .customBlock .cardSlider .swiper{overflow:hidden}}.main-card-slider .customBlock .cardSlider .swiper .swiper-slide{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.main-card-slider .customBlock .cardSlider .swiper .swiper-slide .cardImage{height:clamp(300px,40vw,700px)}
+/*# sourceMappingURL=card-slider.min.css.map */

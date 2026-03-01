@@ -1,0 +1,19 @@
+{% extends "overall/block-base.twig" %}
+{% block block %}
+    {% if fields.cards %}
+    <section class="cardSlider {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                {% for card in fields.cards %}
+                <div class="swiper-slide">
+                    {% include "overall/card-image.twig" with {image: card, class: 'cardSlider__image'} %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <button class="swiper-button-prev" type="button"></button>
+            <button class="swiper-button-next" type="button"></button>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}

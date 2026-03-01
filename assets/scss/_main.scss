@@ -190,6 +190,28 @@ main {
 	}
 }
 
+.socialIcons {
+	display: flex;
+	align-items: center;
+	gap: var(--primary-size);
+
+	a {
+		display: flex;
+		color: var(--color-green);
+		transition: opacity .3s ease;
+
+		&:hover {
+		}
+	}
+
+	svg {
+		width: 60px;
+		height: 60px;
+		flex-shrink: 0;
+	}
+}
+
+
 
 
 

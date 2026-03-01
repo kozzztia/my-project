@@ -1,0 +1,14 @@
+{% if links %}
+<ul class="socialIcons {% if class %}{{ class }}{% endif %}">
+    {% for link in links %}
+    <li>
+        <a href="{{ link.href }}" title="{{ link.title }}">
+            <svg>
+                <use href="{{ svg_sprite }}#icon-{{ link.icon }}"></use>
+            </svg>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+

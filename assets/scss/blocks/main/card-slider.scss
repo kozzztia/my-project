@@ -1,0 +1,25 @@
+.main-card-slider {
+	.customBlock {
+		.cardSlider {
+
+			.swiper {
+				overflow: visible;
+
+				@media (max-width: 1024px) {
+					overflow: hidden;
+				}
+				.swiper-wrapper {
+				}
+				.swiper-slide {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.cardImage {
+						height: clamp(300px, 40vw, 700px);
+					}
+				}
+			}
+		}
+	}
+}

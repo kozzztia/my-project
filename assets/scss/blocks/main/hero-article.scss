@@ -35,6 +35,9 @@
 				@media(max-width: 768px) {
 					align-self: center;
 				}
+				@media(max-width: 768px) {
+					width: 100%;
+				}
 			}
 
 			&:has(.hero-article__content + .hero-article__image) {

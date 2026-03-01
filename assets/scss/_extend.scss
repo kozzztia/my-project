@@ -283,11 +283,13 @@
 				background-color: var(--color-green);
 			}
 		}
+
 		&_list-type-blue {
 			li:before {
 				background-color: var(--color-blue);
 			}
 		}
+
 		&_list-type-violet {
 			li:before {
 				background-color: var(--color-violet);
@@ -500,29 +502,48 @@
 }
 
 .tracker {
-	transition: opacity .3s ease-in-out;
-	opacity: 0.8;
+	transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+	opacity: 0;
 
-	& > * {
-		transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+	&.left-right{
+		& > * {
+			transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+		}
+
+		& > *:nth-child(odd) {
+			transform: translateX(-50%);
+		}
+
+		& > *:nth-child(even) {
+			transform: translateX(50%);
+		}
+
+		&.is-show {
+			& > * {
+				transform: translateX(0);
+			}
+		}
 	}
 
-	& > *:nth-child(odd) {
-		transform: translateX(-50%);
+	&.down {
+		transform: translateY(-50%);
+
+		&.is-show {
+			transform: translateY(0);
+		}
 	}
 
-	& > *:nth-child(even) {
-		transform: translateX(50%);
+	&.up {
+		transform: translateY(50%);
+
+		&.is-show {
+			transform: translateY(0);
+		}
 	}
+
 
 	&.is-show {
-		& {
-			opacity: 1;
-		}
-
-		& > * {
-			transform: translateX(0);
-		}
+		opacity: 1;
 	}
 }
 

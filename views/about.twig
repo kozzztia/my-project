@@ -5,10 +5,24 @@
 {% block base %}
 
     {% set blocks = [
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'text-align: center',
+            'class': 'tracker down',
+            'text': '<h1><strong><span class="mce_size-xl">Задорожній Костянтин Сергійович</span></strong></h1>',
+        },
+        },
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'text-align: center',
+            'class': 'tracker down',
+            'text': '<h2><strong><span class="mce_size-l">Front-end розробник</span></strong></h2>',
+        },
+        },
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker',
+            'class': 'tracker down',
             'image': {
                 'image_position': 'right',
                 'title': 'search',
@@ -21,8 +35,8 @@
                 ]
             },
             'content': {
-                'title': '<h2><strong><span class="mce_size-l">Про мене</span></strong></h2>',
-                'subtitle': '<h3><strong><span class="mce_size-s">Про мене</span></strong></h3>',
+                'title': '<h3><strong><span class="mce_size-l">Про мене</span></strong></h3>',
+                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
                 'text': '<p><strong>Front-End розробник</strong> із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</p>
                         <p>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</p>
                         <p>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</p>
@@ -44,14 +58,13 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': ' tracker',
+            'class': ' tracker left-right',
             'image': {
                 'title': 'cash-back',
                 'src': svg_folder ~'cash-back.svg',
             },
             'content': {
-                'title': '<h2><strong><span class="mce_size-l">Про мене</span></strong></h2>',
-                'subtitle': '<h3><strong><span class="mce_size-s">Про мене</span></strong></h3>',
+                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
                 'text': '
                     <ul class="mce_list-type-green">
                         <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
@@ -76,10 +89,9 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': ' tracker',
+            'class': ' tracker up',
             'content': {
-                'title': '<h2><strong><span class="mce_size-l">Про мене</span></strong></h2>',
-                'subtitle': '<h3><strong><span class="mce_size-s">Про мене</span></strong></h3>',
+                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
                 'text': '
                     <ul class="mce_list-type-green">
                         <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>

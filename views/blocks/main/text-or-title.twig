@@ -3,7 +3,7 @@
 {% block block %}
 
     {% if fields.text %}
-    <article class="text-or-title typo {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    <article class="text-or-title typo {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         {{ fields.text }}
     </article>
     {% endif %}

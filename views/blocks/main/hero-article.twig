@@ -3,18 +3,18 @@
 {% block block %}
 
     {% if fields.content %}
-    {%  set isImage = fields.image.src or fields.image.layers %}
-    <section class="hero-article {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    {% set isImage = fields.image.src or fields.image.layers %}
+    <section class="hero-article {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         {% if fields.image.image_position != 'right' and isImage %}
-        {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
+            {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
         {% endif %}
 
         {% if fields.content %}
-        {% include "overall/article.twig" with {content: fields.content, class: 'hero-article__content' } %}
+            {% include "overall/article.twig" with {content: fields.content, class: 'hero-article__content' } %}
         {% endif %}
 
         {% if fields.image.image_position == 'right' and isImage %}
-        {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
+            {% include "overall/card-image.twig" with {image: fields.image, class: 'hero-article__image'} %}
         {% endif %}
     </section>
     {% endif %}

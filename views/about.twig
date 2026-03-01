@@ -1,5 +1,5 @@
 
-{# white  is hteme  of  block  rtacker  is animation  in show  #}
+{# white  is theme  of  block  traacker  is animation  in show  (left-right , dow, up #}
 {% extends "overall/base.twig" %}
 
 {% block base %}
@@ -9,20 +9,20 @@
             'fields': {
             'style': 'text-align: center',
             'class': 'tracker down',
-            'text': '<h1><strong><span class="mce_size-xl">Задорожній Костянтин Сергійович</span></strong></h1>',
+            'text': '<h1><strong><span class="mce_size-xl">Задорожній Костя</span></strong></h1>',
         },
         },
         {'name': 'text-or-title',
             'fields': {
             'style': 'text-align: center',
             'class': 'tracker down',
-            'text': '<h2><strong><span class="mce_size-l">Front-end розробник</span></strong></h2>',
+            'text': '<h2><strong><span class="mce_size-xl">Front-end розробник</span></strong></h2>',
         },
         },
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down',
+            'class': 'tracker left-right',
             'image': {
                 'image_position': 'right',
                 'title': 'search',
@@ -58,7 +58,7 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': ' tracker left-right',
+            'class': 'tracker left-right',
             'image': {
                 'title': 'cash-back',
                 'src': svg_folder ~'cash-back.svg',
@@ -89,7 +89,7 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': ' tracker up',
+            'class': 'tracker up',
             'content': {
                 'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
                 'text': '
@@ -123,9 +123,5 @@
                 'fields': block.fields,
             } %}
     {% endfor %}
-
-
-    <section>
-    </section>
 
 {% endblock %}

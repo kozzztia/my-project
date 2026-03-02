@@ -175,11 +175,10 @@ function initCardSlider(el) {
 
     if (!wrapper) return;
 
-
     new Swiper(wrapper, {
         loop: true,
         grabCursor: true,
-        initialSlide: 1,
+        initialSlide: 2,
         loopAdditionalSlides: slideCount,
         watchSlidesProgress: true,
 
@@ -187,12 +186,12 @@ function initCardSlider(el) {
             el: pagination,
             clickable: true,
             dynamicBullets: true,
-            dynamicMainBullets: 4,
         },
 
         navigation: {
             nextEl: next,
             prevEl: prev,
+            enabled: false,
         },
 
         breakpoints: {
@@ -200,16 +199,25 @@ function initCardSlider(el) {
                 slidesPerView: 2,
                 spaceBetween: 16,
                 centeredSlides: true,
+                navigation: {
+                    enabled: false,
+                },
             },
             768: {
                 slidesPerView: 2,
                 spaceBetween: 24,
                 centeredSlides: true,
+                navigation: {
+                    enabled: false,
+                },
             },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 32,
                 centeredSlides: true,
+                navigation: {
+                    enabled: true,
+                },
             },
         },
     });

@@ -45,21 +45,20 @@ jobs:
           wget -q http://localhost:8080 -O dist/index.html
           cp -r assets dist/assets
 
-      - name: Replace localhost and relative links
+      - name: Replace base URL everywhere
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
-          # Заменяем все localhost ссылки
-          find dist -type f -name "*.html" -exec sed -i "s|http://localhost:[0-9]\+|$BASE_URL|g" {} \;
-          # Все якоря <a href="/...">
-          find dist -type f -name "*.html" -exec sed -i "s|href=\"/|href=\"$BASE_URL/|g" {} \;
-          # Все <link ...> (CSS, favicon)
-          find dist -type f -name "*.html" -exec sed -i "s|href=\"/assets|href=\"$BASE_URL/assets|g" {} \;
-          # Все <script ...> и <img ...>
-          find dist -type f -name "*.html" -exec sed -i "s|src=\"/assets|src=\"$BASE_URL/assets|g" {} \;
-          # SVG спрайты
-          find dist -type f -name "*.html" -exec sed -i "s|/assets/svg|$BASE_URL/assets/svg|g" {} \;
-
-      # CSS url(/assets/...) оставляем как есть
+          # HTML
+          find dist -type f -name "*.html" -exec sed -i "
+            s|http://localhost:[0-9]\+|$BASE_URL|g;
+            s|href=\"/|href=\"$BASE_URL/|g;
+            s|src=\"/|src=\"$BASE_URL/|g;
+            s|/assets/svg|$BASE_URL/assets/svg|g
+          " {} \;
+          # CSS
+          find dist -type f -name "*.css" -exec sed -i "
+            s|url(/assets|url($BASE_URL/assets|g
+          " {} \;
 
       - name: Verify asset paths
         run: |

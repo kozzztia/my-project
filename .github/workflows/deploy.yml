@@ -16,8 +16,16 @@ jobs:
         with:
           php-version: '8.1'
 
+      - name: Cache Composer packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.composer/cache
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
       - name: Install dependencies
-        run: composer install
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Start PHP server
         run: php -S localhost:8080 &
@@ -34,9 +42,19 @@ jobs:
           wget -q http://localhost:8080/graphics -O dist/graphics.html
           cp -r assets dist/assets
 
+      - name: Fix localhost links
+        run: |
+          find dist -type f -name "*.html" -exec sed -i 's|http://localhost:8080/|/|g' {} \;
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
+
+      - name: Confirm deploy
+        run: |
+          echo "✅ Deploy complete. GitHub Pages обновится в течение 5–15 минут."
+          echo "Содержимое папки dist:"
+          ls -R dist

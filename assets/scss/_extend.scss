@@ -560,13 +560,13 @@
 			align-items: center;
 			justify-content: flex-start;
 			margin-bottom: 12px;
-			color: var(--color-blue);
+			color: var(--color-white);
 			gap: var(--primary-size);
 
 			svg {
 				width: 40px;
 				height: 40px;
-				color: var(--color-orange);
+				color: var(--color-blue);
 			}
 
 			@media (max-width: 1024px) {
@@ -590,7 +590,7 @@
 		.message {
 			display: flex;
 			flex-direction: column;
-			color: var(--color-blue);
+			color: var(--color-white);
 			gap: var(--primary-size);
 
 			#cookie_text_toggle {
@@ -615,7 +615,7 @@
 					cursor: pointer;
 					border-top: none;
 					border-right: none;
-					border-bottom: dashed 1px var(--color-blue);
+					border-bottom: dashed 1px var(--color-green);
 					border-left: none;
 					background-color: transparent;
 					-webkit-appearance: none;
@@ -629,7 +629,7 @@
 				}
 
 				.typo {
-					color: var(--color-blue);
+					color: var(--color-white);
 					@media (max-width: 1024px) {
 						display: none;
 						text-align: center;

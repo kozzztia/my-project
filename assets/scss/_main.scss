@@ -51,6 +51,8 @@ main {
 	position: relative;
 	width: 100%;
 	height: auto;
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
 
 	img {
 		display: block;

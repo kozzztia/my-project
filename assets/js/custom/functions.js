@@ -171,14 +171,17 @@ function initCardSlider(el) {
     const pagination = el.find('.swiper-pagination')[0];
     const next = el.find('.swiper-button-next')[0];
     const prev = el.find('.swiper-button-prev')[0];
+    const slideCount = el.find('.swiper-slide').length;
 
     if (!wrapper) return;
+
 
     new Swiper(wrapper, {
         loop: true,
         grabCursor: true,
         initialSlide: 1,
-        loopAdditionalSlides: 3,
+        loopAdditionalSlides: slideCount,
+        watchSlidesProgress: true,
 
         pagination: {
             el: pagination,
@@ -196,7 +199,7 @@ function initCardSlider(el) {
             0: {
                 slidesPerView: 1,
                 spaceBetween: 16,
-                centeredSlides: true,
+                centeredSlides: false,
             },
             768: {
                 slidesPerView: 2,

@@ -196,10 +196,10 @@ function initCardSlider(el) {
         },
 
         breakpoints: {
-            0: {
-                slidesPerView: 1,
+            390: {
+                slidesPerView: 2,
                 spaceBetween: 16,
-                centeredSlides: false,
+                centeredSlides: true,
             },
             768: {
                 slidesPerView: 2,

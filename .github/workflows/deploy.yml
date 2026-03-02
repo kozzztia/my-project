@@ -38,7 +38,7 @@ jobs:
 
       - name: Download all twig pages
         run: |
-          for file in $(find templates -name "*.twig" -exec basename {} .twig \;); do
+          for file in $(find views -name "*.twig" ! -name "index.twig" -exec basename {} .twig \;); do
             echo "Rendering $file..."
             wget -q "http://localhost:8080/$file" -O "dist/$file.html"
           done

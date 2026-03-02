@@ -175,9 +175,11 @@ function initCardSlider(el) {
 
     if (!wrapper) return;
 
-    new Swiper(wrapper, {
+    const intervalAttr = el.attr('data-interval');
+    const interval = intervalAttr ? parseInt(intervalAttr, 10) : null;
+
+    const swiper = new Swiper(wrapper, {
         loop: true,
-        grabCursor: true,
         initialSlide: 2,
         loopAdditionalSlides: slideCount,
         watchSlidesProgress: true,
@@ -199,26 +201,37 @@ function initCardSlider(el) {
                 slidesPerView: 2,
                 spaceBetween: 16,
                 centeredSlides: true,
-                navigation: {
-                    enabled: false,
-                },
+                navigation: { enabled: false },
             },
             768: {
                 slidesPerView: 2,
                 spaceBetween: 24,
                 centeredSlides: true,
-                navigation: {
-                    enabled: false,
-                },
+                navigation: { enabled: false },
             },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 32,
                 centeredSlides: true,
-                navigation: {
-                    enabled: true,
-                },
+                navigation: { enabled: true },
             },
         },
+
+        ...(interval ? {
+            autoplay: {
+                delay: interval * 1000,
+                disableOnInteraction: false,
+            }
+        } : {})
+    });
+
+    // Остановка при наведении
+    el.on('mouseenter', function() {
+        if (swiper.autoplay) swiper.autoplay.stop();
+    });
+
+    // Возобновление при уходе
+    el.on('mouseleave', function() {
+        if (swiper.autoplay) swiper.autoplay.start();
     });
 }

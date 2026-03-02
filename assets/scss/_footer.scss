@@ -13,6 +13,10 @@ footer {
 		padding: var(--primary-size) var(--secondary-size);
 		margin-inline: auto;
 		gap: var(--primary-size);
+
+		@media (max-width: 768px){
+			flex-direction: column;
+		}
 	}
 }
 

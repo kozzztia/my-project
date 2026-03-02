@@ -494,7 +494,7 @@
 	}
 
 	&.down {
-		transform: translateY(45px);
+		transform: translateY(-45px);
 
 		&.is-show {
 			transform: translateY(0);

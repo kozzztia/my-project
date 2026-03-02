@@ -1,7 +1,9 @@
 {% extends "overall/block-base.twig" %}
 {% block block %}
     {% if fields.cards %}
-    <section class="cardSlider {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    <section class="cardSlider {% if fields.class %}{{ fields.class }}" {% endif %}
+        {% if fields.style %} style="{{ fields.style }}" {% endif %}
+        {% if fields.interval %} data-interval="{{ fields.interval }}" {% endif %}>
         <div class="swiper">
             <div class="swiper-wrapper">
                 {% for card in fields.cards %}

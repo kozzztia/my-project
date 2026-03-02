@@ -36,15 +36,23 @@ jobs:
       - name: Download pages
         run: |
           mkdir -p dist
-          wget -q http://localhost:8080 -O dist/index.html
-          wget -q http://localhost:8080/about -O dist/about.html
-          wget -q http://localhost:8080/projects -O dist/projects.html
-          wget -q http://localhost:8080/graphics -O dist/graphics.html
+          for file in $(find templates -name "*.twig" -exec basename {} .twig \;); do
+            echo "Rendering $file..."
+            wget -q "http://localhost:8080/$file" -O "dist/$file.html"
+          done
           cp -r assets dist/assets
+
 
       - name: Fix localhost links
         run: |
           find dist -type f -name "*.html" -exec sed -i 's|http://localhost:8080/|/|g' {} \;
+
+      - name: Normalize asset paths
+        run: |
+          find dist -type f -name "*.html" -exec sed -i 's|[/\\\+\*]*assets|assets|g' {} \;
+      - name: Verify asset paths
+        run: |
+          grep -R "assets/" dist/*.html || (echo "❌ Assets path not fixed!" && exit 1)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

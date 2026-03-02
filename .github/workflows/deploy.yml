@@ -49,20 +49,15 @@ jobs:
         run: |
           find dist -type f -name "*.html" -exec sed -i 's|http://localhost:8080/|/|g' {} \;
 
-      - name: Normalize asset paths in HTML
+      - name: Normalize links in HTML
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
-          find dist -type f -name "*.html" -exec sed -i "s|['\"]\?/assets|$BASE_URL/assets|g" {} \;
+          # Хедер и внутренние ссылки
+          find dist -type f -name "*.html" -exec sed -i "s|href=\"/|href=\"$BASE_URL/|g" {} \;
+          # Ассеты
+          find dist -type f -name "*.html" -exec sed -i "s|/assets|$BASE_URL/assets|g" {} \;
 
-      - name: Fix site.url links in HTML
-        run: |
-          BASE_URL="https://kozzztia.github.io/my-project"
-          find dist -type f -name "*.html" -exec sed -i "s|http://localhost:8080|$BASE_URL|g" {} \;
-
-      - name: Fix CSS asset paths
-        run: |
-          BASE_URL="https://kozzztia.github.io/my-project"
-          find dist -type f -name "*.css" -exec sed -i "s|url(['\"]\?/assets|url('$BASE_URL/assets|g" {} \;
+      # CSS фонты и background оставляем как есть
 
       - name: Verify asset paths
         run: |

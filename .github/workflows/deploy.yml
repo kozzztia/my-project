@@ -38,12 +38,10 @@ jobs:
 
       - name: Download all twig pages
         run: |
-          # ищем все twig-файлы и рендерим их
           for file in $(find templates -name "*.twig" -exec basename {} .twig \;); do
             echo "Rendering $file..."
             wget -q "http://localhost:8080/$file" -O "dist/$file.html"
           done
-          # отдельно рендерим index
           wget -q http://localhost:8080 -O dist/index.html
           cp -r assets dist/assets
 
@@ -54,7 +52,7 @@ jobs:
       - name: Normalize asset paths in HTML
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
-          find dist -type f -name "*.html" -exec sed -i "s|[/\\\+\*]*assets|$BASE_URL/assets|g" {} \;
+          find dist -type f -name "*.html" -exec sed -i "s|['\"]\?/assets|$BASE_URL/assets|g" {} \;
 
       - name: Fix site.url links in HTML
         run: |
@@ -64,11 +62,11 @@ jobs:
       - name: Fix CSS asset paths
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
-          find dist -type f -name "*.css" -exec sed -i "s|url('/assets|url('$BASE_URL/assets|g" {} \;
+          find dist -type f -name "*.css" -exec sed -i "s|url(['\"]\?/assets|url('$BASE_URL/assets|g" {} \;
 
       - name: Verify asset paths
         run: |
-          grep -R "https://kozzztia.github.io/my-project/assets/" dist/*.html dist/*.css || (echo "❌ Assets path not fixed!" && exit 1)
+          grep -R "https://kozzztia.github.io/my-project/assets/" dist || (echo "❌ Assets path not fixed!" && exit 1)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

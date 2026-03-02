@@ -38,11 +38,12 @@ jobs:
 
       - name: Download all twig pages
         run: |
-          for file in $(find views -name "*.twig" ! -name "index.twig" -exec basename {} .twig \;); do
-            echo "Rendering $file..."
-            wget -q "http://localhost:8080/$file" -O "dist/$file.html"
-          done
+          mkdir -p dist
           wget -q http://localhost:8080 -O dist/index.html
+          wget -q http://localhost:8080/about -O dist/about.html
+          wget -q http://localhost:8080/graphics -O dist/graphics.html
+          wget -q http://localhost:8080/projects -O dist/projects.html
+          wget -q http://localhost:8080/start -O dist/start.html
           cp -r assets dist/assets
 
       - name: Replace base URL everywhere

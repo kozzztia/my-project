@@ -51,7 +51,8 @@ function initHeaderNavigation(header) {
 
     const initActive = () => {
         nav.querySelectorAll('a').forEach(a => {
-            if (a.getAttribute('href') === currentPath) {
+            const linkPath = new URL(a.href).pathname;
+            if (linkPath === currentPath) {
                 activeLi = a.closest('li');
                 setThumbInstant(activeLi);
                 currentLi = activeLi;

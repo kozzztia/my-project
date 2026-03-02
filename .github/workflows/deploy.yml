@@ -47,18 +47,28 @@ jobs:
           wget -q http://localhost:8080 -O dist/index.html
           cp -r assets dist/assets
 
-      - name: Fix localhost links
+      - name: Fix localhost links in HTML
         run: |
           find dist -type f -name "*.html" -exec sed -i 's|http://localhost:8080/|/|g' {} \;
 
-      - name: Normalize asset paths
+      - name: Normalize asset paths in HTML
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
           find dist -type f -name "*.html" -exec sed -i "s|[/\\\+\*]*assets|$BASE_URL/assets|g" {} \;
 
+      - name: Fix site.url links in HTML
+        run: |
+          BASE_URL="https://kozzztia.github.io/my-project"
+          find dist -type f -name "*.html" -exec sed -i "s|http://localhost:8080|$BASE_URL|g" {} \;
+
+      - name: Fix CSS asset paths
+        run: |
+          BASE_URL="https://kozzztia.github.io/my-project"
+          find dist -type f -name "*.css" -exec sed -i "s|url('/assets|url('$BASE_URL/assets|g" {} \;
+
       - name: Verify asset paths
         run: |
-          grep -R "https://kozzztia.github.io/my-project/assets/" dist/*.html || (echo "❌ Assets path not fixed!" && exit 1)
+          grep -R "https://kozzztia.github.io/my-project/assets/" dist/*.html dist/*.css || (echo "❌ Assets path not fixed!" && exit 1)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

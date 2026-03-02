@@ -2,7 +2,7 @@
     <div class="cookiePopup block-shadow">
         <p class="title">
             <svg>
-                <use href="{{ svg_sprite }}#cookie-icon"></use>
+                <use href="{{ svg_sprite }}#icon-arrow"></use>
             </svg>
             <span>Цей сайт використовує файли cookie</span>
         </p>
@@ -16,16 +16,15 @@
                     </div>
                 </div>
             </div>
-        {% include 'overall/button.twig' with {
-            title: 'Добре, я розумію',
-            buttonType: 'cookie_popup_button_type',
-            type: {
-                'style' : 'size-xl style-gradient-white-blue',
-                'icon_position': 'right',
-                'icon': 'icon-triangle',
-            },
-        }
-        %}
+            {% include 'overall/button.twig' with {
+                title: 'Добре, я розумію',
+                buttonType: 'cookie_popup_button_type',
+                type: {
+                    'style' : 'size-xs style-green-transparent',
+                    'icon_position': 'right',
+                    'icon': 'icon-triangle',
+                },
+            } %}
         </div>
     </div>
 </div>

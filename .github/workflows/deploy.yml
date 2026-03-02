@@ -52,12 +52,16 @@ jobs:
       - name: Normalize links in HTML
         run: |
           BASE_URL="https://kozzztia.github.io/my-project"
-          # Хедер и внутренние ссылки
+          # Все якоря <a href="/...">
           find dist -type f -name "*.html" -exec sed -i "s|href=\"/|href=\"$BASE_URL/|g" {} \;
-          # Ассеты
-          find dist -type f -name "*.html" -exec sed -i "s|/assets|$BASE_URL/assets|g" {} \;
+          # Все <link ...> (CSS, favicon)
+          find dist -type f -name "*.html" -exec sed -i "s|href=\"/assets|href=\"$BASE_URL/assets|g" {} \;
+          # Все <script ...> и <img ...>
+          find dist -type f -name "*.html" -exec sed -i "s|src=\"/assets|src=\"$BASE_URL/assets|g" {} \;
+          # SVG спрайты
+          find dist -type f -name "*.html" -exec sed -i "s|/assets/svg|$BASE_URL/assets/svg|g" {} \;
 
-      # CSS фонты и background оставляем как есть
+      # CSS фонты и background оставляем как есть (url(/assets/...))
 
       - name: Verify asset paths
         run: |

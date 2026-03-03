@@ -36,9 +36,8 @@ jobs:
       - name: Clean dist folder
         run: rm -rf dist && mkdir dist
 
-      - name: Download all twig pages
+      - name: Download pages
         run: |
-          mkdir -p dist
           wget -q http://localhost:8080 -O dist/index.html
           wget -q http://localhost:8080/about -O dist/about.html
           wget -q http://localhost:8080/graphics -O dist/graphics.html
@@ -46,70 +45,30 @@ jobs:
           wget -q http://localhost:8080/start -O dist/start.html
           cp -r assets dist/assets
 
-      - name: Replace base URL everywhere
+      - name: Replace base URL
         run: |
+          # ⬇️ МЕНЯЙ ТОЛЬКО ЭТУ СТРОКУ ПРИ ПЕРЕНОСЕ НА НОВЫЙ ПРОЕКТ
           BASE_URL="https://kozzztia.github.io/my-project"
 
-          # HTML файлы
           find dist -type f -name "*.html" -exec sed -i \
             -e "s|http://localhost:[0-9]*|$BASE_URL|g" \
-            -e "s|href=\"/|href=\"$BASE_URL/|g" \
-            -e "s|src=\"/|src=\"$BASE_URL/|g" \
-            -e "s|url(/assets|url($BASE_URL/assets|g" \
             {} \;
 
-          # CSS файлы
-          find dist -type f -name "*.css" -exec sed -i \
-            -e "s|http://localhost:[0-9]*|$BASE_URL|g" \
-            -e "s|url(/assets|url($BASE_URL/assets|g" \
-            -e "s|url('http://localhost:[0-9]*/assets|url('$BASE_URL/assets|g" \
-            -e "s|url(\"http://localhost:[0-9]*/assets|url(\"$BASE_URL/assets|g" \
-            {} \;
-
-          # Убираем двойной BASE_URL если вдруг появился
-          ESCAPED=$(echo "$BASE_URL" | sed 's|/|\\/|g')
-          find dist -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i \
-            -e "s|${ESCAPED}${ESCAPED}|$BASE_URL|g" \
-            {} \;
-
-      - name: Create extensionless page copies (for clean URLs)
+      - name: Create clean URLs
         run: |
-          # Создаём папки с index.html для чистых URL (/projects вместо /projects.html)
           find dist -maxdepth 1 -name "*.html" ! -name "index.html" | while read f; do
             name=$(basename "$f" .html)
             mkdir -p "dist/$name"
             cp "$f" "dist/$name/index.html"
           done
 
-      - name: Fix internal links to use clean URLs
-        run: |
-          BASE_URL="https://kozzztia.github.io/my-project"
-          # Заменяем ссылки вида href="...page.html" на href=".../page"
-          find dist -type f -name "*.html" -exec sed -i \
-            -e "s|href=\"$BASE_URL/\([^\"]*\)\.html\"|href=\"$BASE_URL/\1\"|g" \
-            {} \;
-
-      - name: Verify asset paths
+      - name: Verify
         run: |
           echo "=== Проверка localhost ==="
           if grep -Rn "localhost" dist/*.html 2>/dev/null | head -5; then
             echo "⚠️ Найдены ссылки на localhost!"
           else
             echo "✅ Нет ссылок на localhost."
-          fi
-
-          echo "=== Проверка двойного BASE_URL ==="
-          if grep -Rn "my-projecthttps" dist/*.html 2>/dev/null | head -5; then
-            echo "⚠️ Найден двойной BASE_URL!"
-          else
-            echo "✅ Двойных URL нет."
-          fi
-
-          echo "=== Проверка относительных /assets ==="
-          if grep -Rn "href=\"/assets\|src=\"/assets" dist/*.html 2>/dev/null | head -5; then
-            echo "⚠️ Найдены относительные ссылки на /assets!"
-          else
-            echo "✅ Все ссылки на assets абсолютные."
           fi
 
       - name: Deploy to GitHub Pages
@@ -122,5 +81,4 @@ jobs:
       - name: Confirm deploy
         run: |
           echo "✅ Deploy complete."
-          echo "Структура dist:"
           ls -R dist

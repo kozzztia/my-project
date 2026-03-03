@@ -5,7 +5,7 @@
 		.cardSlider {
 			.swiper {
 				overflow: visible;
-				padding-bottom: var(--secondary-size);
+				padding: var(--primary-size) var(--secondary-size);
 				@media (max-width: 1024px) {
 					overflow: hidden;
 				}
@@ -21,10 +21,6 @@
 					&.swiper-slide-visible {
 						transform: scale(1);
 						opacity: 1;
-					}
-
-					.cardImage {
-						height: clamp(300px, 30vw, 500px);
 					}
 				}
 

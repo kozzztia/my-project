@@ -1,0 +1,29 @@
+<div class="cardProject {% if class %}{{ class }}{% endif %}">
+    <div class="inner">
+        {% if project.src %}
+        <figure class="front">
+            {% if project.title %}
+            <figcaption>{{ project.title }}</figcaption>
+            {% endif %}
+            <img src="{{ project.src }}" alt="{{ project.title }}">
+        </figure>
+        {% endif %}
+
+        {% if project.title or project.description or project.button %}
+        <article class="back decorBorder leftToTop">
+            {% if project.title and project.href %}
+            <a class="link" href="{{ project.href }}" target="_blank">{{ project.title }}</a>
+            {% endif %}
+
+            {% if project.description %}
+            <p class="description">{{ project.description }}</p>
+            {% endif %}
+
+
+            {% if project.button %}
+            {% include 'overall/button.twig' with project.button %}
+            {% endif %}
+        </article>
+        {% endif %}
+    </div>
+</div>

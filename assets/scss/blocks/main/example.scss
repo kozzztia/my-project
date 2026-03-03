@@ -2,6 +2,7 @@
 	.customBlock {
 		.example {
 			height: 200vh;
+			padding: var(--primary-size) var(--secondary-size);
 		}
 	}
 }

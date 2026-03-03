@@ -1,6 +1,6 @@
-.main-card-grid {
+.main-project-grid {
 	.customBlock {
-		.card-grid {
+		.project-grid {
 			position: relative;
 			display: grid;
 			padding: var(--primary-size) var(--secondary-size);
@@ -9,6 +9,9 @@
 			gap: var(--primary-size);
 			@media (max-width: 1024px) {
 				grid-template-columns: repeat(2, 1fr);
+			}
+			@media (max-width: 768px) {
+				grid-template-columns: 1fr;
 			}
 		}
 	}

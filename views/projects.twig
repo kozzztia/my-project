@@ -3,12 +3,181 @@
 {% block base %}
 
     {% set blocks = [
-        {'name': 'example',
+        {'name': 'text-or-title',
             'fields': {
-                'style': '',
-                'text': '<p>example</p>',
-            },
-        }
+            'style': 'text-align: left',
+            'class': 'tracker down',
+            'text': '<h1><strong><span class="mce_size-l">Мною реалізовані  проєкти.</span></strong></h1>',
+        },
+        },
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'text-align: left',
+            'class': 'tracker down',
+            'text': '<h2><strong><span class="mce_size-s">Art проєкти:</span></strong></h2>',
+        },
+        },
+        {'name': 'project-grid',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size);',
+            'class': 'tracker down',
+            'animation': 'flip',
+            'projects': [
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'/page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+            ],
+        },
+        },
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'text-align: left',
+            'class': 'tracker down',
+            'text': '<h2><strong><span class="mce_size-s">Інтернет магазини:</span></strong></h2>',
+        },
+        },
+        {'name': 'project-grid',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size);',
+            'class': 'tracker down',
+            'animation': 'hover-up',
+            'projects': [
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'/page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                    'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'page',
+                    },
+                    'type': {
+                        'style' : 'size-s style-green-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
+                },
+                },
+            ],
+        },
+        },
     ] %}
 
     {% for block in blocks %}
@@ -17,8 +186,7 @@
                 'block_group': 'main',
                 'block_name': block.name,
                 'fields': block.fields,
-            }
-        %}
+            } %}
     {% endfor %}
 
 {% endblock %}

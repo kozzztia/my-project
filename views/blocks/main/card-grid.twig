@@ -1,9 +1,9 @@
 {% extends "overall/block-base.twig" %}
 {% block block %}
     {% if fields.cards %}
-    <section class="cardGrid {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    <section class="card-grid {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
     {% for card in fields.cards %}
-    {% include "overall/card-image.twig" with {image: card, class: 'cardGrid__image'} %}
+    {% include "overall/card-image.twig" with {image: card, class: 'card-grid__image'} %}
     {% endfor %}
     </section>
     {% endif %}

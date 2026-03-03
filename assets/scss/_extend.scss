@@ -351,6 +351,7 @@
 	outline: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
+	white-space: nowrap;
 
 	svg {
 		position: relative;
@@ -378,6 +379,26 @@
 		svg {
 			width: 24px;
 			height: 24px;
+		}
+
+		@media (max-width: 1024px) {
+			font-size: 16px;
+			padding: 20px 40px;
+		}
+		@media (max-width: 768px) {
+			padding: 10px 20px;
+		}
+	}
+	&.size-s {
+		font-size: 14px;
+		height: auto;
+		padding: 20px;
+		border-radius: var(--primary-border-radius);
+		gap: 10px;
+
+		svg {
+			width: 20px;
+			height: 20px;
 		}
 
 		@media (max-width: 1024px) {
@@ -547,7 +568,7 @@
 		text-align: left;
 		border-radius: var(--primary-border-radius);
 		background-color: var(--element-dark-background);
-		backdrop-filter: blur(8px);
+		backdrop-filter: blur(var(--primary-blur-value));
 		@media (max-width: 1024px) {
 			padding: var(--primary-size);
 			border-radius: 0;

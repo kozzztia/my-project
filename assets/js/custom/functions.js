@@ -9,8 +9,9 @@ function initHeaderNavigation(header) {
     let activeLi = null;
     let currentLi = null;
     let timer = null;
-    const segments = window.location.pathname.split('/').filter(Boolean);
-    const currentPath = segments.length ? '/' + segments[0] : '/';
+
+    const normalizePath = (path) => path.replace(/\.html$/, '').replace(/\/index$/, '').replace(/\/$/, '') || '/';
+    const currentPath = normalizePath(window.location.pathname);
 
     const setThumbInstant = (li) => {
         const rect = li.getBoundingClientRect();
@@ -29,7 +30,6 @@ function initHeaderNavigation(header) {
         const navRect = nav.getBoundingClientRect();
 
         clearTimeout(timer);
-
         thumb.style.left = (rect.left - navRect.left) + 'px';
         thumb.style.width = rect.width + 'px';
         thumb.style.height = rect.height * 0.6 + 'px';
@@ -51,7 +51,7 @@ function initHeaderNavigation(header) {
 
     const initActive = () => {
         nav.querySelectorAll('a').forEach(a => {
-            const linkPath = new URL(a.href).pathname;
+            const linkPath = normalizePath(new URL(a.href).pathname);
             if (linkPath === currentPath) {
                 activeLi = a.closest('li');
                 setThumbInstant(activeLi);
@@ -77,7 +77,6 @@ function initHeaderNavigation(header) {
         }
     });
 
-    // Resize
     let resizeTimer = null;
     let wasDesktop = window.innerWidth > 1024;
 

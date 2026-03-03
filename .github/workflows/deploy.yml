@@ -47,7 +47,6 @@ jobs:
 
       - name: Replace base URL
         run: |
-          # ⬇️ МЕНЯЙ ТОЛЬКО ЭТУ СТРОКУ ПРИ ПЕРЕНОСЕ НА НОВЫЙ ПРОЕКТ
           BASE_URL="https://kozzztia.github.io/my-project"
 
           find dist -type f -name "*.html" -exec sed -i \
@@ -64,11 +63,11 @@ jobs:
 
       - name: Verify
         run: |
-          echo "=== Проверка localhost ==="
+          echo "=== localhost ==="
           if grep -Rn "localhost" dist/*.html 2>/dev/null | head -5; then
-            echo "⚠️ Найдены ссылки на localhost!"
+            echo "⚠️ localhost!"
           else
-            echo "✅ Нет ссылок на localhost."
+            echo "✅ localhost."
           fi
 
       - name: Deploy to GitHub Pages

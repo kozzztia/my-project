@@ -5,6 +5,30 @@
 {% block base %}
 
     {% set blocks = [
+        {'name': 'accordion',
+            'fields': {
+            'style': '',
+            'class': 'tracker down',
+            'name': 'study',
+            'layers': [
+                {
+                    'label': 'study 1',
+                    'title': 'title 1',
+                    'text': 'loren 10 Front-end розробник',
+                },
+                {
+                    'label': 'study 2',
+                    'title': 'title 2',
+                    'text': 'loren 10',
+                },
+                {
+                    'label': 'study 3',
+                    'title': 'title 3',
+                    'text': 'loren 10',
+                },
+            ]
+        },
+        },
         {'name': 'text-or-title',
             'fields': {
             'style': 'text-align: center',

@@ -1,5 +1,4 @@
-{# for flex can use class: heroReverse #}
-<article class="typo {% if class %}{{ class }}{% endif %}">
+<div class="typo {% if class %}{{ class }}{% endif %}">
     {% if content.title %}
     {{ content.title }}
     {% endif %}
@@ -15,4 +14,4 @@
     {% if content.button %}
     {% include 'overall/button.twig' with content.button %}
     {% endif %}
-</article>
+</div>

@@ -15,13 +15,15 @@
 				display: flex;
 				flex-direction: column;
 				gap: var(--primary-size);
+				flex: 1 200px;
 
 				label {
 					position: relative;
 					display: flex;
 					align-items: center;
 					justify-content: space-between;
-					width: 100px;
+					gap: var(--primary-size);
+					width: auto;
 					transition: color .3s ease-in-out;
 
 					svg {
@@ -36,14 +38,12 @@
 
 			&__contents {
 				position: relative;
-				display: flex;
-				flex-direction: row;
+				display: grid;
 				width: 100%;
 				overflow: hidden;
 
 				label {
-					position: absolute;
-					width: 100%;
+					grid-area: 1 / 1; /* все в одной ячейке */
 					opacity: 0;
 					transform: translateX(45px);
 					transition: opacity .3s ease-in-out, transform .3s ease-in-out;
@@ -51,7 +51,6 @@
 				}
 
 				label:has(input:checked) {
-					position: relative;
 					opacity: 1;
 					transform: translateX(0);
 					transition: opacity .4s ease-in-out .1s, transform .4s ease-in-out .1s;

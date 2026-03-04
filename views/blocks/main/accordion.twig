@@ -21,9 +21,10 @@
         {% for layer in fields.layers %}
             <label for="{{ fields.name }}__{{ loop.index }}">
                 <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %}>
-                {% if layer.title or layer.text %}
-                    {% include "overall/article.twig" with {content: {title: layer.title, text: layer.text} , class: 'accordion__article' } %}
-                {% endif %}
+                <span class="accordion__article">
+                    {{ layer.title }}
+                    {{ layer.text }}
+                </span>
             </label>
         {% endfor %}
         </div>

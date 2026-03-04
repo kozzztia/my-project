@@ -225,12 +225,80 @@ function initCardSlider(el) {
         } : {})
     });
 
-    // Остановка при наведении
     el.on('mouseenter', function() {
         if (swiper.autoplay) swiper.autoplay.stop();
     });
 
-    // Возобновление при уходе
+    el.on('mouseleave', function() {
+        if (swiper.autoplay) swiper.autoplay.start();
+    });
+}
+
+function initProjectSlider(el) {
+    if (!el) return;
+
+    const wrapper = el.find('.swiper')[0];
+    const pagination = el.find('.swiper-pagination')[0];
+    const next = el.find('.swiper-button-next')[0];
+    const prev = el.find('.swiper-button-prev')[0];
+    const slideCount = el.find('.swiper-slide').length;
+
+    if (!wrapper) return;
+
+    const intervalAttr = el.attr('data-interval');
+    const interval = intervalAttr ? parseInt(intervalAttr, 10) : null;
+
+    const swiper = new Swiper(wrapper, {
+        loop: true,
+        initialSlide: 2,
+        loopAdditionalSlides: slideCount,
+        watchSlidesProgress: true,
+
+        pagination: {
+            el: pagination,
+            clickable: true,
+            dynamicBullets: true,
+        },
+
+        navigation: {
+            nextEl: next,
+            prevEl: prev,
+            enabled: false,
+        },
+
+        breakpoints: {
+            400: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+                centeredSlides: true,
+                navigation: { enabled: false },
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+                centeredSlides: true,
+                navigation: { enabled: false },
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 32,
+                centeredSlides: true,
+                navigation: { enabled: true },
+            },
+        },
+
+        ...(interval ? {
+            autoplay: {
+                delay: interval * 1000,
+                disableOnInteraction: false,
+            }
+        } : {})
+    });
+
+    el.on('mouseenter', function() {
+        if (swiper.autoplay) swiper.autoplay.stop();
+    });
+
     el.on('mouseleave', function() {
         if (swiper.autoplay) swiper.autoplay.start();
     });

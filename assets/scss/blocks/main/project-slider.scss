@@ -1,0 +1,18 @@
+.main-project-slider {
+	padding-inline: 0;
+
+	.customBlock {
+		.projectSlider {
+			.projectSwiper {
+				overflow: hidden;
+				padding: var(--primary-size) var(--secondary-size);
+
+				.swiperSlide {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}

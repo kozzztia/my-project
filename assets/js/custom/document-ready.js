@@ -30,15 +30,20 @@
         }
 
 
-        if($('.tracker').length){
+        if($('.customBlock  .tracker').length){
             $('.tracker').each(function () {
                 initTracking($(this));
             })
         }
 
-        if ($('.cardSlider').length) {
+        if ($('.customBlockWrapper.main-card-slider').length) {
             $('.cardSlider').each(function () {
                 initCardSlider($(this));
+            });
+        }
+        if ($('.customBlockWrapper.main-project-slider').length) {
+            $('.projectSlider').each(function () {
+                initProjectSlider($(this));
             });
         }
 

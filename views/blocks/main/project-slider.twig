@@ -1,0 +1,21 @@
+{% extends "overall/block-base.twig" %}
+{% block block %}
+    {% if fields.projects %}
+    <section class="projectSlider {% if fields.class %}{{ fields.class }}" {% endif %}
+        {% if fields.style %} style="{{ fields.style }}" {% endif %}
+        {% if fields.interval %} data-interval="{{ fields.interval }}" {% endif %}>
+        <div class="swiper projectSwiper">
+            <div class="swiper-wrapper">
+                {% for project in fields.projects %}
+                <div class="swiper-slide swiperSlide">
+                    {% include "overall/card-project.twig" with {image: project, class: 'projectSlider__image ' ~ (fields.animation ? fields.animation : 'default')} %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination pagination"></div>
+            <button class="swiper-button-prev prev" type="button"></button>
+            <button class="swiper-button-next next" type="button"></button>
+        </div>
+    </section>
+    {% endif %}
+{% endblock %}

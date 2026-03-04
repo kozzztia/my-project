@@ -351,7 +351,7 @@
 	outline: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	white-space: nowrap;
+
 
 	svg {
 		position: relative;
@@ -371,7 +371,6 @@
 	//sizes
 	&.size-xs {
 		font-size: 18px;
-		height: var(--element-height);
 		padding: 30px 60px;
 		border-radius: var(--primary-border-radius);
 		gap: 10px;
@@ -392,9 +391,9 @@
 	&.size-s {
 		font-size: 14px;
 		height: auto;
-		padding: 20px;
+		padding: 15px 5px;
 		border-radius: var(--primary-border-radius);
-		gap: 10px;
+		gap: 5px;
 
 		svg {
 			width: 20px;

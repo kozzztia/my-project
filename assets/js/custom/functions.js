@@ -267,8 +267,8 @@ function initProjectSlider(el) {
         },
 
         breakpoints: {
-            400: {
-                slidesPerView: 1.5,
+            390: {
+                slidesPerView: 1,
                 spaceBetween: 16,
                 centeredSlides: true,
                 navigation: { enabled: false },

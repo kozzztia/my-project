@@ -4,10 +4,10 @@
     <section class="cardSlider {% if fields.class %}{{ fields.class }}" {% endif %}
         {% if fields.style %} style="{{ fields.style }}" {% endif %}
         {% if fields.interval %} data-interval="{{ fields.interval }}" {% endif %}>
-        <div class="swiper">
+        <div class="swiper cardSwiper">
             <div class="swiper-wrapper">
                 {% for card in fields.cards %}
-                <div class="swiper-slide">
+                <div class="swiper-slide swiperSlide">
                     {% include "overall/card-image.twig" with {image: card, class: 'cardSlider__image'} %}
                 </div>
                 {% endfor %}

@@ -2,9 +2,6 @@
     <div class="inner">
         {% if project.src %}
         <figure class="front">
-            {% if project.title %}
-            <figcaption>{{ project.title }}</figcaption>
-            {% endif %}
             <img src="{{ project.src }}" alt="{{ project.title }}">
         </figure>
         {% endif %}

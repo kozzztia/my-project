@@ -3,7 +3,7 @@
     {% if fields.projects %}
     <section class="project-grid {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
     {% for projects in fields.projects %}
-        {% include "overall/card-project.twig" with {project: projects, class: 'project-grid__image ' ~ (fields.animation ? fields.animation : '')} %}
+        {% include "overall/card-project.twig" with {project: projects, class: 'project-grid__image ' ~ (fields.animation ? fields.animation : 'default')} %}
     {% endfor %}
     </section>
     {% endif %}

@@ -24,13 +24,12 @@
             }
         });
 
-        if($('header')){
+        if ($('header')) {
             initHeaderNavigation($(this))
             initBurger($(this))
         }
 
-
-        if($('.customBlock  .tracker').length){
+        if ($('.customBlock  .tracker').length) {
             $('.tracker').each(function () {
                 initTracking($(this));
             })
@@ -46,7 +45,6 @@
                 initProjectSlider($(this));
             });
         }
-
 
     });
 })(jQuery);

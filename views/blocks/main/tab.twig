@@ -23,26 +23,23 @@
                 <label for="{{ fields.name }}__{{ loop.index }}">
                     <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %}>
                 </label>
-                <article class="tab__article typo">
 
-
-
-                {% if layer.title %}
-                {{ layer.title }}
-                {% endif %}
-
-                    {% if layer.img %}
-                        <figure>
-                            <img src="{{ layer.img }}" alt="{{ layer.label }}">
-                        </figure>
+                <div class="tab__title">
+                    {% if layer.title %}
+                        {{ layer.title }}
                     {% endif %}
+                </div>
+
+                <article class="tab__article typo">
+                {% if layer.img %}
+                    <figure>
+                        <img src="{{ layer.img }}" alt="{{ layer.label }}">
+                    </figure>
+                {% endif %}
 
                 {% if layer.text %}
                 {{ layer.text }}
                 {% endif %}
-
-
-
                 </article>
             </div>
         {% endfor %}

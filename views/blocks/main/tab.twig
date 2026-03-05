@@ -6,8 +6,8 @@
     <section class="tab {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         <div class="tab__radios">
         {% for layer in fields.layers %}
-            <label for="{{ fields.name }}__{{ loop.index }}">
-                <span>
+            <label class="decorBorder leftToTop" for="{{ fields.name }}__{{ loop.index }}">
+                <span class="title">
                 {{ layer.label }}
                 </span>
                 <svg>
@@ -23,9 +23,26 @@
                 <label for="{{ fields.name }}__{{ loop.index }}">
                     <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %}>
                 </label>
-                <article class="tab__article">
+                <article class="tab__article typo">
+
+
+
+                {% if layer.title %}
                 {{ layer.title }}
+                {% endif %}
+
+                    {% if layer.img %}
+                        <figure>
+                            <img src="{{ layer.img }}" alt="{{ layer.label }}">
+                        </figure>
+                    {% endif %}
+
+                {% if layer.text %}
                 {{ layer.text }}
+                {% endif %}
+
+
+
                 </article>
             </div>
         {% endfor %}

@@ -1,0 +1,108 @@
+.main-tab {
+	.customBlock {
+		.tab {
+			position: relative;
+			display: flex;
+			padding-block: var(--primary-size);
+			//padding: var(--primary-size) var(--secondary-size);
+			gap: var(--primary-size);
+
+			input[type='radio'] {
+				display: none;
+				visibility: hidden;
+			}
+
+			&__radios {
+				display: flex;
+				flex: 1 0 30%;
+				flex-direction: column;
+				gap: var(--primary-size);
+
+				label {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: var(--primary-size);
+					cursor: pointer;
+					transition: color .3s ease-in-out;
+					gap: var(--primary-size);
+
+					.title {
+						font-size: clamp(16px, 1.8vw, 24px);
+						font-weight: 700;
+						line-height: 1.2;
+					}
+
+					svg {
+						width: var(--primary-size);
+						height: var(--primary-size);
+						transition: transform .3s ease-in-out;
+						transform: rotate(90deg);
+						color: inherit;
+					}
+				}
+			}
+
+			&__contents {
+				position: relative;
+				display: grid;
+				overflow: hidden;
+				width: 100%;
+			}
+
+			&__article {
+				figure {
+					float: right;
+					overflow: hidden;
+					max-width: 290px;
+					margin-bottom: var(--primary-size);
+					margin-left: var(--primary-size);
+					border-radius: var(--primary-border-radius);
+					@media (max-width: 1024px) {
+						float: none;
+						max-width: 100%;
+						margin-bottom: var(--secondary-size);
+						margin-left: 0;
+					}
+
+					img {
+						display: block;
+						width: 100%;
+						height: auto;
+						margin-bottom: 0;
+						object-fit: cover;
+						object-position: center;
+					}
+				}
+			}
+
+			&__content {
+				transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+				transform: translateX(45px);
+				pointer-events: none;
+				opacity: 0;
+				grid-area: 1 / 1;
+
+				&:has(input:checked) {
+					transition: opacity .4s ease-in-out .1s, transform .4s ease-in-out .1s;
+					transform: translateX(0);
+					pointer-events: auto;
+					opacity: 1;
+				}
+			}
+
+			@for $i from 1 through 10 {
+				&:has(.tab__content:nth-child(#{$i}) input:checked) {
+					.tab__radios label:nth-child(#{$i}) {
+						color: var(--color-green);
+
+						svg {
+							transform: rotate(0deg);
+						}
+					}
+				}
+			}
+		}
+	}
+}

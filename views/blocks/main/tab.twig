@@ -1,0 +1,36 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.layers %}
+    <section class="tab {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+        <div class="tab__radios">
+        {% for layer in fields.layers %}
+            <label for="{{ fields.name }}__{{ loop.index }}">
+                <span>
+                {{ layer.label }}
+                </span>
+                <svg>
+                    <use href="{{ svg_sprite }}#{{ layer.icon ? layer.icon : "icon-arrow" }}"></use>
+                </svg>
+            </label>
+        {% endfor %}
+        </div>
+
+        <div class="tab__contents">
+        {% for layer in fields.layers %}
+            <div class="tab__content">
+                <label for="{{ fields.name }}__{{ loop.index }}">
+                    <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %}>
+                </label>
+                <article class="tab__article">
+                {{ layer.title }}
+                {{ layer.text }}
+                </article>
+            </div>
+        {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+
+{% endblock %}

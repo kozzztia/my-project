@@ -1,10 +1,11 @@
 .main-tab {
+
 	.customBlock {
 		.tab {
 			position: relative;
 			display: flex;
-			padding-block: var(--primary-size);
 			gap: var(--secondary-size);
+			padding-block: var(--primary-size);
 			@media (max-width: 768px) {
 				flex-direction: column;
 			}
@@ -53,6 +54,7 @@
 					scroll-snap-type: x mandatory;
 					scrollbar-width: none;
 					-webkit-overflow-scrolling: touch;
+					padding-right: var(--primary-size);
 
 					&::-webkit-scrollbar {
 						display: none;
@@ -75,6 +77,10 @@
 				display: grid;
 				overflow: hidden;
 				width: 100%;
+
+				@media (max-width: 768px) {
+					display: block;
+				}
 			}
 
 			&__article {
@@ -93,12 +99,6 @@
 						max-width: 100%;
 						margin-bottom: var(--primary-size);
 						margin-inline: auto;
-					}
-					@media (max-width: 768px) {
-						float: left;
-						max-width: 50%;
-						margin-right: var(--primary-size);
-						margin-bottom: var(--primary-size);
 					}
 
 					img {
@@ -136,6 +136,23 @@
 					transform: translateX(0);
 					pointer-events: auto;
 					opacity: 1;
+				}
+
+				@media (max-width: 768px) {
+					grid-area: unset;
+					display: block;
+					opacity: 0;
+					visibility: hidden;
+					height: 0;
+					overflow: hidden;
+					transition: opacity .4s ease-in-out, visibility .4s ease-in-out;
+
+					&:has(input:checked) {
+						opacity: 1;
+						visibility: visible;
+						height: auto;
+						overflow: visible;
+					}
 				}
 			}
 

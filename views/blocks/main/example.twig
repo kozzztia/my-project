@@ -2,7 +2,7 @@
 
 {% block block %}
     {% if fields.text %}
-    <div class="example typo {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    <section class="example typo {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
     {{ fields.text }}
 
     {% include 'overall/button.twig' with {
@@ -15,6 +15,6 @@
         },
     }
     %}
-    </div>
+    </section>
     {% endif %}
 {% endblock %}

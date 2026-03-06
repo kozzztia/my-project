@@ -11,7 +11,7 @@
                 {{ layer.label }}
                 </span>
                 <svg>
-                    <use href="{{ svg_sprite }}#{{ layer.icon ? layer.icon : "icon-arrow" }}"></use>
+                    <use href="{{ svg_sprite }}#icon-arrow"></use>
                 </svg>
             </label>
         {% endfor %}
@@ -21,7 +21,7 @@
         {% for layer in fields.layers %}
             <div class="tab__content">
                 <label for="{{ fields.name }}__{{ loop.index }}">
-                    <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %}>
+                    <input type="radio" id="{{ fields.name }}__{{ loop.index }}" name="{{ fields.name }}" {% if loop.first %}checked{% endif %} hidden>
                 </label>
 
                 <div class="tab__title">

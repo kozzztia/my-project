@@ -1,0 +1,33 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.title and fields.text %}
+    <fieldset class="single-accordion {% if fields.class %}{{ fields.class }}{% endif %}"
+         {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+        <input type="checkbox" id="{{ fields.name }}" hidden>
+
+        <label class="single-accordion__toggler" for="{{ fields.name }}">
+            <span class="title">
+            {{ fields.title }}
+            </span>
+            <svg>
+                <use href="{{ svg_sprite }}#icon-arrow"></use>
+            </svg>
+        </label>
+
+        <article class="single-accordion__article typo">
+            {% if fields.img %}
+            <figure>
+                <img src="{{ fields.img }}" alt="{{ fields.label }}">
+            </figure>
+            {% endif %}
+
+            {% if fields.text %}
+            {{ fields.text }}
+            {% endif %}
+        </article>
+    </fieldset>
+    {% endif %}
+
+{% endblock %}

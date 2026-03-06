@@ -1,13 +1,44 @@
 
-{# white  is theme  of  block  traacker  is animation  in show  (left-right , dow, up #}
+{# white  is theme  of  block  tracker  is animation  in show  (left-right , dow, up #}
 {% extends "overall/base.twig" %}
 
 {% block base %}
 
     {% set blocks = [
+
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker down',
+            'text': '<h2><strong><span class="mce_size-xl">Додаткова  інформація:</span></strong></h2>',
+        },
+        },
+
+        {'name': 'single-accordion',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker down decorBorder leftToTop',
+            'name': 'text',
+            'title': 'Хоббі: ',
+            'text': '<p>Поглибив знання HTML, CSS, JavaScript та ООП — від теорії до реальних задач.</p>
+                    <p>Самостійно спроектував і розгорнув власний Back-end на <a href="https://funny-fudge-ddda7b.netlify.app/api/items">bikes-placeholder</a> з підключенням бази даних MySQL через Neon.</p>
+                    <p>Дипломний проєкт <a href="https://i-love-my-bike.netlify.app/">i-love-my-bike</a> — повноцінний застосунок з власною інфраструктурою на Next.js + TypeScript.</p>
+                    <p>Паралельно вдосконалював англійську через групові заняття, дискусії та презентації.</p>
+                    <p>Познайомився з крутими людьми зі сфери IT та відточив навички командної взаємодії — від брейнштормів до спільного вирішення задач.</p>',
+            'img': img_folder ~ 'experience/beetroot.png'
+        },
+        },
+
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker down',
+            'text': '<h2><strong><span class="mce_size-xl">Навчання :</span></strong></h2>',
+        },
+        },
         {'name': 'tab',
             'fields': {
-            'style': '',
+            'style': 'margin-bottom: var(--secondary-size)',
             'class': 'tracker down',
             'name': 'study',
             'layers': [
@@ -64,14 +95,7 @@
         },
         {'name': 'text-or-title',
             'fields': {
-            'style': 'text-align: center',
-            'class': 'tracker down',
-            'text': '<h1><strong><span class="mce_size-xl">Задорожній Костя</span></strong></h1>',
-        },
-        },
-        {'name': 'text-or-title',
-            'fields': {
-            'style': 'text-align: center',
+            'style': 'text-align: center; margin-bottom: var(--secondary-size)',
             'class': 'tracker down',
             'text': '<h2><strong><span class="mce_size-xl">Front-end розробник</span></strong></h2>',
         },

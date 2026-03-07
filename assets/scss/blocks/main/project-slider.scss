@@ -1,0 +1,41 @@
+.main-project-slider {
+	padding-inline: 0;
+
+	@media (max-width: 390px) {
+		padding-inline: var(--primary-size);
+	}
+
+	.customBlock {
+		.projectSlider {
+			.projectSwiper {
+				overflow: hidden;
+				padding: var(--primary-size) var(--secondary-size);
+
+				.swiperSlide {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: opacity 0.3s ease, transform 0.3s ease;
+					transform: scale(.8);
+					opacity: .8;
+
+					&.swiper-slide-visible {
+						transform: scale(1);
+						opacity: 1;
+					}
+
+					@media (max-width: 1024px) {
+						.cardProject{
+							pointer-events: none;
+						}
+						&.swiper-slide-active {
+							.cardProject{
+								pointer-events: auto;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

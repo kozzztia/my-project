@@ -8,7 +8,7 @@
         {% endif %}
 
         {% if project.title or project.description or project.button %}
-        <article class="back decorBorder leftToTop">
+        <div class="back decorBorder leftToTop">
             {% if project.title and project.href %}
             <a class="link" href="{{ project.href }}" target="_blank">{{ project.title }}</a>
             {% endif %}
@@ -21,7 +21,7 @@
             {% if project.button %}
             {% include 'overall/button.twig' with project.button %}
             {% endif %}
-        </article>
+        </div>
         {% endif %}
     </div>
 </div>

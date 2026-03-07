@@ -35,7 +35,7 @@
                 'button': {
                     'title': 'Дiзнатися більше',
                     'link': {
-                        'url': '/about',
+                        'url': site.url ~'about',
                     },
                     'type': {
                         'style' : 'size-xs style-green-transparent',
@@ -53,16 +53,9 @@
             'text': '<h2><strong><span class="mce_size-l">Мої проєкти: </span></strong></h2>',
         },
         },
-        {'name': 'text-or-title',
-            'fields': {
-            'style': 'margin-bottom: var(--primary-size)',
-            'class': 'tracker down',
-            'text': '<h2><strong><span class="mce_size-l">Мої роботи: </span></strong></h2>',
-        },
-        },
         {'name': 'project-slider',
             'fields': {
-            'style': 'margin-bottom: var(--secondary-size)',
+            'style': 'margin-bottom: var(--primary-size)',
             'class': 'tracker up',
             'interval': 200,
             'animation': 'flip',
@@ -170,6 +163,17 @@
                 },
                 },
             ],
+        },
+        },
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'text': '
+                <p>У своїх проектах я використовую PHP + Twig як шаблонізатор — компонентна система де кожен блок це окремий файл з власними полями. Дані передаються через масиви конфігурації, що дозволяє легко керувати контентом без прив`язки до CMS. Локальне середовище розгорнуто через Laragon.</p>
+                <p>Стилізація побудована на SCSS з BEM-подібною структурою — кожен компонент має свій файл, змінні через CSS Custom Properties та адаптивна типографіка через clamp(). Компіляція і автопрефіксер через Prepros.</p>
+                <p>CSS без JavaScript — там де можливо використовую нативні можливості браузера: акордіони, табси, слайдери та анімації появи елементів. JavaScript підключається тільки там де CSS не справляється.</p>
+                <p>Анімації та інтерактив — SVG спрайти, keyframe анімації для ілюстрацій, хитрощі з grid для плавної зміни контенту без стрибків висоти, flip-картки через 3D трансформації.</p>',
         },
         },
 

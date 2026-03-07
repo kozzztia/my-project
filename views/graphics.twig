@@ -3,12 +3,99 @@
 {% block base %}
 
     {% set blocks = [
-        {'name': 'example',
+        {'name': 'card-grid',
             'fields': {
-                'style': '',
-                'text': '<p>example</p>',
-            },
-        }
+            'style': 'margin-bottom: var(--secondary-size);',
+            'class': 'tracker  left-right',
+            'cards': [
+                {'title': 'basket', 'animation': 'move','layers' : [
+                    {'layer': svg_folder ~'animation/basket-1.svg'},
+                    {'layer': svg_folder ~'animation/basket-2.svg'},
+                    {'layer': svg_folder ~'animation/basket-3.svg'},
+                    {'layer': svg_folder ~'animation/basket-4.svg'},
+                ]},
+                {'title': 'cash-back', 'animation': 'move', 'layers' : [
+                    {'layer': svg_folder ~'animation/cash-back-1.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-2.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-3.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-4.svg'},
+                ]},
+                {'title' :'mobile-wallet', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/mobile-wallet-1.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-2.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-3.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-4.svg'},
+                ]},
+                {'title': 'search', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/search-1.svg'},
+                    {'layer': svg_folder ~'animation/search-2.svg'},
+                    {'layer': svg_folder ~'animation/search-3.svg'},
+                    {'layer': svg_folder ~'animation/search-4.svg'},
+                ]
+                },
+            ],
+        },
+        },
+        {'name': 'card-slider',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'interval': 4,
+            'cards': [
+                {'title': 'basket', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/basket-1.svg'},
+                    {'layer': svg_folder ~'animation/basket-2.svg'},
+                    {'layer': svg_folder ~'animation/basket-3.svg'},
+                    {'layer': svg_folder ~'animation/basket-4.svg'},
+                ]},
+                {'title': 'cash-back', 'animation': 'live', 'layers' : [
+                    {'layer': svg_folder ~'animation/cash-back-1.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-2.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-3.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-4.svg'},
+                ]},
+                {'title' :'mobile-wallet', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/mobile-wallet-1.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-2.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-3.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-4.svg'},
+                ]},
+                {'title': 'search', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/search-1.svg'},
+                    {'layer': svg_folder ~'animation/search-2.svg'},
+                    {'layer': svg_folder ~'animation/search-3.svg'},
+                    {'layer': svg_folder ~'animation/search-4.svg'},
+                ]
+                },
+                {'title': 'basket', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/basket-1.svg'},
+                    {'layer': svg_folder ~'animation/basket-2.svg'},
+                    {'layer': svg_folder ~'animation/basket-3.svg'},
+                    {'layer': svg_folder ~'animation/basket-4.svg'},
+                ]},
+                {'title': 'cash-back', 'animation': 'live', 'layers' : [
+                    {'layer': svg_folder ~'animation/cash-back-1.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-2.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-3.svg'},
+                    {'layer': svg_folder ~'animation/cash-back-4.svg'},
+                ]},
+                {'title' :'mobile-wallet', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/mobile-wallet-1.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-2.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-3.svg'},
+                    {'layer': svg_folder ~'animation/mobile-wallet-4.svg'},
+                ]},
+                {'title': 'search', 'animation': 'live','layers' : [
+                    {'layer': svg_folder ~'animation/search-1.svg'},
+                    {'layer': svg_folder ~'animation/search-2.svg'},
+                    {'layer': svg_folder ~'animation/search-3.svg'},
+                    {'layer': svg_folder ~'animation/search-4.svg'},
+                ]
+                },
+            ],
+        },
+        },
+
     ] %}
 
     {% for block in blocks %}

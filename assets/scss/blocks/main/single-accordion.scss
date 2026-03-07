@@ -38,22 +38,21 @@
 			&__article {
 				position: relative;
 				z-index: 1;
-				padding-bottom: 0;
-				padding-inline: var(--secondary-size);
 				overflow: hidden;
 				max-height: 0;
+				padding-bottom: 0;
 				transition: max-height .3s ease-in-out, opacity .3s ease-in-out, transform .3s ease-in-out, padding .3s ease-in-out;
-				opacity: 0;
 				transform: translateY(-15px);
+				opacity: 0;
+				padding-inline: var(--secondary-size);
 
 				figure {
 					float: left;
 					overflow: hidden;
 					width: 40%;
-					margin-bottom: var(--primary-size);
 					margin-right: var(--primary-size);
+					margin-bottom: var(--primary-size);
 					border-radius: var(--primary-border-radius);
-
 					@media (max-width: 768px) {
 						float: none;
 						width: 100%;
@@ -78,14 +77,17 @@
 
 				.single-accordion__toggler {
 					color: var(--color-green);
-					svg { transform: rotate(90deg); }
+
+					svg {
+						transform: rotate(90deg);
+					}
 				}
 
 				.single-accordion__article {
 					max-height: 2000px;
-					opacity: 1;
-					transform: translateY(0);
 					padding-bottom: var(--primary-size);
+					transform: translateY(0);
+					opacity: 1;
 				}
 			}
 		}

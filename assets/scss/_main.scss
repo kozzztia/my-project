@@ -322,25 +322,15 @@ main {
 			text-decoration: none;
 			text-transform: uppercase;
 			color: var(--color-main);
-
-			&:after {
-				position: absolute;
-				right: 0;
-				bottom: 1px;
-				left: auto;
-				width: 0;
-				height: 1px;
-				content: '';
-				transition: all 0.3s ease-in-out;
-				background-color: var(--color-main);
-			}
+			transition: background-size 0.3s;
+			background-image: linear-gradient(var(--color-main), var(--color-main), var(--color-main));
+			background-size: 0 2px;
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
 
 			&:hover {
-				&:after {
-					right: auto;
-					left: 0;
-					width: 100%;
-				}
+				background-size: 100% 2px;
+				background-position: 0 100%;
 			}
 		}
 
@@ -348,10 +338,10 @@ main {
 			font-size: clamp(14px, 1.2vw, 18px);
 			display: -webkit-box;
 			overflow: hidden;
-			margin-top: auto;
 			text-overflow: ellipsis;
 			-webkit-line-clamp: 6;
 			-webkit-box-orient: vertical;
+			margin-bottom: auto;
 		}
 
 		.overallButton {

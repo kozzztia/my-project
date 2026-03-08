@@ -10,7 +10,7 @@
         {% if project.title or project.description or project.button %}
         <div class="back decorBorder leftToTop">
             {% if project.title and project.href %}
-            <a class="link" href="{{ project.href }}" target="_blank">{{ project.title }}</a>
+            <span><a class="link" href="{{ project.href }}" target="_blank">{{ project.title }}</a></span>
             {% endif %}
 
             {% if project.description %}

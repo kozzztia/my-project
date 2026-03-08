@@ -9,7 +9,7 @@
 		.projectSlider {
 			.projectSwiper {
 				overflow: hidden;
-				padding: var(--primary-size) var(--secondary-size);
+				padding: var(--primary-size) var(--secondary-size) calc(var(--primary-size) * 2);
 
 				.swiperSlide {
 					display: flex;

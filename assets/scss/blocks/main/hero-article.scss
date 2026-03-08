@@ -3,17 +3,12 @@
 		.hero-article {
 			position: relative;
 			display: flex;
+			align-items: center;
 			width: 100%;
 			max-width: var(--primary-block-width);
 			padding-inline: var(--secondary-size);
 			margin-inline: auto;
 			gap: var(--secondary-size);
-
-			&.white {
-				color: var(--color-black);
-				border-radius: var(--primary-border-radius);
-				background-color: var(--element-light-background);
-			}
 
 			&__image {
 				max-width: 30%;

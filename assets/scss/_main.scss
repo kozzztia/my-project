@@ -83,7 +83,7 @@ main {
 .cardImage {
 	position: relative;
 	width: 100%;
-	height: clamp(150px, 30vw, 500px);
+	height: clamp(250px, 30vw, 500px);
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
 
@@ -156,6 +156,62 @@ main {
 				}
 				to {
 					transform: rotate(5deg);
+				}
+			}
+		}
+	}
+
+	.coding {
+		&__1 {
+			opacity: 0.85;
+			scale: 1.1;
+			animation: coding1 3s ease-in-out infinite alternate;
+			@keyframes coding1 {
+				from {
+					opacity: 0.5;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		&__2 {
+			transform: scale(0.95);
+			animation: coding2 6s ease-in-out infinite alternate;
+			filter: drop-shadow(0 0 1px var(--color-main));
+			@keyframes coding2 {
+				from {
+					transform: scale(0.8);
+				}
+				to {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		&__3 {
+
+			animation: coding3 3s ease-in-out infinite alternate;
+			@keyframes coding3 {
+				from {
+
+				}
+				to {
+
+				}
+			}
+		}
+
+		&__4 {
+			transform: translateX(0);
+			animation: coding4 3s ease-in-out infinite alternate;
+			@keyframes coding4 {
+				from {
+					transform: translateX(-5%) rotate(1deg);
+				}
+				to {
+					transform: translateX(5%) rotate(-1deg);
 				}
 			}
 		}

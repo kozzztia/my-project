@@ -285,13 +285,16 @@ main {
 	position: relative;
 	display: block;
 	width: 100%;
-	max-width: 320px;
+	max-width: 390px;
+	aspect-ratio: 1/1.1;
 	cursor: pointer;
 	user-select: none;
 	border-radius: var(--primary-border-radius);
 	-webkit-tap-highlight-color: transparent;
 	perspective: 1000px;
 	margin-inline: auto;
+
+
 
 	.inner {
 		position: relative;
@@ -397,6 +400,7 @@ main {
 				padding: var(--primary-size);
 				transform: rotateY(180deg);
 				gap: var(--primary-size);
+				height: 100%;
 			}
 		}
 

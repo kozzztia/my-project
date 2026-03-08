@@ -34,6 +34,9 @@
 	--primary-size: 20px;
 	--primary-font-size: clamp(14px, 1.2vw, 18px);;
 	--element-height: 80px;
+	--color-main: var(--color-green);
+	--color-main-rgb: var(--color-green-rgb);
+
 	@media (max-width: 1024px) {
 		--secondary-size: 40px;
 		--primary-size: 17px;

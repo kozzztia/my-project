@@ -410,13 +410,13 @@
 	}
 
 	//gradient
-	&.style-green-transparent {
+	&.style-main-transparent {
 		transition: color .3s ease-in-out;
 		color: var(--color-dark-green);
 		background-color: transparent;
-		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
-		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
-		inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6);
+		box-shadow: inset 0 0 0 1px rgba(var(--color-main-rgb), 0.1),
+		inset 0 0 0 1px rgba(var(--color-main-rgb), 0.2),
+		inset 1px -1px 0 rgba(var(--color-main-rgb), 0.6);
 		backdrop-filter: blur(var(--primary-blur-value));
 
 		&:after {
@@ -430,18 +430,18 @@
 			transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 			background: linear-gradient(
 							to left,
-							rgba(var(--color-green-rgb), 1) 0%,
-							rgba(var(--color-green-rgb), 1) 50%,
-							rgba(var(--color-green-rgb), 0) 100%
+							rgba(var(--color-main-rgb), 1) 0%,
+							rgba(var(--color-main-rgb), 1) 50%,
+							rgba(var(--color-main-rgb), 0) 100%
 			);
 		}
 
 		&:hover, &:focus, &:active, &:focus-visible {
-			color: var(--color-green);
-			box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
-			inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
-			inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6),
-			1px 1px 20px 2px rgba(var(--color-green-rgb), 0.6);
+			color: var(--color-main);
+			box-shadow: inset 0 0 0 1px rgba(var(--color-main-rgb), 0.1),
+			inset 0 0 0 1px rgba(var(--color-main-rgb), 0.2),
+			inset 1px -1px 0 rgba(var(--color-main-rgb), 0.6),
+			1px 1px 20px 2px rgba(var(--color-main-rgb), 0.6);
 
 			&:after {
 				right: -200%;
@@ -449,13 +449,13 @@
 		}
 	}
 
-	&.style-green {
+	&.style-main {
 		transition: color .3s ease-in-out;
 		color: var(--color-dark-green);
-		background-color: var(--color-dark-green);
-		box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
-		inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
-		inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6);
+		background-color: var(--color-dark-main);
+		box-shadow: inset 0 0 0 1px rgba(var(--color-main-rgb), 0.1),
+		inset 0 0 0 1px rgba(var(--color-main-rgb), 0.2),
+		inset 1px -1px 0 rgba(var(--color-main-rgb), 0.6);
 		backdrop-filter: blur(var(--primary-blur-value));
 
 		&:after {
@@ -469,18 +469,18 @@
 			transition: right 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 			background: linear-gradient(
 							to left,
-							rgba(var(--color-green-rgb), 1) 0%,
-							rgba(var(--color-green-rgb), 1) 50%,
-							rgba(var(--color-green-rgb), 0) 100%
+							rgba(var(--color-main-rgb), 1) 0%,
+							rgba(var(--color-main-rgb), 1) 50%,
+							rgba(var(--color-main-rgb), 0) 100%
 			);
 		}
 
 		&:hover, &:focus, &:active, &:focus-visible {
-			color: var(--color-green);
-			box-shadow: inset 0 0 0 1px rgba(var(--color-green-rgb), 0.1),
-			inset 0 0 0 1px rgba(var(--color-green-rgb), 0.2),
-			inset 1px -1px 0 rgba(var(--color-green-rgb), 0.6),
-			1px 1px 20px 2px rgba(var(--color-green-rgb), 0.6);
+			color: var(--color-main);
+			box-shadow: inset 0 0 0 1px rgba(var(--color-main-rgb), 0.1),
+			inset 0 0 0 1px rgba(var(--color-main-rgb), 0.2),
+			inset 1px -1px 0 rgba(var(--color-main-rgb), 0.6),
+			1px 1px 20px 2px rgba(var(--color-main-rgb), 0.6);
 
 			&:after {
 				right: -200%;
@@ -635,7 +635,7 @@
 					cursor: pointer;
 					border-top: none;
 					border-right: none;
-					border-bottom: dashed 1px var(--color-green);
+					border-bottom: dashed 1px var(--color-main);
 					border-left: none;
 					background-color: transparent;
 					-webkit-appearance: none;
@@ -683,7 +683,7 @@
 			display: block;
 			content: '';
 			border-radius: 5px;
-			background: var(--color-green);
+			background: var(--color-main);
 		}
 
 		&:before {
@@ -721,7 +721,7 @@
 			scale: 0.9;
 
 			&.swiper-pagination-bullet-active {
-				background: var(--color-green);
+				background: var(--color-main);
 				scale: 1;
 			}
 		}

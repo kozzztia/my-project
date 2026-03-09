@@ -3,6 +3,7 @@
 {% block base %}
 
     {% set blocks = [
+
         {'name': 'text-or-title',
             'fields': {
             'style': 'text-align: center; margin-bottom: var(--primary-size)',
@@ -392,12 +393,24 @@
         },
         {'name': 'contacts',
             'fields': {
-            'style': '',
-            'class': 'tracker up',
-            'text': 'contacts',
+            'style': 'margin-bottom: var(--secondary-size);',
+            'class': 'tracker down',
+            'inputs': [
+                {'name': 'name', 'type': 'text', 'placeholder': 'введіть ваше ім`я', 'title': 'Ваше Ім`я'},
+                {'name': 'phone', 'type': 'text', 'placeholder': 'введіть ваш номер телефону', 'title': 'номер телефону'},
+                {'name': 'message', 'type': 'textarea', 'placeholder': 'введіть ваші побажання', 'title': 'повідомлення'},
+            ],
+            'button': {
+                'title': 'Відправити',
+                'buttonType': 'submit',
+                'type': {
+                    'style' : 'size-xs style-main-transparent',
+                    'icon_position': 'right',
+                    'icon': 'icon-triangle',
+                },
+            },
         },
         },
-
     ] %}
 
     {% for block in blocks %}

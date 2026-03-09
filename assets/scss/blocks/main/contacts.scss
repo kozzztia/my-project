@@ -1,8 +1,118 @@
 .main-contacts {
 	.customBlock {
 		.contacts {
-			padding: 0 var(--secondary-size);
 			position: relative;
+			padding: calc(var(--primary-size) + var(--primary-size)/2) var(--secondary-size) var(--primary-size);
+			background-image: url('../../../../assets/img/form-background.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			border-radius: var(--primary-border-radius);
+
+			&__form {
+				display: grid;
+				width: 100%;
+				grid-template-areas:
+                    'inputs textarea'
+                    'button button';
+				grid-template-columns: 1fr 1fr;
+				gap: var(--primary-size);
+
+				@media (max-width: 768px) {
+					grid-template-areas:
+                        'inputs'
+                        'textarea'
+                        'button';
+					grid-template-columns: 1fr;
+				}
+			}
+
+			&__inputs {
+				display: flex;
+				flex-direction: column;
+				grid-area: inputs;
+				gap: var(--primary-size);
+			}
+
+			&__textarea {
+				grid-area: textarea;
+				display: flex;
+				flex-direction: column;
+
+				label {
+					flex: 1;
+
+					textarea {
+						height: 100%;
+						min-height: 120px;
+						line-height: 1.6;
+					}
+				}
+			}
+
+			&__button {
+				grid-area: button;
+				display: flex;
+				justify-content: flex-end;
+
+				@media (max-width: 768px) {
+					justify-content: center;
+
+					.overallButton{
+						width: 100%;
+					}
+				}
+			}
+
+			label {
+				position: relative;
+				display: block;
+				padding: var(--primary-size);
+				cursor: text;
+
+				span {
+					position: absolute;
+					top: calc(var(--primary-size) * -.6);
+					left: var(--primary-size);
+					font-size: 14px;
+					font-weight: 700;
+					width :30%;
+					min-width: 200px;
+					color: var(--color-dark-green);
+					background-color: var(--color-main);
+					padding: 2px 5px;
+					pointer-events: none;
+					transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+					border-radius: var(--primary-border-radius);
+					text-align: center;
+					text-transform: uppercase;
+				}
+
+				&:focus-within span {
+					box-shadow: var(--hover-shadow);
+				}
+			}
+
+			input,
+			textarea {
+				display: block;
+				width: 100%;
+				background: transparent;
+				border: none;
+				outline: none;
+				color: inherit;
+				font-family: inherit;
+				font-size: clamp(14px, 1.2vw, 16px);
+				resize: none;
+
+				&::placeholder {
+					color: currentColor;
+					opacity: 0.3;
+				}
+			}
+			input {
+				height: 40px;
+			}
 		}
 	}
 }

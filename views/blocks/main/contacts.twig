@@ -2,9 +2,41 @@
 
 {% block block %}
 
-    {% if fields.text %}
+    {% if fields %}
     <section class="contacts {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
-        {{ fields.text }}
+        <form method="post" class="contacts__form">
+            {% if fields.inputs %}
+            <div class="contacts__inputs">
+                {% for input in fields.inputs %}
+                    {% if input.type != 'textarea' %}
+                        <label class="decorBorder leftToTop">
+                            <span>{{ input.title }}</span>
+
+                            <input type="{{ input.type }}" name="{{ input.name }}" placeholder="{{ input.placeholder }}">
+                        </label>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="contacts__textarea">
+                {% for input in fields.inputs %}
+                    {% if input.type == 'textarea' %}
+                        <label class="decorBorder leftToTop">
+                            <span>{{ input.title }}</span>
+
+                            <textarea name="{{ input.name }}" placeholder="{{ input.placeholder }}"></textarea>
+                        </label>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if fields.button %}
+            <div class="contacts__button">
+                {% include 'overall/button.twig' with fields.button %}
+            </div>
+            {% endif %}
+        </form>
     </section>
     {% endif %}
 

@@ -303,3 +303,32 @@ function initProjectSlider(el) {
         if (swiper.autoplay) swiper.autoplay.start();
     });
 }
+
+function initPhoneMask(context) {
+    const $ctx = $(context);
+
+    const $phones = $ctx.find('input[name="phone"]');
+    if (!$phones.length) return;
+
+    if (typeof $.fn.mask === 'function') {
+        $phones.mask('+380 00 000-00-00', {placeholder: '+380 __ ___-__-__'});
+    } else {
+        console.warn('⚠️ jQuery Mask Plugin не найден.');
+    }
+
+    $phones
+    .off('.phoneMask')
+    .on('focus.phoneMask', function () {
+        const $input = $(this);
+        if ($input.val().trim() === '') {
+            $input.val('+380 ');
+        }
+    })
+    .on('blur.phoneMask', function () {
+        const $input = $(this);
+        const v = $input.val().trim();
+        if (['+380', '+38', '+3', '+'].includes(v)) {
+            $input.val('');
+        }
+    });
+}

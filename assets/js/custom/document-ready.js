@@ -24,6 +24,13 @@
             }
         });
 
+
+        if($('.customBlock .contacts')) {
+            $(this).find('textarea').autogrow()
+            initPhoneMask($(this));
+        }
+
+
         if ($('header')) {
             initHeaderNavigation($(this))
             initBurger($(this))

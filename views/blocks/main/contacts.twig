@@ -20,14 +20,14 @@
 
             <div class="contacts__textarea">
                 {% for input in fields.inputs %}
-                    {% if input.type == 'textarea' %}
-                        <label class="decorBorder leftToTop">
-                            <span>{{ input.title }}</span>
+                {% if input.type == 'textarea' %}
+                <label class="decorBorder leftToTop">
+                    <span>{{ input.title }}</span>
 
-                            <textarea name="{{ input.name }}" placeholder="{{ input.placeholder }}"></textarea>
-                        </label>
-                    {% endif %}
-                {% endfor %}
+                    <textarea name="{{ input.name }}" placeholder="{{ input.placeholder }}"></textarea>
+                </label>
+                {% endif %}
+            {% endfor %}
             </div>
             {% endif %}
 
@@ -36,6 +36,15 @@
                 {% include 'overall/button.twig' with fields.button %}
             </div>
             {% endif %}
+
+            {% if fields.decor %}
+            {% for decor in fields.decor %}
+            <svg class="decor" aria-hidden="true">
+                <use href="{{ svg_sprite }}#{{ decor }}" />
+            </svg>
+            {% endfor %}
+            {% endif %}
+
         </form>
     </section>
     {% endif %}

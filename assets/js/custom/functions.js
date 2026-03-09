@@ -304,55 +304,48 @@ function initProjectSlider(el) {
     });
 }
 
-function initPhoneMask(context) {
-    const $ctx = $(context);
+function initPhoneMask(el) {
+    const ctx = $(el);
 
-    const $phones = $ctx.find('input[name="phone"]');
-    if (!$phones.length) return;
+    const phones = ctx.find('input[name="phone"]');
+    if (phones.length) {
+        if (typeof $.fn.mask === 'function') {
+            phones.mask('+380 00 000-00-00', { placeholder: '+380 __ ___-__-__' });
+        } else {
+            console.warn('⚠️ jQuery Mask Plugin не найден.');
+        }
 
-    if (typeof $.fn.mask === 'function') {
-        $phones.mask('+380 00 000-00-00', {placeholder: '+380 __ ___-__-__'});
-    } else {
-        console.warn('⚠️ jQuery Mask Plugin не найден.');
+        phones
+        .off('.phoneMask')
+        .on('focus.phoneMask', function () {
+            if ($(this).val().trim() === '') $(this).val('+380 ');
+        })
+        .on('blur.phoneMask', function () {
+            const v = $(this).val().trim();
+            if (['+380', '+38', '+3', '+'].includes(v)) $(this).val('');
+        });
     }
-
-    $phones
-    .off('.phoneMask')
-    .on('focus.phoneMask', function () {
-        const $input = $(this);
-        if ($input.val().trim() === '') {
-            $input.val('+380 ');
-        }
-    })
-    .on('blur.phoneMask', function () {
-        const $input = $(this);
-        const v = $input.val().trim();
-        if (['+380', '+38', '+3', '+'].includes(v)) {
-            $input.val('');
-        }
-    });
 }
 
 function initForm(el) {
     const form = el.querySelector('form');
-
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-
             const inputs = form.querySelectorAll('input, textarea');
             let isValid = true;
 
             inputs.forEach(input => {
                 const label = input.closest('label');
 
+                label.classList.remove('empty', 'ready');
+                void label.offsetWidth;
+
                 if (input.value.trim() === '') {
                     label.classList.add('empty');
-                    label.classList.remove('ready');
                     isValid = false;
                 } else {
                     label.classList.add('ready');
-                    label.classList.remove('empty');
                 }
             });
 
@@ -362,7 +355,6 @@ function initForm(el) {
                     data[input.name] = input.value.trim();
                 });
                 console.log('форма валідна:', data);
-
                 inputs.forEach(input => {
                     input.value = '';
                     input.closest('label').classList.remove('ready');

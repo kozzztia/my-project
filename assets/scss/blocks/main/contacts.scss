@@ -15,7 +15,7 @@
 				width: 100%;
 				grid-template-areas:
                     'inputs textarea'
-                    'button button';
+                    'inputs button';
 				grid-template-columns: 1fr 1fr;
 				gap: var(--primary-size);
 				@media (max-width: 768px) {
@@ -68,13 +68,6 @@
 				padding: var(--primary-size);
 				cursor: text;
 
-				&.ready {
-					//span { color: var(--color-green); }
-				}
-				&.empty {
-					span { color: var(--color-red); }
-				}
-
 				&:has(textarea) {
 					@media (max-width: 1024px) {
 						padding-top: calc(var(--primary-size) + var(--primary-size) / 2);
@@ -85,11 +78,11 @@
 					font-size: 14px;
 					font-weight: 700;
 					position: absolute;
-					top: calc(var(--primary-size) * -.6);
+					top: calc(var(--primary-size) * -1);
 					left: var(--primary-size);
 					width: 30%;
 					min-width: 200px;
-					padding: 2px 5px;
+					padding: 8px;
 					transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 					text-align: center;
 					text-transform: uppercase;
@@ -97,9 +90,62 @@
 					color: var(--color-dark-green);
 					border-radius: var(--primary-border-radius);
 					background-color: var(--color-main);
+
+					&:after {
+						font-size: 20px;
+						line-height: 0;
+						position: relative;
+						display: inline;
+						opacity: 0;
+						filter: drop-shadow(0px 0px 1px #000);
+					}
+
+					@keyframes shake {
+						0% {
+							transform: rotate(0);
+						}
+						20% {
+							transform: rotate(5deg);
+						}
+						40% {
+							transform: rotate(-5deg);
+						}
+						60% {
+							transform: rotate(5deg);
+						}
+						80% {
+							transform: rotate(-5deg);
+						}
+						100% {
+							transform: rotate(0deg);
+						}
+					}
+				}
+
+				&.ready {
+					span {
+						&:after {
+							//content: ' ✔';
+							//opacity: 1;
+							//color: var(--color-ready)
+						}
+					}
+				}
+
+				&.empty {
+					span {
+						animation: shake 0.1s ease-in-out;
+						&:after {
+							//content: ' ✘';
+							content: " *";
+							opacity: 1;
+							color: var(--color-empty);
+						}
+					}
 				}
 
 				&:focus-within span {
+					animation: shake 0.1s ease-in-out;
 					box-shadow: var(--hover-shadow);
 				}
 			}

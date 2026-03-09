@@ -3,7 +3,7 @@
 {% block block %}
 
     {% if fields.title and fields.text %}
-    <section class="single-accordion {% if fields.class %}{{ fields.class }}{% endif %}"
+    <div class="single-accordion {% if fields.class %}{{ fields.class }}{% endif %}"
          {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         <input type="checkbox" id="{{ fields.name }}" hidden>
 
@@ -27,7 +27,7 @@
             {{ fields.text }}
             {% endif %}
         </article>
-    </section>
+    </div>
     {% endif %}
 
 {% endblock %}

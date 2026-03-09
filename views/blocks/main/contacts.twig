@@ -3,18 +3,18 @@
 {% block block %}
 
     {% if fields %}
-    <section class="contacts {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
-        <form method="post" class="contacts__form">
+    <div class="contacts {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+        <form method="post" class="contacts__form" novalidate>
             {% if fields.inputs %}
             <div class="contacts__inputs">
                 {% for input in fields.inputs %}
-                    {% if input.type != 'textarea' %}
-                        <label class="decorBorder leftToTop">
-                            <span>{{ input.title }}</span>
+                {% if input.type != 'textarea' %}
+                <label class="decorBorder leftToTop">
+                    <span>{{ input.title }}</span>
 
-                            <input type="{{ input.type }}" name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="on">
-                        </label>
-                    {% endif %}
+                    <input type="{{ input.type }}" name="{{ input.name }}" placeholder="{{ input.placeholder }}" autocomplete="off">
+                </label>
+                {% endif %}
                 {% endfor %}
             </div>
 
@@ -44,9 +44,8 @@
             </svg>
             {% endfor %}
             {% endif %}
-
         </form>
-    </section>
+    </div>
     {% endif %}
 
 {% endblock %}

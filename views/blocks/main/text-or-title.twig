@@ -3,9 +3,9 @@
 {% block block %}
 
     {% if fields.text %}
-    <section class="text-or-title typo {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+    <div class="text-or-title typo {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         {{ fields.text }}
-    </section>
+    </div>
     {% endif %}
 
 {% endblock %}

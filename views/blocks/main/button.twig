@@ -3,9 +3,9 @@
 {% block block %}
 
     {% if fields.button %}
-    <section class="buttonWrapper {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+    <div class="buttonWrapper {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
     {% include 'overall/button.twig' with fields.button %}
-    </section>
+    </div>
     {% endif %}
 
 {% endblock %}

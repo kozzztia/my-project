@@ -3,7 +3,7 @@
 {% block block %}
 
     {% if fields.layers %}
-    <section class="tab {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+    <div class="tab {% if fields.class %}{{ fields.class }}{% endif %}" {% if fields.style %}style="{{ fields.style }}"{% endif %}>
         <div class="tab__radios">
         {% for layer in fields.layers %}
             <label class="{% if layer.class %} {{ layer.class }} {% endif %}" for="{{ fields.name }}__{{ loop.index }}">
@@ -42,7 +42,7 @@
             </div>
         {% endfor %}
         </div>
-    </section>
+    </div>
     {% endif %}
 
 {% endblock %}

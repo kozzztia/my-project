@@ -1,7 +1,7 @@
 {% extends "overall/block-base.twig" %}
 {% block block %}
     {% if fields.projects %}
-    <section class="projectSlider {% if fields.class %}{{ fields.class }}" {% endif %}
+    <div class="projectSlider {% if fields.class %}{{ fields.class }}" {% endif %}
         {% if fields.style %} style="{{ fields.style }}" {% endif %}
         {% if fields.interval %} data-interval="{{ fields.interval }}" {% endif %}>
         <div class="swiper projectSwiper">
@@ -16,6 +16,6 @@
             <button class="swiper-button-prev prev" type="button"></button>
             <button class="swiper-button-next next" type="button"></button>
         </div>
-    </section>
+    </div>
     {% endif %}
 {% endblock %}

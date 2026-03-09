@@ -158,6 +158,7 @@ function initTracking(el) {
             }
         });
     }, {
+
         threshold: [0.1, 0.3]
     });
 

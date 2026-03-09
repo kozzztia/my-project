@@ -154,12 +154,11 @@ function initTracking(el) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
             } else {
-                // entry.target.classList.remove('is-show');
+                entry.target.classList.remove('is-show');
             }
         });
     }, {
-        // threshold: [0.1, 0.3]
-        throttle: 0.3
+        threshold: [0.1, 0.3]
     });
 
     observer.observe(domEl);

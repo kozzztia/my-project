@@ -24,7 +24,6 @@
             }
         });
 
-
         if ($('.customBlock .contacts').length) {
             $('.contacts').each(function () {
                 $(this).find('textarea').autogrow();
@@ -33,7 +32,7 @@
             });
         }
 
-        if ($('header').length) {
+        if ($('header .inner').length) {
             initHeaderNavigation($('header'));
             initBurger($('header'));
         }

@@ -352,7 +352,6 @@
 	-webkit-appearance: none;
 	-moz-appearance: none;
 
-
 	svg {
 		position: relative;
 		z-index: 100;
@@ -388,6 +387,7 @@
 			padding: 10px 20px;
 		}
 	}
+
 	&.size-s {
 		font-size: 14px;
 		height: auto;
@@ -664,7 +664,7 @@
 	}
 }
 
-.swiper{
+.swiper {
 	.next, .prev {
 		width: 50px;
 		height: 50px;

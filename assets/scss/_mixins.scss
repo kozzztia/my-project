@@ -1,6 +1,5 @@
 /* mixins
 -------------------------------------------------------------- */
-
 @mixin transition($value...) {
 	-moz-transition: $value;
 	-o-transition: $value;
@@ -9,10 +8,10 @@
 }
 
 @mixin transition-delay($delay...) {
-	-moz-transition-delay:    $delay;
-	-o-transition-delay:      $delay;
+	-moz-transition-delay: $delay;
+	-o-transition-delay: $delay;
 	-webkit-transition-delay: $delay;
-	transition-delay:         $delay;
+	transition-delay: $delay;
 }
 
 @mixin animation-delay($value...) {
@@ -30,7 +29,7 @@
 	opacity: $value; /* CSS3 - Mozilla 1.7b +, Firefox 0.9 +, Safari 1.2+, Opera 9+ */
 }
 
-@mixin transform($value){
+@mixin transform($value) {
 	-moz-transform: $value; /* Для Firefox */
 	-ms-transform: $value; /* Для IE */
 	-webkit-transform: $value; /* Для Safari, Chrome, iOS */
@@ -38,41 +37,41 @@
 	transform: $value;
 }
 
-@mixin box-shadow($value){
+@mixin box-shadow($value) {
 	-webkit-box-shadow: $value;
-	-moz-box-shadow:    $value;
-	box-shadow:         $value;
+	-moz-box-shadow: $value;
+	box-shadow: $value;
 }
 
-@mixin border-radius($value){
+@mixin border-radius($value) {
 	-webkit-border-radius: $value;
 	-moz-border-radius: $value;
 	border-radius: $value;
 }
 
-@mixin linearGradient($left, $right){
+@mixin linearGradient($left, $right) {
 	background: $left; /* Old browsers */
-	background: -moz-linear-gradient(left,  $left 0%, $right 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left, right, color-stop(0%,$left), color-stop(100%,$right)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  $left 0%,$right 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  $left 0%,$right 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  $left 0%,$right 100%); /* IE10+ */
-	background: linear-gradient(to right,  $left 0%,$right 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(left, $left 0%, $right 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left, right, color-stop(0%, $left), color-stop(100%, $right)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, $left 0%, $right 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, $left 0%, $right 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, $left 0%, $right 100%); /* IE10+ */
+	background: linear-gradient(to right, $left 0%, $right 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
 }
 
-@mixin linearTopGradient($top, $bottom){
+@mixin linearTopGradient($top, $bottom) {
 	background: $top; /* Old browsers */
-	background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $bottom)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $top 0%, $bottom 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $top 0%, $bottom 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $top 0%, $bottom 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $top 0%, $bottom 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); /* IE6-9 */
 }
 
-@mixin keyframe($name){
+@mixin keyframe($name) {
 	@-webkit-keyframes #{$name}{
 		@content;
 	}
@@ -87,7 +86,7 @@
 	}
 }
 
-@mixin animation ($params...){
+@mixin animation($params...) {
 	-webkit-animation: $params;
 	-moz-animation: $params;
 	-o-animation: $params;
@@ -95,21 +94,29 @@
 }
 
 @mixin placeholder() {
-	&::-webkit-input-placeholder {@content;}
-	&::-moz-placeholder          {@content;}
-	&:-moz-placeholder           {@content;}
-	&:-ms-input-placeholder      {@content;}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
 }
 
 @mixin blur($px: 0) {
 	-webkit-filter: blur(#{$px}px) !important;
 	-ms-filter: blur(#{$px}px) !important;
 	-moz-filter: blur(#{$px}px) !important;
-	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'blur\'><feGaussianBlur stdDeviation=\'#{$px}\' /></filter></svg>#blur");
-	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='#{$px}');
+	filter: url('data:image/svg+xml;utf8,<svg xmlns=\\');
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='#{$px}');
 }
 
-@mixin transform-origin ($origin...) {
+@mixin transform-origin($origin...) {
 	moz-transform-origin: $origin;
 	-o-transform-origin: $origin;
 	-ms-transform-origin: $origin;
@@ -122,8 +129,7 @@
 	@include transition(all .35s ease-in-out $param);
 	@include opacity(0);
 	@include transform(translateY(25px));
-
-	&.visible{
+	&.visible {
 		@include opacity(1);
 		@include transform(translateY(0px));
 	}

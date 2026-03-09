@@ -134,9 +134,10 @@
 				&.empty {
 					span {
 						animation: shake 0.1s ease-in-out;
+
 						&:after {
 							//content: ' ✘';
-							content: " *";
+							content: ' *';
 							opacity: 1;
 							color: var(--color-empty);
 						}

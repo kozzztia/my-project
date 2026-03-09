@@ -7,11 +7,13 @@
 
 <footer>
     <div class="inner decorBorder leftToTop tracker up">
-        <div class="info">
-            empty yet
+        <div class="footer__info">
+            <svg>
+                <use href="{{ svg_sprite }}#icon-logo"></use>
+            </svg>
         </div>
 
-        <div class="contacts">
+        <div class="footer__contacts">
             {% include "overall/social-icons.twig" with {links: links, class: 'footer__social-icons'}%}
         </div>
     </div>

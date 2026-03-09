@@ -114,11 +114,11 @@ header {
 					flex-direction: column;
 					justify-content: flex-end;
 					padding: var(--primary-size) var(--secondary-size);
+					transition: top .1s ease-in-out, opacity .1s ease-in-out, visibility .1s ease-in-out;
 					opacity: 0;
 					background-color: var(--element-dark-background);
 					gap: var(--primary-size);
 					backdrop-filter: blur(var(--primary-blur-value));
-					transition: top .1s ease-in-out, opacity .1s ease-in-out, visibility .1s ease-in-out;
 					&.active {
 						top: calc(var(--element-height) + var(--primary-size));
 						visibility: visible;
@@ -129,6 +129,7 @@ header {
 			}
 
 			.burger {
+				position: relative;
 				display: none;
 				flex-shrink: 0;
 				width: 50px;
@@ -140,18 +141,17 @@ header {
 				background: transparent;
 				-webkit-appearance: none;
 				-webkit-tap-highlight-color: transparent;
-				position: relative;
 
 				&:before, &:after, span {
-					content: '';
-					display: block;
 					position: absolute;
 					left: 0;
+					display: block;
 					width: 100%;
 					height: 5px;
-					background: var(--color-main);
-					border-radius: 3px;
+					content: '';
 					transition: transform .3s ease-in-out, opacity .3s ease-in-out, visibility .3s ease-in-out;
+					border-radius: 3px;
+					background: var(--color-main);
 				}
 
 				&:before {
@@ -161,10 +161,10 @@ header {
 
 				span {
 					top: 50%;
-					translate: 80% -50%;
 					width: 55%;
-					opacity: 0.4;
 					transition-delay: .3s;
+					opacity: 0.4;
+					translate: 80% -50%;
 				}
 
 				&:after {

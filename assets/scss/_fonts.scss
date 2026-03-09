@@ -26,47 +26,55 @@
 }
 
 @font-face {
-	font-family: "icons";
-	src: url("../../assets/fonts/icons.ttf?75785056e3c55ec7c1b8a197a785f68c") format("truetype"),
-	url("../../assets/fonts/icons.woff?75785056e3c55ec7c1b8a197a785f68c") format("woff"),
-	url("../../assets/fonts/icons.woff2?75785056e3c55ec7c1b8a197a785f68c") format("woff2");
+	font-family: 'icons';
+	src: url('../../assets/fonts/icons.ttf?75785056e3c55ec7c1b8a197a785f68c') format('truetype'),
+	url('../../assets/fonts/icons.woff?75785056e3c55ec7c1b8a197a785f68c') format('woff'),
+	url('../../assets/fonts/icons.woff2?75785056e3c55ec7c1b8a197a785f68c') format('woff2');
 }
 
 .icon:before {
 	font-family: icons !important;
-	font-style: normal;
 	font-weight: normal !important;
+	font-style: normal;
 	font-variant: normal;
-	text-transform: none;
 	line-height: 1;
+	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .icon.icon-arrow:before {
-	content: "\f101";
+	content: '\f101';
 }
+
 .icon.icon-code:before {
-	content: "\f102";
+	content: '\f102';
 }
+
 .icon.icon-decor-arrow:before {
-	content: "\f103";
+	content: '\f103';
 }
+
 .icon.icon-facebook:before {
-	content: "\f104";
+	content: '\f104';
 }
+
 .icon.icon-github:before {
-	content: "\f105";
+	content: '\f105';
 }
+
 .icon.icon-phone:before {
-	content: "\f106";
+	content: '\f106';
 }
+
 .icon.icon-segment:before {
-	content: "\f107";
+	content: '\f107';
 }
+
 .icon.icon-telegram:before {
-	content: "\f108";
+	content: '\f108';
 }
+
 .icon.icon-triangle:before {
-	content: "\f109";
+	content: '\f109';
 }

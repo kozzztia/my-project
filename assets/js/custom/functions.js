@@ -154,16 +154,18 @@ function initTracking(el) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
             } else {
-                entry.target.classList.remove('is-show');
+                // entry.target.classList.remove('is-show');
             }
         });
     }, {
-        threshold: [0.1, 0.3]
+        // threshold: [0.1, 0.3]
+        throttle: 0.3
     });
 
     observer.observe(domEl);
 }
 
+// card slider
 function initCardSlider(el) {
     if (!el) return;
 
@@ -234,6 +236,7 @@ function initCardSlider(el) {
     });
 }
 
+// project slider
 function initProjectSlider(el) {
     if (!el) return;
 
@@ -304,13 +307,14 @@ function initProjectSlider(el) {
     });
 }
 
+// mask for  phone
 function initPhoneMask(el) {
     const ctx = $(el);
 
     const phones = ctx.find('input[name="phone"]');
     if (phones.length) {
         if (typeof $.fn.mask === 'function') {
-            phones.mask('+380 00 000-00-00', { placeholder: '+380 __ ___-__-__' });
+            phones.mask('+380 00 000-00-00', {placeholder: '+380 __ ___-__-__'});
         } else {
             console.warn('⚠️ jQuery Mask Plugin не найден.');
         }
@@ -327,6 +331,7 @@ function initPhoneMask(el) {
     }
 }
 
+// form validation
 function initForm(el) {
     const form = el.querySelector('form');
     if (form) {

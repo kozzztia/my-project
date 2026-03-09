@@ -25,21 +25,23 @@
         });
 
 
-        if($('.customBlock .contacts')) {
-            $(this).find('textarea').autogrow()
-            initPhoneMask($(this));
+        if ($('.customBlock .contacts').length) {
+            $('.contacts').each(function () {
+                $(this).find('textarea').autogrow();
+                initPhoneMask($(this));
+                initForm(this);
+            });
         }
 
-
-        if ($('header')) {
-            initHeaderNavigation($(this))
-            initBurger($(this))
+        if ($('header').length) {
+            initHeaderNavigation($('header'));
+            initBurger($('header'));
         }
 
-        if ($('.customBlock  .tracker').length) {
+        if ($('.customBlock .tracker').length) {
             $('.tracker').each(function () {
                 initTracking($(this));
-            })
+            });
         }
 
         if ($('.customBlockWrapper.main-card-slider').length) {
@@ -47,11 +49,11 @@
                 initCardSlider($(this));
             });
         }
+
         if ($('.customBlockWrapper.main-project-slider').length) {
             $('.projectSlider').each(function () {
                 initProjectSlider($(this));
             });
         }
-
     });
 })(jQuery);

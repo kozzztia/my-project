@@ -201,19 +201,19 @@ function initCardSlider(el) {
                 slidesPerView: 2,
                 spaceBetween: 16,
                 centeredSlides: true,
-                navigation: { enabled: false },
+                navigation: {enabled: false},
             },
             768: {
                 slidesPerView: 2,
                 spaceBetween: 24,
                 centeredSlides: true,
-                navigation: { enabled: false },
+                navigation: {enabled: false},
             },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 32,
                 centeredSlides: true,
-                navigation: { enabled: true },
+                navigation: {enabled: true},
             },
         },
 
@@ -225,11 +225,11 @@ function initCardSlider(el) {
         } : {})
     });
 
-    el.on('mouseenter', function() {
+    el.on('mouseenter', function () {
         if (swiper.autoplay) swiper.autoplay.stop();
     });
 
-    el.on('mouseleave', function() {
+    el.on('mouseleave', function () {
         if (swiper.autoplay) swiper.autoplay.start();
     });
 }
@@ -271,19 +271,19 @@ function initProjectSlider(el) {
                 slidesPerView: 1,
                 spaceBetween: 16,
                 centeredSlides: true,
-                navigation: { enabled: false },
+                navigation: {enabled: false},
             },
             768: {
                 slidesPerView: 2,
                 spaceBetween: 24,
                 centeredSlides: true,
-                navigation: { enabled: false },
+                navigation: {enabled: false},
             },
             1024: {
                 slidesPerView: 3,
                 spaceBetween: 32,
                 centeredSlides: true,
-                navigation: { enabled: true },
+                navigation: {enabled: true},
             },
         },
 
@@ -295,11 +295,11 @@ function initProjectSlider(el) {
         } : {})
     });
 
-    el.on('mouseenter', function() {
+    el.on('mouseenter', function () {
         if (swiper.autoplay) swiper.autoplay.stop();
     });
 
-    el.on('mouseleave', function() {
+    el.on('mouseleave', function () {
         if (swiper.autoplay) swiper.autoplay.start();
     });
 }
@@ -331,4 +331,43 @@ function initPhoneMask(context) {
             $input.val('');
         }
     });
+}
+
+function initForm(el) {
+    const form = el.querySelector('form');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const inputs = form.querySelectorAll('input, textarea');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                const label = input.closest('label');
+
+                if (input.value.trim() === '') {
+                    label.classList.add('empty');
+                    label.classList.remove('ready');
+                    isValid = false;
+                } else {
+                    label.classList.add('ready');
+                    label.classList.remove('empty');
+                }
+            });
+
+            if (isValid) {
+                const data = {};
+                inputs.forEach(input => {
+                    data[input.name] = input.value.trim();
+                });
+                console.log('форма валідна:', data);
+
+                inputs.forEach(input => {
+                    input.value = '';
+                    input.closest('label').classList.remove('ready');
+                });
+            }
+        });
+    }
 }

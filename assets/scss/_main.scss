@@ -357,9 +357,9 @@ main {
 		overflow: hidden;
 
 		&__1 {
-			animation: move1 .5s ease-in-out .2s;
+			animation: error1 .5s ease-in-out .2s;
 			opacity: 1;
-			@keyframes move1 {
+			@keyframes error1 {
 				from {
 					opacity: 0;
 				}
@@ -371,8 +371,8 @@ main {
 
 		&__2 {
 			transform: scale(0.95);
-			animation: move2 10s ease-in-out infinite alternate;
-			@keyframes move2 {
+			animation: error2 10s ease-in-out infinite alternate;
+			@keyframes error2 {
 				from {
 					transform: scale(0.8);
 				}
@@ -384,9 +384,9 @@ main {
 
 		&__3 {
 			transform: translateY(-100%);
-			animation: move3 .5s ease-in-out .7s forwards;
+			animation: error3 .5s ease-in-out .7s forwards;
 			opacity: 0;
-			@keyframes move3 {
+			@keyframes error3 {
 				from {
 					opacity: 0;
 					transform: translateY(-100%);
@@ -400,9 +400,9 @@ main {
 
 		&__4 {
 			transform: translateX(100%);
-			animation: move4 .5s ease-in-out 1.5s forwards;
+			animation: error4 .5s ease-in-out 1.5s forwards;
 			opacity: 0;
-			@keyframes move4 {
+			@keyframes error4 {
 				from {
 					opacity: 0;
 					transform: translateX(-100%);
@@ -416,9 +416,9 @@ main {
 
 		&__5 {
 			transform: translateX(-100%);
-			animation: move5 .5s ease-in-out 1.5s forwards;
+			animation: error5 .5s ease-in-out 1.5s forwards;
 			opacity: 0;
-			@keyframes move5 {
+			@keyframes error5 {
 				from {
 					opacity: 0;
 					transform: translateX(100%);

@@ -47,6 +47,67 @@ main {
 	margin-inline: auto;
 }
 
+.logo{
+	color: var(--color-main);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--primary-size);
+	height: 100%;
+
+	svg{
+		height: 100%;
+		max-width: 50px;
+		flex-shrink: 0;
+		aspect-ratio: 1/1;
+		scale: 2.2;
+
+		@keyframes shake {
+			0% {
+				transform: rotate(0);
+			}
+			20% {
+				transform: rotate(5deg);
+			}
+			40% {
+				transform: rotate(-5deg);
+			}
+			60% {
+				transform: rotate(5deg);
+			}
+			80% {
+				transform: rotate(-5deg);
+			}
+			100% {
+				transform: rotate(0deg);
+			}
+		}
+	}
+
+	&__title{
+		transition: letter-spacing 0.3s ease-in-out;
+		color: transparent;
+		background-image: var(--gradient-blue-violet);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-size: clamp(16px, 1.8vw, 24px);
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0;
+	}
+
+	&:hover{
+		svg{
+			animation: shake 0.1s ease-in-out;
+		}
+
+		.logo__title{
+			letter-spacing: 1px;
+		}
+	}
+}
+
 .decorBorder {
 	border-radius: var(--primary-border-radius);
 	background: var(--element-dark-background);

@@ -33,12 +33,6 @@ header {
 		margin-inline: auto;
 		gap: var(--primary-size);
 
-		.title {
-			a {
-				text-decoration: none;
-			}
-		}
-
 		nav {
 			font-size: clamp(16px, 1.8vw, 24px);
 			display: flex;

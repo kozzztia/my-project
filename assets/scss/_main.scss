@@ -37,6 +37,19 @@ main {
 	margin-top: calc(var(--element-height) + var(--primary-size) * 2);
 }
 
+.error{
+	flex :1;
+	width: 100%;
+	height: calc(100vh - var(--element-height) * 2 - var(--secondary-size) * 1.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.error__image{
+		height: 100%;
+	}
+}
+
 .customBlockWrapper {
 	padding-inline: var(--primary-size);
 }
@@ -278,9 +291,74 @@ main {
 	}
 
 	.move {
+			&__1 {
+				animation: move1 .5s ease-in-out .2s forwards;
+				opacity: 0;
+				@keyframes move1 {
+					from {
+						opacity: 0;
+					}
+					to {
+						opacity: 1;
+					}
+				}
+			}
+
+			&__2 {
+				transform: translate(-100%, -50%);
+				animation: move2 .5s ease-in-out .5s forwards;
+				opacity: 0;
+				@keyframes move2 {
+					from {
+						transform: translate(-100%, -50%);
+						opacity: 0;
+					}
+					to {
+						transform: translate(0, 0);
+						opacity: 1;
+					}
+				}
+			}
+
+			&__3 {
+				transform: translateY(-100%);
+				animation: move3 .5s ease-in-out 1s forwards;
+				opacity: 0;
+				@keyframes move3 {
+					from {
+						opacity: 0;
+						transform: translateY(-100%);
+					}
+					to {
+						transform: translateY(0);
+						opacity: 1;
+					}
+				}
+			}
+
+			&__4 {
+				transform: rotate(-5deg) scale(2);
+				animation: move4 .5s ease-in-out 1.5s forwards;
+				opacity: 0;
+				@keyframes move4 {
+					from {
+						transform: rotate(-5deg) scale(2);
+						opacity: 0;
+					}
+					to {
+						transform: rotate(0) scale(1);
+						opacity: 1;
+					}
+				}
+			}
+	}
+
+	.error {
+		overflow: hidden;
+
 		&__1 {
-			animation: move1 .5s ease-in-out .2s forwards;
-			opacity: 0;
+			animation: move1 .5s ease-in-out .2s;
+			opacity: 1;
 			@keyframes move1 {
 				from {
 					opacity: 0;
@@ -292,24 +370,21 @@ main {
 		}
 
 		&__2 {
-			transform: translate(-100%, -50%);
-			animation: move2 .5s ease-in-out .5s forwards;
-			opacity: 0;
+			transform: scale(0.95);
+			animation: move2 10s ease-in-out infinite alternate;
 			@keyframes move2 {
 				from {
-					transform: translate(-100%, -50%);
-					opacity: 0;
+					transform: scale(0.8);
 				}
 				to {
-					transform: translate(0, 0);
-					opacity: 1;
+					transform: scale(1.1);
 				}
 			}
 		}
 
 		&__3 {
 			transform: translateY(-100%);
-			animation: move3 .5s ease-in-out 1s forwards;
+			animation: move3 .5s ease-in-out .7s forwards;
 			opacity: 0;
 			@keyframes move3 {
 				from {
@@ -324,18 +399,40 @@ main {
 		}
 
 		&__4 {
-			transform: rotate(-5deg) scale(2);
+			transform: translateX(100%);
 			animation: move4 .5s ease-in-out 1.5s forwards;
 			opacity: 0;
 			@keyframes move4 {
 				from {
-					transform: rotate(-5deg) scale(2);
 					opacity: 0;
+					transform: translateX(-100%);
 				}
 				to {
-					transform: rotate(0) scale(1);
 					opacity: 1;
+					transform: translateX(0);
 				}
+			}
+		}
+
+		&__5 {
+			transform: translateX(-100%);
+			animation: move5 .5s ease-in-out 1.5s forwards;
+			opacity: 0;
+			@keyframes move5 {
+				from {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		}
+
+		&:hover {
+			&__3 {
+				animation: shake 0.1s ease-in-out;
 			}
 		}
 	}

@@ -54,6 +54,8 @@ main {
 	justify-content: center;
 	gap: var(--primary-size);
 	height: 100%;
+	cursor: pointer;
+	text-decoration: none;
 
 	svg{
 		height: 100%;

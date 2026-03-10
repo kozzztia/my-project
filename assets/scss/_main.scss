@@ -37,15 +37,15 @@ main {
 	margin-top: calc(var(--element-height) + var(--primary-size) * 2);
 }
 
-.error{
-	flex :1;
-	width: 100%;
-	height: calc(100vh - var(--element-height) * 2 - var(--secondary-size) * 1.5);
+.error {
 	display: flex;
 	align-items: center;
+	flex: 1;
 	justify-content: center;
+	width: 100%;
+	height: calc(100vh - var(--element-height) * 2 - var(--secondary-size) * 1.5);
 
-	.error__image{
+	.error__image {
 		height: 100%;
 	}
 }
@@ -291,66 +291,66 @@ main {
 	}
 
 	.move {
-			&__1 {
-				animation: move1 .5s ease-in-out .2s forwards;
-				opacity: 0;
-				@keyframes move1 {
-					from {
-						opacity: 0;
-					}
-					to {
-						opacity: 1;
-					}
+		&__1 {
+			animation: move1 .5s ease-in-out .2s forwards;
+			opacity: 0;
+			@keyframes move1 {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
 				}
 			}
+		}
 
-			&__2 {
-				transform: translate(-100%, -50%);
-				animation: move2 .5s ease-in-out .5s forwards;
-				opacity: 0;
-				@keyframes move2 {
-					from {
-						transform: translate(-100%, -50%);
-						opacity: 0;
-					}
-					to {
-						transform: translate(0, 0);
-						opacity: 1;
-					}
+		&__2 {
+			transform: translate(-100%, -50%);
+			animation: move2 .5s ease-in-out .5s forwards;
+			opacity: 0;
+			@keyframes move2 {
+				from {
+					transform: translate(-100%, -50%);
+					opacity: 0;
+				}
+				to {
+					transform: translate(0, 0);
+					opacity: 1;
 				}
 			}
+		}
 
-			&__3 {
-				transform: translateY(-100%);
-				animation: move3 .5s ease-in-out 1s forwards;
-				opacity: 0;
-				@keyframes move3 {
-					from {
-						opacity: 0;
-						transform: translateY(-100%);
-					}
-					to {
-						transform: translateY(0);
-						opacity: 1;
-					}
+		&__3 {
+			transform: translateY(-100%);
+			animation: move3 .5s ease-in-out 1s forwards;
+			opacity: 0;
+			@keyframes move3 {
+				from {
+					opacity: 0;
+					transform: translateY(-100%);
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
 				}
 			}
+		}
 
-			&__4 {
-				transform: rotate(-5deg) scale(2);
-				animation: move4 .5s ease-in-out 1.5s forwards;
-				opacity: 0;
-				@keyframes move4 {
-					from {
-						transform: rotate(-5deg) scale(2);
-						opacity: 0;
-					}
-					to {
-						transform: rotate(0) scale(1);
-						opacity: 1;
-					}
+		&__4 {
+			transform: rotate(-5deg) scale(2);
+			animation: move4 .5s ease-in-out 1.5s forwards;
+			opacity: 0;
+			@keyframes move4 {
+				from {
+					transform: rotate(-5deg) scale(2);
+					opacity: 0;
+				}
+				to {
+					transform: rotate(0) scale(1);
+					opacity: 1;
 				}
 			}
+		}
 	}
 
 	.error {
@@ -427,12 +427,6 @@ main {
 					opacity: 1;
 					transform: translateX(0);
 				}
-			}
-		}
-
-		&:hover {
-			&__3 {
-				animation: shake 0.1s ease-in-out;
 			}
 		}
 	}

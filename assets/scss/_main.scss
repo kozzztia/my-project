@@ -47,23 +47,23 @@ main {
 	margin-inline: auto;
 }
 
-.logo{
-	color: var(--color-main);
+.logo {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: var(--primary-size);
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
+	color: var(--color-main);
+	gap: var(--primary-size);
+	-webkit-tap-highlight-color: transparent;
 
-	svg{
-		height: 100%;
-		max-width: 50px;
+	svg {
 		flex-shrink: 0;
+		max-width: 50px;
+		height: 100%;
 		aspect-ratio: 1/1;
 		scale: 2.2;
-
 		@keyframes shake {
 			0% {
 				transform: rotate(0);
@@ -86,25 +86,25 @@ main {
 		}
 	}
 
-	&__title{
+	&__title {
+		font-size: clamp(16px, 1.8vw, 24px);
+		font-weight: 700;
+		line-height: 1.2;
 		transition: letter-spacing 0.3s ease-in-out;
+		letter-spacing: 0;
 		color: transparent;
 		background-image: var(--gradient-blue-violet);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
-		font-size: clamp(16px, 1.8vw, 24px);
-		font-weight: 700;
-		line-height: 1.2;
-		letter-spacing: 0;
 	}
 
-	&:hover{
-		svg{
+	&:hover {
+		svg {
 			animation: shake 0.1s ease-in-out;
 		}
 
-		.logo__title{
+		.logo__title {
 			letter-spacing: 1px;
 		}
 	}

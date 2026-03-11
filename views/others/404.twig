@@ -3,13 +3,21 @@
 {% block base %}
 
     {% set blocks = [
-        {'name': 'error',
+        {'name': 'single-animation',
             'fields': {
-            'style': 'text-align: center; margin-bottom: var(--primary-size)',
+            'style': '',
             'class': 'tracker down',
+            'image': {'title': '404', 'animation': 'error',
+                'class': 'error__image ',
+                'layers' : [
+                    {'layer': svg_folder ~'animation/404-1.svg'},
+                    {'layer': svg_folder ~'animation/404-2.svg'},
+                    {'layer': svg_folder ~'animation/404-3.svg'},
+                    {'layer': svg_folder ~'animation/404-4.svg'},
+                    {'layer': svg_folder ~'animation/404-5.svg'},
+                ]}
             },
         },
-
     ] %}
 
     {% for block in blocks %}

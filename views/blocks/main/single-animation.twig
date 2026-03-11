@@ -1,0 +1,11 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.class %}
+    <div class="single-animation {% if fields.class %} {{ fields.class }} {% endif %}" {% if fields.style %} style="{{ fields.style }}" {% endif %}>
+    {% include 'overall/card-image.twig' with { image : fields.image } %}
+    </div>
+    {% endif %}
+
+{% endblock %}

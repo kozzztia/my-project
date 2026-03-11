@@ -1,0 +1,20 @@
+.main-single-animation {
+	.customBlock {
+		.single-animation {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: center;
+			width: 100%;
+
+			&:has(.error__image) {
+				height: calc(100vh - var(--element-height) * 2 - var(--primary-size) * 4);
+			}
+
+			.cardImage.intro__image{
+					width: 100% !important;
+					height: 100% !important;
+			}
+		}
+	}
+}

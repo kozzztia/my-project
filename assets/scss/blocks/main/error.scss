@@ -1,0 +1,16 @@
+.main-error {
+	.customBlock {
+		.error {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			justify-content: center;
+			width: 100%;
+			height: calc(100vh - var(--element-height) * 2 - var(--primary-size) * 4);
+
+			.error__image {
+				height: 100%;
+			}
+		}
+	}
+}

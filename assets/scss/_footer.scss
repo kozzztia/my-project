@@ -8,19 +8,14 @@ footer {
 		align-items: center;
 		justify-content: space-between;
 		max-width: var(--primary-block-width);
-		min-height: var(--element-height);
+		height: var(--element-height);
 		padding: var(--primary-size) var(--secondary-size);
 		background-color: var(--element-dark-background);
 		margin-inline: auto;
 		gap: var(--primary-size);
-		@media (max-width: 768px) {
-			flex-direction: column;
-		}
 	}
 
 	svg{
-		width :200px;
-		height :200px;
 		fill: var(--color-main);
 	}
 }

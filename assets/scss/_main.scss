@@ -37,19 +37,6 @@ main {
 	margin-top: calc(var(--element-height) + var(--primary-size) * 2);
 }
 
-.error {
-	display: flex;
-	align-items: center;
-	flex: 1;
-	justify-content: center;
-	width: 100%;
-	height: calc(100vh - var(--element-height) * 2 - var(--secondary-size) * 1.5);
-
-	.error__image {
-		height: 100%;
-	}
-}
-
 .customBlockWrapper {
 	padding-inline: var(--primary-size);
 }
@@ -372,6 +359,7 @@ main {
 		&__2 {
 			transform: scale(0.95);
 			animation: error2 10s ease-in-out infinite alternate;
+			filter: drop-shadow(0 0 1px var(--color-main));
 			@keyframes error2 {
 				from {
 					transform: scale(0.8);
@@ -397,11 +385,21 @@ main {
 				}
 			}
 			@keyframes error-move {
-				0%   { transform: translateX(0) translateY(0); }
-				25%  { transform: translateX(20px) translateY(-20px); }
-				50%  { transform: translateX(0) translateY(-25px); }
-				75%  { transform: translateX(-20px) translateY(0); }
-				100% { transform: translateX(0) translateY(25px); }
+				0% {
+					transform: translateX(0) translateY(0);
+				}
+				25% {
+					transform: translateX(20px) translateY(-20px);
+				}
+				50% {
+					transform: translateX(0) translateY(-25px);
+				}
+				75% {
+					transform: translateX(-20px) translateY(0);
+				}
+				100% {
+					transform: translateX(0) translateY(25px);
+				}
 			}
 		}
 
@@ -438,7 +436,7 @@ main {
 		}
 	}
 
-	.learning{
+	.learning {
 		&__1 {
 			animation: learning1 .5s ease-in-out .2s forwards;
 			opacity: 0;
@@ -454,8 +452,8 @@ main {
 
 		&__2 {
 			transform: scale(0.75);
-			opacity: 0;
 			animation: learning2 10s ease-in-out infinite alternate .7s, learning-show 10s forwards .7s;
+			opacity: 0;
 			filter: drop-shadow(0 0 1px var(--color-main));
 			@keyframes learning2 {
 				from {
@@ -468,8 +466,14 @@ main {
 				}
 			}
 			@keyframes learning-show {
-				0%   { opacity: 0; scale: (2)}
-				100% { opacity: 1; scale: (1) }
+				0% {
+					opacity: 0;
+					scale: (2)
+				}
+				100% {
+					opacity: 1;
+					scale: (1)
+				}
 			}
 		}
 
@@ -488,11 +492,21 @@ main {
 				}
 			}
 			@keyframes learning-move {
-				0%   { transform: translateX(0) translateY(0); }
-				25%  { transform: translateX(20px) translateY(-20px); }
-				50%  { transform: translateX(0) translateY(-25px); }
-				75%  { transform: translateX(-20px) translateY(0); }
-				100% { transform: translateX(0) translateY(25px); }
+				0% {
+					transform: translateX(0) translateY(0);
+				}
+				25% {
+					transform: translateX(20px) translateY(-20px);
+				}
+				50% {
+					transform: translateX(0) translateY(-25px);
+				}
+				75% {
+					transform: translateX(-20px) translateY(0);
+				}
+				100% {
+					transform: translateX(0) translateY(25px);
+				}
 			}
 		}
 
@@ -690,8 +704,8 @@ main {
 		width: 50px;
 		height: 50px;
 		@media (max-width: 768px) {
-			width: 50px;
-			height: 50px;
+			width: 40px;
+			height: 40px;
 		}
 	}
 }

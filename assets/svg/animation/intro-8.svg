@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 500 500">
+    <style type="text/css">
+        .st0{fill:#FFFFFF;stroke:#263238;stroke-width:1.1031;stroke-linecap:round;stroke-linejoin:round;}
+        .st1{fill:none;stroke:#263238;stroke-width:1.1031;stroke-linecap:round;stroke-linejoin:round;}
+    </style>
+    <g id="freepik--Graphics--inject-388">
+        <path class="st0" d="M349.8,245.5h30.6c3.6,0,6.5,2.9,6.5,6.5V270c0,3.6-2.9,6.5-6.5,6.5h-30.6c-3.6,0-6.5-2.9-6.5-6.5v-17.9
+		C343.2,248.5,346.2,245.5,349.8,245.5z"/>
+        <polyline class="st1" points="357.3,254.9 348.9,260.1 356.7,267 	"/>
+        <polyline class="st1" points="372.6,267.5 380.1,261.1 371.4,255.4 	"/>
+        <line class="st1" x1="361.4" y1="271.5" x2="367.6" y2="252.1"/>
+    </g>
+</svg>

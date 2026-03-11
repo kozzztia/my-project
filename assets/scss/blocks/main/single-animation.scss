@@ -7,13 +7,17 @@
 			justify-content: center;
 			width: 100%;
 
-			&:has(.error__image) {
+			.cardImage.error__image {
 				height: calc(100vh - var(--element-height) * 2 - var(--primary-size) * 4);
 			}
 
-			.cardImage.intro__image{
-					width: 100% !important;
-					height: 100% !important;
+			.cardImage.intro__image {
+				width: 80%;
+				height: auto;
+
+				@media (max-width: 768px) {
+					width: 100%;
+				}
 			}
 		}
 	}

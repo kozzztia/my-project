@@ -240,15 +240,15 @@ main {
 		}
 
 		&__2 {
-			transform: scale(0.95);
+			transform: scale(1);
 			animation: coding2 6s ease-in-out infinite alternate;
 			filter: drop-shadow(0 0 1px var(--color-main));
 			@keyframes coding2 {
 				from {
-					transform: scale(0.8);
+					transform: scale(1);
 				}
 				to {
-					transform: scale(1.1);
+					transform: scale(1.2);
 				}
 			}
 		}
@@ -451,28 +451,26 @@ main {
 		}
 
 		&__2 {
-			transform: scale(0.75);
-			animation: learning2 10s ease-in-out infinite alternate .7s, learning-show 10s forwards .7s;
+			transform: scale(1);
+			animation: learning-show .7s ease-in-out forwards, learning2 10s ease-in-out infinite alternate 1.3s;
 			opacity: 0;
 			filter: drop-shadow(0 0 1px var(--color-main));
 			@keyframes learning2 {
 				from {
-					transform: scale(0.75);
-					opacity: 0;
+					transform: scale(1);
 				}
 				to {
-					transform: scale(1.1);
-					opacity: 1;
+					transform: scale(1.2);
 				}
 			}
 			@keyframes learning-show {
 				0% {
+					transform: scale(2);
 					opacity: 0;
-					scale: (2)
 				}
 				100% {
+					transform: scale(1);
 					opacity: 1;
-					scale: (1)
 				}
 			}
 		}
@@ -523,6 +521,202 @@ main {
 					opacity: 1;
 					transform: translateX(0);
 				}
+			}
+		}
+	}
+
+	.intro {
+		&__1 {
+			animation: intro-1 .2s ease-in-out .3s forwards;
+			opacity: 0;
+			scale: 0.5;
+			transform: translate(6%, -3%);
+			@keyframes intro-1 {
+				0% {
+					opacity: 0;
+					scale: 0.5
+				}
+				100% {
+					opacity: 1;
+					scale: 1.1;
+				}
+			}
+		}
+
+		&__2 {
+			transform: translateY(0);
+			animation: intro2 .2s ease-in-out .4s forwards;
+			opacity: 0;
+			@keyframes intro2 {
+				0% {
+					transform: translateY(-100%);
+					opacity: 0;
+				}
+				90% {
+					transform: translateY(2%);
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__3 {
+			transform: translateX(-100%);
+			transform-origin: 27% 38%;
+			animation: intro3 .2s ease-in-out .6s forwards, intro-rotate-forward 15s linear infinite;
+			opacity: 0;
+			@keyframes intro3 {
+				from {
+					opacity: 0;
+					transform: translateX(-100%);
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__4 {
+			transform: translateX(-100%);
+			transform-origin: 75% 37%;
+			animation: intro4 .2s ease-in-out .82s forwards, intro-rotate-back 12s linear infinite;
+			opacity: 0;
+			@keyframes intro4 {
+				from {
+					opacity: 0;
+					transform: translateX(-100%);
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__5 {
+			transform: translateX(100%);
+			transform-origin: 41% 55%;
+			animation: intro5 .2s ease-in-out .84s forwards, intro-rotate-forward 5s linear infinite;
+			opacity: 0;
+			@keyframes intro5 {
+				from {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__6 {
+			transform: translateX(100%);
+			transform-origin: 67% 54%;
+			animation: intro6 .2s ease-in-out .78s forwards, intro-rotate-back 10s linear infinite;
+			opacity: 0;
+			@keyframes intro6 {
+				from {
+					opacity: 0;
+					transform: translateX(100%);
+				}
+				to {
+					transform: translateX(0);
+					opacity: 1;
+				}
+			}
+		}
+
+		&__7 {
+			transform: translateX(0);
+			animation: intro7 .2s ease-in-out 1s forwards, intro-scale 4s linear 2.2s infinite alternate;
+			opacity: 0;
+			@keyframes intro7 {
+				from {
+					opacity: 0;
+					scale: 0;
+				}
+				to {
+					opacity: 0.6;
+					scale: 1;
+				}
+			}
+		}
+
+		&__8 {
+			transform: translateX(0);
+			animation: intro8 .2s ease-in-out 1.1s forwards, intro-scale 5s linear 1.9s infinite alternate;
+			opacity: 0;
+			@keyframes intro8 {
+				from {
+					opacity: 0;
+					scale: 0;
+				}
+				to {
+					opacity: 0.6;
+					scale: 1;
+				}
+			}
+		}
+
+		&__9 {
+			transform: translateX(0);
+			animation: intro9 .2s ease-in-out .9s forwards, intro-scale 6s linear 1.6s infinite alternate;
+			opacity: 0;
+			@keyframes intro9 {
+				from {
+					opacity: 0;
+					scale: 0;
+				}
+				to {
+					opacity: 0.6;
+					scale: 1;
+				}
+			}
+		}
+
+		&__10 {
+			transform: translateY(0);
+			animation: intro10 .2s ease-in-out 1.2s forwards;
+			opacity: 0;
+			@keyframes intro10 {
+				from {
+					opacity: 0;
+					transform: translateY(-100%);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+
+		@keyframes intro-rotate-forward {
+			0% {
+				rotate: 0deg;
+			}
+			100% {
+				rotate: 360deg;
+			}
+		}
+		@keyframes intro-rotate-back {
+			0% {
+				rotate: 360deg;
+			}
+			100% {
+				rotate: 0deg;
+			}
+		}
+		@keyframes intro-scale {
+			from {
+				scale: 1;
+			}
+			to {
+				scale: 0.9;
 			}
 		}
 	}

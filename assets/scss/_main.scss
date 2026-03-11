@@ -383,8 +383,8 @@ main {
 		}
 
 		&__3 {
-			transform: translateY(-100%);
-			animation: error3 .5s ease-in-out .7s forwards;
+			transform: translateY(-100%) translateX(0);
+			animation: error3 .5s ease-in-out .7s forwards, error-move 10s ease-in-out 1.5s infinite alternate;
 			opacity: 0;
 			@keyframes error3 {
 				from {
@@ -395,6 +395,13 @@ main {
 					transform: translateY(0);
 					opacity: 1;
 				}
+			}
+			@keyframes error-move {
+				0%   { transform: translateX(0) translateY(0); }
+				25%  { transform: translateX(20px) translateY(-20px); }
+				50%  { transform: translateX(0) translateY(-25px); }
+				75%  { transform: translateX(-20px) translateY(0); }
+				100% { transform: translateX(0) translateY(25px); }
 			}
 		}
 
@@ -422,6 +429,81 @@ main {
 				from {
 					opacity: 0;
 					transform: translateX(100%);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		}
+	}
+
+	.learning{
+		&__1 {
+			animation: learning1 .5s ease-in-out .2s forwards;
+			opacity: 0;
+			@keyframes learning1 {
+				from {
+					opacity: 0;
+				}
+				to {
+					opacity: 1;
+				}
+			}
+		}
+
+		&__2 {
+			transform: scale(0.75);
+			opacity: 0;
+			animation: learning2 10s ease-in-out infinite alternate .7s, learning-show 10s forwards .7s;
+			filter: drop-shadow(0 0 1px var(--color-main));
+			@keyframes learning2 {
+				from {
+					transform: scale(0.75);
+					opacity: 0;
+				}
+				to {
+					transform: scale(1.1);
+					opacity: 1;
+				}
+			}
+			@keyframes learning-show {
+				0%   { opacity: 0; scale: (2)}
+				100% { opacity: 1; scale: (1) }
+			}
+		}
+
+		&__3 {
+			transform: translateY(-100%) translateX(0);
+			animation: learning3 .5s ease-in-out .7s forwards, learning-move 10s ease-in-out 1.5s infinite alternate;
+			opacity: 0;
+			@keyframes learning3 {
+				from {
+					opacity: 0;
+					transform: translateY(-100%);
+				}
+				to {
+					transform: translateY(0);
+					opacity: 1;
+				}
+			}
+			@keyframes learning-move {
+				0%   { transform: translateX(0) translateY(0); }
+				25%  { transform: translateX(20px) translateY(-20px); }
+				50%  { transform: translateX(0) translateY(-25px); }
+				75%  { transform: translateX(-20px) translateY(0); }
+				100% { transform: translateX(0) translateY(25px); }
+			}
+		}
+
+		&__4 {
+			transform: translateX(100%);
+			animation: learning4 .5s ease-in-out 1.5s forwards;
+			opacity: 0;
+			@keyframes learning4 {
+				from {
+					opacity: 0;
+					transform: translateX(-100%);
 				}
 				to {
 					opacity: 1;

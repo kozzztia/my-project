@@ -14,10 +14,10 @@
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down',
+            'class': 'tracker up',
             'image': {
                 'image_position': 'right',
-                'title': 'developer',
+                'title': 'coding',
                 'animation': 'coding',
                 'layers' : [
                     {'layer': svg_folder ~'animation/coding-1.svg'},
@@ -50,13 +50,13 @@
         {'name': 'text-or-title',
             'fields': {
             'style': '',
-            'class': 'tracker down',
+            'class': 'tracker up',
             'text': '<h2><strong><span class="mce_size-l">Мої проєкти: </span></strong></h2>',
         },
         },
         {'name': 'project-slider',
             'fields': {
-            'style': 'margin-bottom: var(--primary-size)',
+            'style': 'margin-bottom: var(--secondary-size)',
             'class': 'tracker up',
             'interval': 200,
             'animation': 'flip',
@@ -166,10 +166,12 @@
             ],
         },
         },
-        {'name': 'text-or-title',
+        {'name': 'single-accordion',
             'fields': {
-            'style': 'margin-bottom: var(--primary-size)',
-            'class': 'tracker up',
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'projects',
+            'title': 'У своїх проектах я використовую PHP + Twig',
             'text': '
                 <p>У своїх проектах я використовую PHP + Twig як шаблонізатор — компонентна система де кожен блок це окремий файл з власними полями. Дані передаються через масиви конфігурації, що дозволяє легко керувати контентом без прив`язки до CMS. Локальне середовище розгорнуто через Laragon.</p>
                 <p>Стилізація побудована на SCSS з BEM-подібною структурою — кожен компонент має свій файл, змінні через CSS Custom Properties та адаптивна типографіка через clamp(). Компіляція і автопрефіксер через Prepros.</p>
@@ -177,33 +179,53 @@
                 <p>Анімації та інтерактив — SVG спрайти, keyframe анімації для ілюстрацій, хитрощі з grid для плавної зміни контенту без стрибків висоти, flip-картки через 3D трансформації.</p>',
         },
         },
-        {'name': 'button',
+        {'name': 'hero-article',
             'fields': {
-            'style': 'margin-bottom: var(--secondary-size);',
-            'class': 'tracker down',
-            'button': {
-                'title': 'Дiзнатися більше',
-                'link': {
-                    'url': site.url ~'page',
-                },
-                'type': {
-                    'style' : 'size-xs style-main-transparent',
-                    'icon_position': 'right',
-                    'icon': 'icon-triangle',
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'image': {
+                'image_position': 'left',
+                'title': 'learning',
+                'animation': 'learning',
+                'layers' : [
+                    {'layer': svg_folder ~'animation/learning-1.svg'},
+                    {'layer': svg_folder ~'animation/learning-2.svg'},
+                    {'layer': svg_folder ~'animation/learning-3.svg'},
+                    {'layer': svg_folder ~'animation/learning-4.svg'},
+                ]
+            },
+            'content': {
+                'title': '<h2><strong><span class="mce_size-l">Від схем до пікселів :</span></strong></h2>',
+                'subtitle': '',
+                'text': '<p>Починав з електроніки — паяв, читав схеми, розбирав залізо до останнього транзистора. Потім — комп`ютерні науки, бази даних, мережі, ООП. Далі право: системне мислення, логіка, розуміння як захищати цифрові продукти.</p>
+                        <p>Але все це врешті привело до одного місця — до інтерфейсу. Там де логіка зустрічається з естетикою, а код — з відчуттям.</p>
+                        <p>Beetroot Academy поставила крапку: власний бекенд, дипломний проєкт на Next.js, командна робота і розуміння що фронтенд — це не просто верстка, це архітектура яку бачать люди.</p>
+                        <p>З появою AI-інструментів у розробці відчуваю себе значно впевненіше і продуктивніше. Те що раніше займало тиждень — тепер один вечір. Не тому що стало простіше, а тому що навчився думати швидше і ставити правильні питання.</p>',
+                'button': {
+                    'title': 'Дiзнатися більше',
+                    'link': {
+                        'url': site.url ~'about',
+                    },
+                    'type': {
+                        'style' : 'size-xs style-main-transparent',
+                        'icon_position': 'right',
+                        'icon': 'icon-triangle',
+                    },
                 },
             },
         },
         },
+
         {'name': 'text-or-title',
             'fields': {
             'style': '',
-            'class': 'tracker down',
+            'class': 'tracker up',
             'text': '<h2><strong><span class="mce_size-l">Мої пет-проєкти: </span></strong></h2>',
         },
         },
         {'name': 'project-slider',
             'fields': {
-            'style': 'margin-bottom: var(--primary-size)',
+            'style': 'margin-bottom: var(--secondary-size)',
             'class': 'tracker up',
             'interval': 200,
             'animation': 'hover-up',
@@ -364,37 +386,22 @@
             ],
         },
         },
-        {'name': 'text-or-title',
+        {'name': 'single-accordion',
             'fields': {
-            'style': 'margin-bottom: var(--primary-size)',
-            'class': 'tracker up',
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'pet-projects',
+            'title': 'Під час самонавчання з React.js',
             'text': '
                 <p>Під час самонавчання активно пробував різні інструменти та підходи — React, React Native, Next.js, TypeScript, Tailwind CSS. Деплоїв проєкти на Netlify та Vercel, розбирався з процесом збірки та публічним розгортанням.</p>
                 <p>Практикував розбивку інтерфейсу на компоненти, прокидування пропсів, розділення серверних і клієнтських компонентів у Next.js. Працював з модульним SCSS — ізольовані стилі на компонент без конфліктів. Знайомився зі state management — React Context для локального стану та Redux для глобального керування даними застосунку</p>
                 <p>Цей досвід дав розуміння сучасного фронтенд стеку і допоміг сформувати власний підхід до розробки.</p>'
         },
         },
-        {'name': 'button',
-            'fields': {
-            'style': 'margin-bottom: var(--secondary-size);',
-            'class': 'tracker down',
-            'button': {
-                'title': 'Дiзнатися більше',
-                'link': {
-                    'url': site.url ~'page',
-                },
-                'type': {
-                    'style' : 'size-xs style-main-transparent',
-                    'icon_position': 'right',
-                    'icon': 'icon-triangle',
-                },
-            },
-        },
-        },
         {'name': 'contacts',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size);',
-            'class': 'tracker down',
+            'class': 'tracker up',
             'inputs': [
                 {'name': 'name', 'type': 'text', 'placeholder': 'введіть ваше ім`я', 'title': 'Ваше Ім`я'},
                 {'name': 'phone', 'type': 'text', 'placeholder': 'введіть ваш номер телефону', 'title': 'номер телефону'},

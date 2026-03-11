@@ -149,6 +149,7 @@ main {
 	height: clamp(250px, 30vw, 500px);
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
+	color: var(--color-main);
 
 	img {
 		display: block;
@@ -527,10 +528,10 @@ main {
 
 	.intro {
 		&__1 {
-			animation: intro-1 .2s ease-in-out .3s forwards;
+			transform: translate(7%, -3%);
+			animation: intro-1 .3s ease-in-out .3s forwards;
 			opacity: 0;
 			scale: 0.5;
-			transform: translate(6%, -3%);
 			@keyframes intro-1 {
 				0% {
 					opacity: 0;
@@ -545,7 +546,7 @@ main {
 
 		&__2 {
 			transform: translateY(0);
-			animation: intro2 .2s ease-in-out .4s forwards;
+			animation: intro2 .3s ease-in-out .6s forwards;
 			opacity: 0;
 			@keyframes intro2 {
 				0% {
@@ -566,7 +567,7 @@ main {
 		&__3 {
 			transform: translateX(-100%);
 			transform-origin: 27% 38%;
-			animation: intro3 .2s ease-in-out .6s forwards, intro-rotate-forward 15s linear infinite;
+			animation: intro3 .3s ease-in-out .9s forwards, intro-rotate-forward 15s linear infinite;
 			opacity: 0;
 			@keyframes intro3 {
 				from {
@@ -583,7 +584,7 @@ main {
 		&__4 {
 			transform: translateX(-100%);
 			transform-origin: 75% 37%;
-			animation: intro4 .2s ease-in-out .82s forwards, intro-rotate-back 12s linear infinite;
+			animation: intro4 .3s ease-in-out .92s forwards, intro-rotate-back 12s linear infinite;
 			opacity: 0;
 			@keyframes intro4 {
 				from {
@@ -600,7 +601,7 @@ main {
 		&__5 {
 			transform: translateX(100%);
 			transform-origin: 41% 55%;
-			animation: intro5 .2s ease-in-out .84s forwards, intro-rotate-forward 5s linear infinite;
+			animation: intro5 .3s ease-in-out .94s forwards, intro-rotate-forward 5s linear infinite;
 			opacity: 0;
 			@keyframes intro5 {
 				from {
@@ -617,7 +618,7 @@ main {
 		&__6 {
 			transform: translateX(100%);
 			transform-origin: 67% 54%;
-			animation: intro6 .2s ease-in-out .78s forwards, intro-rotate-back 10s linear infinite;
+			animation: intro6 .3s ease-in-out .88s forwards, intro-rotate-back 10s linear infinite;
 			opacity: 0;
 			@keyframes intro6 {
 				from {
@@ -633,7 +634,7 @@ main {
 
 		&__7 {
 			transform: translateX(0);
-			animation: intro7 .2s ease-in-out 1s forwards, intro-scale 4s linear 2.2s infinite alternate;
+			animation: intro7 .3s ease-in-out 1.8s forwards, intro-scale 4s linear 2.2s infinite alternate;
 			opacity: 0;
 			@keyframes intro7 {
 				from {
@@ -649,7 +650,7 @@ main {
 
 		&__8 {
 			transform: translateX(0);
-			animation: intro8 .2s ease-in-out 1.1s forwards, intro-scale 5s linear 1.9s infinite alternate;
+			animation: intro8 .3s ease-in-out 1.6s forwards, intro-scale 5s linear 1.9s infinite alternate;
 			opacity: 0;
 			@keyframes intro8 {
 				from {
@@ -665,7 +666,7 @@ main {
 
 		&__9 {
 			transform: translateX(0);
-			animation: intro9 .2s ease-in-out .9s forwards, intro-scale 6s linear 1.6s infinite alternate;
+			animation: intro9 .3s ease-in-out 1.4s forwards, intro-scale 6s linear 1.6s infinite alternate;
 			opacity: 0;
 			@keyframes intro9 {
 				from {
@@ -681,7 +682,7 @@ main {
 
 		&__10 {
 			transform: translateY(0);
-			animation: intro10 .2s ease-in-out 1.2s forwards;
+			animation: intro10 .3s ease-in-out 1.2s forwards;
 			opacity: 0;
 			@keyframes intro10 {
 				from {

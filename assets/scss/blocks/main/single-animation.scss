@@ -7,11 +7,13 @@
 			justify-content: center;
 			width: 100%;
 
+			color: var(--color-main);
+
 			.cardImage.error__image {
 				height: calc(100vh - var(--element-height) * 2 - var(--primary-size) * 4);
 			}
 
-			.cardImage.intro__image {
+			.cardImage.intro__image, .cardImage.drone__image {
 				width: 80%;
 				height: auto;
 

@@ -3,6 +3,20 @@
 {% block base %}
 
     {% set blocks = [
+        {'name': 'single-animation',
+            'fields': {
+            'style': '',
+            'class': 'tracker down',
+            'image': {'title': 'drone',
+                'class': 'drone__image ',
+                'animation': 'drone',
+                'layers' : [
+                    {'layer': svg_folder ~'animation/drone-1.svg'},
+                    {'layer': svg_folder ~'animation/drone-2.svg'},
+                    {'layer': svg_folder ~'animation/drone-3.svg'},
+                ]}
+        },
+        },
         {'name': 'card-grid',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size);',

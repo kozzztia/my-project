@@ -1,0 +1,52 @@
+/* variables!
+-------------------------------------------------------------- */
+:root {
+	//color
+	--color-white: #fff;
+	--color-white-rgb: 255, 255, 255;
+	--color-black: #020E0C;
+	--color-black-rgb: 2, 14, 12;
+	--color-green: #1EEBCD;
+	--color-green-rgb: 30, 235, 205;
+	--color-dark-green: #0E2E29;
+	--color-dark-green-rgb: 14, 46, 41;
+	--color-blue: #2AF6FF;
+	--color-blue-rgb: 42, 246, 255;
+	--color-pink: #FF63CE;
+	--color-pink-rgb: 255, 99, 206;
+	--color-violet: #A56EF4;
+	--color-violet-rgb: 165, 110, 244;
+	--color-empty: #f46e72;
+	--color-ready: #6ef472;
+	--test: rgba(0, 128, 0, 0.42);
+	//gradient
+	--gradient-blue-violet: linear-gradient(170deg, var(--color-blue) 5%, var(--color-violet) 90%);
+	--gradient-green-violet: linear-gradient(170deg, var(--color-green) 5%, var(--color-violet) 90%);
+	--element-dark-background: rgba(var(--color-black-rgb), 0.7);
+	--element-light-background: rgba(var(--color-white-rgb), 0.7);
+	//other
+	--primary-block-width: 1500px;
+	--secondary-block-width: 1920px;
+	--primary-font-family: 'Raleway', sans-serif;
+	--primary-blur-value: 5px;
+	--primary-border-radius: 5px;
+	--hover-shadow: 1px 1px 20px 2px rgba(var(--color-main-rgb), 0.6);
+	--hover-drop-shadow: drop-shadow(1px 1px 2px rgba(var(--color-main-rgb), 0.6));
+	//changed  variables
+	--secondary-size: 60px;
+	--primary-size: 20px;
+	--primary-font-size: clamp(14px, 1.2vw, 18px);;
+	--element-height: 80px;
+	--color-main: var(--color-green);
+	--color-main-rgb: var(--color-green-rgb);
+	@media (max-width: 1024px) {
+		--secondary-size: 40px;
+		--primary-size: 17px;
+		--element-height: 70px;
+	}
+	@media (max-width: 768px) {
+		--primary-size: 14px;
+		--secondary-size: 20px;
+		--element-height: 60px;
+	}
+}

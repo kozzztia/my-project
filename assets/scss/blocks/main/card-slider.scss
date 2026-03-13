@@ -1,0 +1,29 @@
+.main-card-slider {
+	padding-inline: 0;
+
+	.customBlock {
+		.cardSlider {
+			.cardSwiper {
+				overflow: visible;
+				padding: var(--primary-size) var(--secondary-size);
+				@media (max-width: 1024px) {
+					overflow: hidden;
+				}
+
+				.swiperSlide {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: opacity 0.3s ease, transform 0.3s ease;
+					transform: scale(.8);
+					opacity: .8;
+
+					&.swiper-slide-visible {
+						transform: scale(1);
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

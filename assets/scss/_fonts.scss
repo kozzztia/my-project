@@ -1,0 +1,80 @@
+@font-face {
+	font-family: 'Raleway';
+	src: url('../../assets/fonts/Raleway-Thin.woff2') format('woff2'),
+	url('../../assets/fonts/Raleway-Thin.woff') format('woff'),
+	url('../../assets/fonts/Raleway-Thin.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('../../assets/fonts/Raleway-Regular.woff2') format('woff2'),
+	url('../../assets/fonts/Raleway-Regular.woff') format('woff'),
+	url('../../assets/fonts/Raleway-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Raleway';
+	src: url('../../assets/fonts/Raleway-Bold.woff2') format('woff2'),
+	url('../../assets/fonts/Raleway-Bold.woff') format('woff'),
+	url('../../assets/fonts/Raleway-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'icons';
+	src: url('../../assets/fonts/icons.ttf?75785056e3c55ec7c1b8a197a785f68c') format('truetype'),
+	url('../../assets/fonts/icons.woff?75785056e3c55ec7c1b8a197a785f68c') format('woff'),
+	url('../../assets/fonts/icons.woff2?75785056e3c55ec7c1b8a197a785f68c') format('woff2');
+}
+
+.icon:before {
+	font-family: icons !important;
+	font-weight: normal !important;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-arrow:before {
+	content: '\f101';
+}
+
+.icon.icon-code:before {
+	content: '\f102';
+}
+
+.icon.icon-decor-arrow:before {
+	content: '\f103';
+}
+
+.icon.icon-facebook:before {
+	content: '\f104';
+}
+
+.icon.icon-github:before {
+	content: '\f105';
+}
+
+.icon.icon-phone:before {
+	content: '\f106';
+}
+
+.icon.icon-segment:before {
+	content: '\f107';
+}
+
+.icon.icon-telegram:before {
+	content: '\f108';
+}
+
+.icon.icon-triangle:before {
+	content: '\f109';
+}

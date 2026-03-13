@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 500 500">
+    <style type="text/css">
+        .st0{fill:#1EEBCD;stroke:#263238;stroke-width:1.1031;stroke-miterlimit:10;}
+        .st1{opacity:0.2;enable-background:new ;}
+        .st2{fill:#FFFFFF;stroke:#263238;stroke-width:1.1031;stroke-linecap:round;stroke-linejoin:round;}
+        .st3{fill:#1EEBCD;}
+        .st4{fill:#263238;}
+    </style>
+    <g id="freepik--Graphics--inject-388">
+        <path class="st0" d="M98.5,187.8h104.6c7.2,0,13.1,5.9,13.1,13.1v144.8c0,7.2-5.9,13.1-13.1,13.1H98.5c-7.2,0-13.1-5.9-13.1-13.1
+		V200.9C85.4,193.6,91.3,187.8,98.5,187.8z"/>
+        <path class="st1" d="M98.5,187.8h104.6c7.2,0,13.1,5.9,13.1,13.1v144.8c0,7.2-5.9,13.1-13.1,13.1H98.5c-7.2,0-13.1-5.9-13.1-13.1
+		V200.9C85.4,193.6,91.3,187.8,98.5,187.8z"/>
+        <path class="st2" d="M228.4,213.8v144.8c0,7.2-5.9,13.1-13.1,13.1c0,0,0,0,0,0H110.7c-7.2,0-13.1-5.9-13.1-13.1l0,0V213.8
+		c0-7.2,5.9-13.1,13.1-13.1h104.6C222.5,200.7,228.4,206.6,228.4,213.8L228.4,213.8z"/>
+        <path class="st0" d="M228.4,213.8v7.8H97.6v-7.8c0-7.2,5.9-13.1,13.1-13.1h104.6C222.5,200.7,228.4,206.6,228.4,213.8L228.4,213.8z
+		"/>
+        <rect x="109.9" y="230.5" class="st3" width="32.2" height="5.4"/>
+        <rect x="109.9" y="278.9" class="st3" width="32.2" height="5.4"/>
+        <rect x="109.9" y="322.8" class="st3" width="32.2" height="5.4"/>
+        <rect x="109.9" y="243.9" class="st4" width="91.4" height="4"/>
+        <rect x="109.9" y="251.5" class="st4" width="74.9" height="3.9"/>
+        <rect x="109.9" y="258.9" class="st4" width="84.7" height="3.9"/>
+        <rect x="109.9" y="266.4" class="st4" width="84.7" height="3.9"/>
+        <rect x="109.9" y="287.8" class="st4" width="91.4" height="4"/>
+        <rect x="109.9" y="295.4" class="st4" width="74.9" height="3.9"/>
+        <rect x="109.9" y="302.8" class="st4" width="84.7" height="3.9"/>
+        <rect x="109.9" y="336" class="st4" width="91.4" height="4"/>
+        <rect x="109.9" y="343.5" class="st4" width="74.9" height="3.9"/>
+        <rect x="109.9" y="351" class="st4" width="84.7" height="3.9"/>
+    </g>
+</svg>

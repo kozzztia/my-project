@@ -148,8 +148,8 @@ main {
 	width: 100%;
 	height: clamp(250px, 30vw, 500px);
 	user-select: none;
-	-webkit-tap-highlight-color: transparent;
 	color: var(--color-main);
+	-webkit-tap-highlight-color: transparent;
 
 	img {
 		display: block;
@@ -722,9 +722,8 @@ main {
 		}
 	}
 
-	.drone{
-
-		&__1{
+	.drone {
+		&__1 {
 			animation: drone1 .3s ease-in-out .2s forwards;
 			opacity: 0;
 			@keyframes drone1 {
@@ -737,7 +736,7 @@ main {
 			}
 		}
 
-		&__2{
+		&__2 {
 			animation: drone2 .3s ease-in-out .6s forwards;
 			opacity: 0;
 			scale: 3;
@@ -757,7 +756,6 @@ main {
 			animation: drone3 1s ease-in-out 0.9s forwards, drone-move 4s ease-in-out infinite 2s;
 			opacity: .5;
 			scale: 0;
-
 			@keyframes drone3 {
 				0% {
 					opacity: .5;
@@ -770,20 +768,55 @@ main {
 					scale: 1;
 				}
 			}
-
 			@keyframes drone-move {
-				0%   { transform: translate(0, 0) rotate(0deg); scale: 1; }
-				10%  { transform: translate(8%, 5%) rotate(5deg); scale: 1.1; }
-				20%  { transform: translate(-60%, 3%) rotate(-8deg); scale: 0.4; }
-				28%  { transform: translate(-60%, 8%) rotate(3deg); scale: 0.45; }
-				38%  { transform: translate(5%, 8%) rotate(6deg); scale: 1.05; }
-				45%  { transform: translate(15%, 5%) rotate(-4deg); scale: 1.15; }
-				52%  { transform: translate(0, 2%) rotate(0deg); scale: 1.2; }
-				60%  { transform: translate(-8%, 10%) rotate(-6deg); scale: 0.95; }
-				70%  { transform: translate(52%, 12%) rotate(8deg); scale: 0.5; }
-				80%  { transform: translate(-5%, 55%) rotate(-3deg); scale: 1.15; }
-				90%  { transform: translate(5%, 25%) rotate(4deg); scale: 1; }
-				100% { transform: translate(0, 0) rotate(0deg); scale: 1; }
+				0% {
+					transform: translate(0, 0) rotate(0deg);
+					scale: 1;
+				}
+				10% {
+					transform: translate(8%, 5%) rotate(5deg);
+					scale: 1.1;
+				}
+				20% {
+					transform: translate(-60%, 3%) rotate(-8deg);
+					scale: 0.4;
+				}
+				28% {
+					transform: translate(-60%, 8%) rotate(3deg);
+					scale: 0.45;
+				}
+				38% {
+					transform: translate(5%, 8%) rotate(6deg);
+					scale: 1.05;
+				}
+				45% {
+					transform: translate(15%, 5%) rotate(-4deg);
+					scale: 1.15;
+				}
+				52% {
+					transform: translate(0, 2%) rotate(0deg);
+					scale: 1.2;
+				}
+				60% {
+					transform: translate(-8%, 10%) rotate(-6deg);
+					scale: 0.95;
+				}
+				70% {
+					transform: translate(52%, 12%) rotate(8deg);
+					scale: 0.5;
+				}
+				80% {
+					transform: translate(-5%, 55%) rotate(-3deg);
+					scale: 1.15;
+				}
+				90% {
+					transform: translate(5%, 25%) rotate(4deg);
+					scale: 1;
+				}
+				100% {
+					transform: translate(0, 0) rotate(0deg);
+					scale: 1;
+				}
 			}
 		}
 	}

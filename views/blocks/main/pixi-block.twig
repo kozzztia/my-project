@@ -1,0 +1,11 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.text %}
+        <div class="pixi-block {% if fields.class %}{{ fields.class }}{% endif %}"
+             {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+        </div>
+    {% endif %}
+
+{% endblock %}

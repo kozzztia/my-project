@@ -1,4 +1,5 @@
 //@prepros-prepend plugins/swiper.min.js
+//@prepros-prepend plugins/pixi.min.js
 //@prepros-prepend plugins/headroom.js
 //@prepros-prepend plugins/jquery.autogrow-textarea.js
 //@prepros-prepend plugins/jquery.cookie.js

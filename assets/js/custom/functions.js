@@ -368,3 +368,12 @@ function initForm(el) {
         });
     }
 }
+
+function initPixi(el) {
+    const app = new PIXI.Application({
+        width: el.offsetWidth,
+        height: 200,
+        transparent: true,
+    });
+    el.appendChild(app.view);
+}

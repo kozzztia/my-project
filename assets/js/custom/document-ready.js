@@ -54,5 +54,17 @@
                 initProjectSlider($(this));
             });
         }
+
+        if ($('.customBlockWrapper.main-pixi-block').length) {
+            $('.pixi-block').each(function () {
+                initPixi(this);
+            });
+        }
+        if ($('.customBlockWrapper.main-rive-block').length) {
+            $('.rive-block').each(function () {
+                initRive(this);
+            });
+        }
+
     });
 })(jQuery);

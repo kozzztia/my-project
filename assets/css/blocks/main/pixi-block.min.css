@@ -1,2 +1,2 @@
-.main-pixi-block .customBlock .pixi-block{position:relative;padding:0 0}
+.main-pixi-block .customBlock .pixi-block{background:rgba(var(--color-white-rgb),0.5);position:relative;padding:0 0}
 /*# sourceMappingURL=pixi-block.min.css.map */

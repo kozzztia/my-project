@@ -370,55 +370,118 @@ function initForm(el) {
 }
 
 function initPixi(el) {
-
     const app = new PIXI.Application({
         width: el.offsetWidth,
-        height: 200,
+        height: 500,
         backgroundAlpha: 0,
     });
     el.appendChild(app.view);
 
     const basePath = el.dataset.url + 'pixi/';
 
-    PIXI.Assets.load([
-        basePath + 'body.png',
-        basePath + 'wheels.json',
-    ]).then(() => {
-        const car = new PIXI.Container();
+    PIXI.Assets.load([basePath + 'helicopter.json']).then(() => {
+        const helicopter = new PIXI.Container();
 
-        const body = PIXI.Sprite.from(basePath + 'body.png');
+        const body = new PIXI.Sprite(PIXI.Texture.from('body.png'));
         body.anchor.set(0.5);
-        car.addChild(body);
+        helicopter.addChild(body);
 
-        const wheelFrames = [
-            PIXI.Texture.from('New Piskel0.png'),
-            PIXI.Texture.from('New Piskel1.png'),
-        ];
+        const props = new PIXI.Sprite(PIXI.Texture.from('props.png'));
+        props.anchor.set(0.5);
+        props.x = -15;
+        props.y = 0;
+        helicopter.addChild(props);
 
-        const wheelFront = new PIXI.AnimatedSprite(wheelFrames);
-        wheelFront.anchor.set(0.5);
-        wheelFront.animationSpeed = 0.2;
-        wheelFront.play();
-        wheelFront.x = 35;
-        wheelFront.y = 30;
-        car.addChild(wheelFront);
+        helicopter.x = app.screen.width / 2;
+        helicopter.y = app.screen.height / 2;
+        helicopter.scale.set(1.5);
+        app.stage.addChild(helicopter);
 
-        const wheelBack = new PIXI.AnimatedSprite(wheelFrames);
-        wheelBack.anchor.set(0.5);
-        wheelBack.animationSpeed = 0.2;
-        wheelBack.play();
-        wheelBack.x = -40;
-        wheelBack.y = 30;
-        car.addChild(wheelBack);
+        const marker = new PIXI.Graphics();
+        marker.beginFill(0xff0000);
+        marker.drawCircle(0, 0, 6);
+        marker.endFill();
+        marker.visible = false;
+        app.stage.addChild(marker);
 
-        car.x = -100;
-        car.y = app.screen.height - car.height / 2;
-        app.stage.addChild(car);
+        let state = 'idle';
+        let propSpeed = 0;
+        let targetX = 0;
+        let facingLeft = true;
+
+        app.view.addEventListener('click', (e) => {
+            if (state !== 'idle') return;
+
+            const rect = app.view.getBoundingClientRect();
+            const heliHalfW = 93 * 2 / 2;
+            targetX = Math.max(heliHalfW, Math.min(app.screen.width - heliHalfW, e.clientX - rect.left));
+
+            marker.x = targetX;
+            marker.y = helicopter.y;
+            marker.visible = true;
+            marker.alpha = 1;
+
+            state = 'takeoff';
+        });
 
         app.ticker.add(() => {
-            car.x += 2;
-            if (car.x > app.screen.width + 100) {
-                car.x = -100;
+            if (marker.visible && state === 'fly') {
+                marker.alpha -= 0.01;
+                if (marker.alpha <= 0) marker.visible = false;
+            }
+
+            if (state === 'idle') return;
+
+            props.rotation += propSpeed;
+
+            if (state === 'takeoff') {
+                propSpeed = Math.min(propSpeed + 0.008, 0.3);
+                helicopter.scale.y = Math.min(helicopter.scale.y + 0.008, 2);
+                helicopter.scale.x = facingLeft
+                    ? Math.min(helicopter.scale.x + 0.008, 2)
+                    : Math.max(helicopter.scale.x - 0.008, -2);
+
+                if (Math.abs(propSpeed - 0.3) < 0.01) {
+                    state = 'turn';
+                }
+            }
+
+            if (state === 'turn') {
+                const needFacingLeft = targetX < helicopter.x;
+                const targetRotation = needFacingLeft ? 0 : Math.PI;
+                const diff = targetRotation - helicopter.rotation;
+
+                helicopter.rotation += diff * 0.04;
+
+                if (Math.abs(diff) < 0.05) {
+                    helicopter.rotation = targetRotation;
+                    facingLeft = needFacingLeft;
+                    state = 'fly';
+                }
+            }
+
+            if (state === 'fly') {
+                const dx = targetX - helicopter.x;
+
+                if (Math.abs(dx) < 3) {
+                    state = 'land';
+                    return;
+                }
+
+                helicopter.x += (dx > 0 ? 1 : -1) * 2;
+            }
+
+            if (state === 'land') {
+                propSpeed = Math.max(propSpeed - 0.004, 0);
+                helicopter.scale.y = Math.max(helicopter.scale.y - 0.008, 1.5);
+                helicopter.scale.x = facingLeft
+                    ? Math.max(helicopter.scale.x - 0.008, 1.5)
+                    : Math.min(helicopter.scale.x + 0.008, -1.5);
+
+                if (propSpeed <= 0 && Math.abs(helicopter.scale.y - 1.5) < 0.05) {
+                    state = 'idle';
+                    propSpeed = 0;
+                }
             }
         });
     });

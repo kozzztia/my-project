@@ -370,6 +370,7 @@ function initForm(el) {
 }
 
 function initPixi(el) {
+
     const app = new PIXI.Application({
         width: el.offsetWidth,
         height: 200,
@@ -377,7 +378,7 @@ function initPixi(el) {
     });
     el.appendChild(app.view);
 
-    const basePath = '/assets/img/pixi/';
+    const basePath = el.dataset.url + 'pixi/';
 
     PIXI.Assets.load([
         basePath + 'body.png',

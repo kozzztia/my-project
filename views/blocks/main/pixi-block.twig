@@ -4,7 +4,9 @@
 
     {% if fields.start %}
         <div class="pixi-block {% if fields.class %}{{ fields.class }}{% endif %}"
-             {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+             {% if fields.style %}style="{{ fields.style }}"{% endif %}
+            data-url = {{ img_folder }}
+        >
         </div>
     {% endif %}
 

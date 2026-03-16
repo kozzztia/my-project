@@ -398,7 +398,7 @@ function initPixi(el) {
         wheelFront.anchor.set(0.5);
         wheelFront.animationSpeed = 0.2;
         wheelFront.play();
-        wheelFront.x = 40;
+        wheelFront.x = 35;
         wheelFront.y = 30;
         car.addChild(wheelFront);
 
@@ -411,7 +411,7 @@ function initPixi(el) {
         car.addChild(wheelBack);
 
         car.x = -100;
-        car.y = app.screen.height / 2;
+        car.y = app.screen.height - car.height / 2;
         app.stage.addChild(car);
 
         app.ticker.add(() => {

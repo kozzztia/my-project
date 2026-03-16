@@ -1,0 +1,48 @@
+{% extends "overall/block-base.twig" %}
+
+{% block block %}
+
+    {% if fields.type %}
+        <div class="svg-block {% if fields.class %}{{ fields.class }}{% endif %}"
+             {% if fields.style %}style="{{ fields.style }}"{% endif %}>
+
+            <svg id="ewR1jfShKDt1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 0 300 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                <style>
+                    #ewR1jfShKDt3 {
+                        transform-origin: 150px 150px;
+                        animation: propeller 2s linear infinite;
+                    }
+                    @keyframes propeller {
+                        from { transform: rotate(0deg); }
+                        to   { transform: rotate(360deg); }
+                    }
+                    @keyframes spinIn {
+                        from { transform: rotate(720deg); fill: #fff; }
+                        to   { transform: rotate(0deg); fill: #d2dbed; }
+                    }
+                    @keyframes spinInBack {
+                        from { transform: rotate(-720deg); }
+                        to   { transform: rotate(0deg); }
+                    }
+                </style>
+
+                <g transform="matrix(0.013177 -0.43022 0.999531 0.030615 -1.906239 209.94093)">
+                    <g id="ewR1jfShKDt3" transform="matrix(1.097268 -0.088913 0.085749 1.058227 -22.399277 -14.238142)">
+                        <ellipse rx="32.080802" ry="28.872722" transform="translate(145.37846 166.837645)" fill="#d2dbed" stroke-width="0"/>
+                        <rect width="120.113619" height="31.011442" rx="0" ry="0"
+                              transform="matrix(0.587952 0.808896 -0.808896 0.587952 179.820045 184.607342)" fill="#d2dbed" stroke-width="0"/>
+                        <rect width="120.113619" height="31.011442" rx="0" ry="0"
+                              transform="matrix(-0.797514 0.6033 -0.6033 -0.797514 122.287262 204.72697)" fill="#d2dbed" stroke-width="0"/>
+                        <rect width="120.113619" height="31.011442" rx="0" ry="0"
+                              transform="matrix(0.587952 0.808896 -0.808896 0.587952 65.036488 34.607342)" fill="#d2dbed" stroke-width="0"/>
+                        <rect width="120.113619" height="31.011442" rx="0" ry="0"
+                              transform="matrix(-0.774533 0.632534 -0.632534 -0.774533 280.299097 80.484244)" fill="#d2dbed" stroke-width="0"/>
+                    </g>
+                </g>
+            </svg>
+
+        </div>
+    {% endif %}
+
+{% endblock %}

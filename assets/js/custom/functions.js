@@ -373,7 +373,52 @@ function initPixi(el) {
     const app = new PIXI.Application({
         width: el.offsetWidth,
         height: 200,
-        transparent: true,
+        backgroundAlpha: 0,
     });
     el.appendChild(app.view);
+
+    const basePath = '/assets/img/pixi/';
+
+    PIXI.Assets.load([
+        basePath + 'body.png',
+        basePath + 'wheels.json',
+    ]).then(() => {
+        const car = new PIXI.Container();
+
+        const body = PIXI.Sprite.from(basePath + 'body.png');
+        body.anchor.set(0.5);
+        car.addChild(body);
+
+        const wheelFrames = [
+            PIXI.Texture.from('New Piskel0.png'),
+            PIXI.Texture.from('New Piskel1.png'),
+        ];
+
+        const wheelFront = new PIXI.AnimatedSprite(wheelFrames);
+        wheelFront.anchor.set(0.5);
+        wheelFront.animationSpeed = 0.2;
+        wheelFront.play();
+        wheelFront.x = 40;
+        wheelFront.y = 30;
+        car.addChild(wheelFront);
+
+        const wheelBack = new PIXI.AnimatedSprite(wheelFrames);
+        wheelBack.anchor.set(0.5);
+        wheelBack.animationSpeed = 0.2;
+        wheelBack.play();
+        wheelBack.x = -40;
+        wheelBack.y = 30;
+        car.addChild(wheelBack);
+
+        car.x = -100;
+        car.y = app.screen.height / 2;
+        app.stage.addChild(car);
+
+        app.ticker.add(() => {
+            car.x += 2;
+            if (car.x > app.screen.width + 100) {
+                car.x = -100;
+            }
+        });
+    });
 }

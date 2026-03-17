@@ -153,8 +153,6 @@ function initTracking(el) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-show');
-            } else {
-                entry.target.classList.remove('is-show');
             }
         });
     }, {

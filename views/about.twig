@@ -8,52 +8,65 @@
 
         {'name': 'text-or-title',
             'fields': {
-            'style': 'margin-bottom: var(--secondary-size)',
+            'style': 'text-align: center; margin-bottom: var(--primary-size)',
             'class': 'tracker down',
-            'text': '<h2><strong><span class="mce_size-xl">Додаткова  інформація:</span></strong></h2>',
+            'text': '<h1><strong><span class="mce_size-xl">Front-end розробник</span></strong></h1>',
+        },
+        },
+
+        {'name': 'hero-article',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'image': {
+                'image_position': 'right',
+                'title': 'cash-back',
+                'animation': 'coding',
+                'layers' : [
+                    {'layer': svg_folder ~'animation/coding-1.svg'},
+                    {'layer': svg_folder ~'animation/coding-2.svg'},
+                    {'layer': svg_folder ~'animation/coding-3.svg'},
+                    {'layer': svg_folder ~'animation/coding-4.svg'},
+                ]
+            },
+            'content': {
+                'subtitle': '<h3><strong><span class="mce_size-l">Про мене</span></strong></h3>',
+                'text': '
+                    <ul class="mce_list-type-green">
+                        <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
+                        <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
+                        <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
+                        <li>З 2024 року працюю як фрилансер — беру проєкти де можна зробити щось справді цікаве.</li>
+                    </ul>',
+            },
         },
         },
 
         {'name': 'single-accordion',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down decorBorder leftToTop',
-            'name': 'about',
-            'title': 'Хоббі: ',
-            'text': '<p>Поглибив знання HTML, CSS, JavaScript та ООП — від теорії до реальних задач.</p>
-                    <p>Самостійно спроектував і розгорнув власний Back-end на <a href="https://funny-fudge-ddda7b.netlify.app/api/items">bikes-placeholder</a> з підключенням бази даних MySQL через Neon.</p>
-                    <p>Дипломний проєкт <a href="https://i-love-my-bike.netlify.app/">i-love-my-bike</a> — повноцінний застосунок з власною інфраструктурою на Next.js + TypeScript.</p>
-                    <p>Паралельно вдосконалював англійську через групові заняття, дискусії та презентації.</p>
-                    <p>Познайомився з крутими людьми зі сфери IT та відточив навички командної взаємодії — від брейнштормів до спільного вирішення задач.</p>',
-            'img': img_folder ~ 'experience/beetroot.png'
-        },
-        },
-
-        {'name': 'single-accordion',
-            'fields': {
-            'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down decorBorder leftToTop',
-            'name': 'about-2',
-            'title': 'Хоббі: ',
-            'text': '<p>Поглибив знання HTML, CSS, JavaScript та ООП — від теорії до реальних задач.</p>
-                    <p>Самостійно спроектував і розгорнув власний Back-end на <a href="https://funny-fudge-ddda7b.netlify.app/api/items">bikes-placeholder</a> з підключенням бази даних MySQL через Neon.</p>
-                    <p>Дипломний проєкт <a href="https://i-love-my-bike.netlify.app/">i-love-my-bike</a> — повноцінний застосунок з власною інфраструктурою на Next.js + TypeScript.</p>
-                    <p>Паралельно вдосконалював англійську через групові заняття, дискусії та презентації.</p>
-                    <p>Познайомився з крутими людьми зі сфери IT та відточив навички командної взаємодії — від брейнштормів до спільного вирішення задач.</p>',
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'hobbi',
+            'title': 'Хобі та захоплення',
+            'text': '<p>Люблю все що рухається — і в коді, і в житті. CSS-анімації, інтерактивні ефекти, піксельні вертольоти о 2 ночі — це не робота, це задоволення.</p>
+                <p>Поза екраном — активний відпочинок. Дрони: керую і розумію як вони влаштовані зсередини. Велосипед — найкращий спосіб скинути голову після складного дня. Рибалка — там де нікуди поспішати і можна просто думати.</p>
+                <p>Людина з паяльником в одній руці і ноутбуком в іншій — так мене можна описати в двох словах. Електроніка, право, програмування — різні світи, але всі вони навчили одному: розбиратись в деталях і не здаватись.</p>
+                <p>Зараз захоплений AI-інструментами в розробці — коли те що займало тиждень робиться за вечір, це не лінь, це еволюція підходу.</p>',
         },
         },
 
         {'name': 'text-or-title',
             'fields': {
-            'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down',
-            'text': '<h2><strong><span class="mce_size-xl">Навчання :</span></strong></h2>',
+            'style': 'margin-bottom: var(--primary-size)',
+            'class': 'tracker up',
+            'text': '<h2><strong><span class="mce_size-l">Навчання :</span></strong></h2>',
         },
         },
+
         {'name': 'tab',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker down',
+            'class': 'tracker up',
             'name': 'study',
             'layers': [
                 {
@@ -107,100 +120,184 @@
                             <p>Вимірювальна техніка — осцилограф, мультиметр, аналіз сигналів.</p>
                             <p>Технічна документація — читання і складання схем, специфікацій та креслень.</p>
                             <p>Діагностика та ремонт — пошук несправностей і відновлення електронного обладнання.</p>',
-                    'img': img_folder ~ 'experience/beetroot.png'
                 },
             ]
         },
         },
 
-        {'name': 'hero-article',
+        {'name': 'single-accordion',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker left-right',
-            'image': {
-                'title': 'cash-back',
-                'src': svg_folder ~'cash-back.svg',
-            },
-            'content': {
-                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
-                'text': '
-                    <ul class="mce_list-type-green">
-                        <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
-                        <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
-                        <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
-                        <li>З 2024 року працюю як фрилансер — беру проєкти де можна зробити щось справді цікаве.</li>
-                    </ul>',
-                'button': {
-                    'title': 'Дiзнатися більше',
-                    'link': {
-                        'url': site.url ~'page',
-                    },
-                    'type': {
-                        'style' : 'size-xs style-main-transparent',
-                        'icon_position': 'right',
-                        'icon': 'icon-triangle',
-                    },
-                },
-            },
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'study',
+            'title': 'Навчання  ат сомарозвиток',
+            'text': '<p>Навчання для мене — не етап який треба пройти, а спосіб існування. Від електроніки до права, від комп`ютерних наук до сучасного фронтенду — кожен крок не був випадковим, він будував фундамент для наступного.</p>
+                    <p>Чим більше дізнаюсь — тим цікавіше стає. Це не втомлює, а навпаки заряджає. Розумію що в IT зупинитись означає відстати, тому обрав шлях де навчання — це не обов`язок а частина характеру.</p>
+                    <p>Beetroot Academy, самостійні проєкти, нові інструменти щотижня — все це не гонитва за трендами, а щире бажання розуміти як влаштований світ навколо і робити його трохи кращим через код.</p>',
         },
         },
-        {'name': 'hero-article',
-            'fields': {
-            'style': 'margin-bottom: var(--secondary-size)',
-            'class': 'tracker left-right',
-            'image': {
-                'title': 'mobile-wallet',
-                'image_position': 'right',
-                'src': svg_folder ~'mobile-wallet.svg',
-            },
-            'content': {
-                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
-                'text': '
-                    <ul class="mce_list-type-green">
-                        <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
-                        <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
-                        <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
-                        <li>З 2024 року працюю як фрилансер — беру проєкти де можна зробити щось справді цікаве.</li>
-                    </ul>',
-                'button': {
-                    'title': 'Дiзнатися більше',
-                    'link': {
-                        'url': site.url ~'page',
-                    },
-                    'type': {
-                        'style' : 'size-xs style-main-transparent',
-                        'icon_position': 'right',
-                        'icon': 'icon-triangle',
-                    },
-                },
-            },
-        },
-        },
+
+
         {'name': 'hero-article',
             'fields': {
             'style': 'margin-bottom: var(--secondary-size)',
             'class': 'tracker up',
+            'image': {
+                'image_position': 'left',
+                'title': 'learning',
+                'animation': 'learning',
+                'layers' : [
+                    {'layer': svg_folder ~'animation/learning-1.svg'},
+                    {'layer': svg_folder ~'animation/learning-2.svg'},
+                    {'layer': svg_folder ~'animation/learning-3.svg'},
+                    {'layer': svg_folder ~'animation/learning-4.svg'},
+                ]
+            },
             'content': {
-                'subtitle': '<h4><strong><span class="mce_size-s">Про мене</span></strong></h4>',
-                'text': '
-                    <ul class="mce_list-type-green">
-                        <li>Front-End розробник із досвідом створення сучасних, адаптивних веб-інтерфейсів. Володію HTML, CSS, SCSS, JavaScript, TypeScript та React, приділяю увагу деталям і якості коду.</li>
-                        <li>Розробляю компонентні бібліотеки та Twig-шаблони для WordPress і ACF, будую UI-системи які зручно підтримувати і масштабувати. В арсеналі — jQuery, Git, SVG-анімації та нестандартні CSS-рішення.</li>
-                        <li>Захоплює все що рухається і дивує — CSS-анімації, інтерактивні ефекти, AI-інструменти у розробці. Люблю коли інтерфейс не просто працює, а відчувається.</li>
-                        <li>З 2024 року працюю як фрилансер — беру проєкти де можна зробити щось справді цікаве.</li>
-                    </ul>',
-                'button': {
-                    'title': 'Дiзнатися більше',
-                    'link': {
-                        'url': site.url ~'page',
-                    },
-                    'type': {
-                        'style' : 'size-xs style-main-transparent',
-                        'icon_position': 'right',
-                        'icon': 'icon-triangle',
-                    },
+                'title': '<h2><strong><span class="mce_size-l">Від схем до пікселів :</span></strong></h2>',
+                'subtitle': '',
+                'text': '<p>Починав з електроніки — паяв, читав схеми, розбирав залізо до останнього транзистора. Потім — комп`ютерні науки, бази даних, мережі, ООП. Далі право: системне мислення, логіка, розуміння як захищати цифрові продукти.</p>
+                        <p>Але все це врешті привело до одного місця — до інтерфейсу. Там де логіка зустрічається з естетикою, а код — з відчуттям.</p>
+                        <p>Beetroot Academy поставила крапку: власний бекенд, дипломний проєкт на Next.js, командна робота і розуміння що фронтенд — це не просто верстка, це архітектура яку бачать люди.</p>
+                        <p>З появою AI-інструментів у розробці відчуваю себе значно впевненіше і продуктивніше. Те що раніше займало тиждень — тепер один вечір. Не тому що стало простіше, а тому що навчився думати швидше і ставити правильні питання.</p>',
+            },
+        },
+        },
+
+        {'name': 'single-accordion',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'projects',
+            'title': 'У своїх проектах я використовую PHP + Twig',
+            'text': '
+                <p>У своїх проектах я використовую PHP + Twig як шаблонізатор — компонентна система де кожен блок це окремий файл з власними полями. Дані передаються через масиви конфігурації, що дозволяє легко керувати контентом без прив`язки до CMS. Локальне середовище розгорнуто через Laragon.</p>
+                <p>Стилізація побудована на SCSS з BEM-подібною структурою — кожен компонент має свій файл, змінні через CSS Custom Properties та адаптивна типографіка через clamp(). Компіляція і автопрефіксер через Prepros.</p>
+                <p>CSS без JavaScript — там де можливо використовую нативні можливості браузера: акордіони, табси, слайдери та анімації появи елементів. JavaScript підключається тільки там де CSS не справляється.</p>
+                <p>Анімації та інтерактив — SVG спрайти, keyframe анімації для ілюстрацій, хитрощі з grid для плавної зміни контенту без стрибків висоти, flip-картки через 3D трансформації.</p>',
+        },
+        },
+
+        {'name': 'text-or-title',
+            'fields': {
+            'style': 'margin-bottom: var(--primary-size)',
+            'class': 'tracker up',
+            'text': '<h2><strong><span class="mce_size-l">Досвід :</span></strong></h2>',
+        },
+        },
+
+        {'name': 'tab',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'name': 'experience',
+            'layers': [
+                {
+                    'class': 'decorBorder leftToTop',
+                    'label': 'Front-end розробник',
+                    'title': 'Фріланс | 2024 - тепер',
+                    'text': '
+                        <p>Почав кар’єру як учасник команди з розробки <strong>Caroinspection</strong> — застосунку для діагностики автомобілів. Тут отримав перший досвід командної роботи: від постановки задачі до деплою. Використовував React.js, TypeScript, SCSS, Canvas, SVG, Redux, Node.js. Самостійно опанував Next.js та інтегрував AI-інструменти у процес розробки.</p>
+                        <p>Згодом перейшов у <strong>фріланс</strong>, де займаюся повним циклом створення веб-проєктів — від архітектури до деплою. Розробляю компонентні системи на PHP + Twig для WordPress, використовую SCSS з BEM-структурою. Обираю проєкти, де є простір для креативу: SVG-анімації, чистий CSS без JS, інтерактивні інтерфейси, що «відчуваються» у взаємодії.</p>
+                    ',
+                },
+                {
+                    'class': 'decorBorder leftToTop',
+                    'label': 'Старший інженер зв`язку та спецтехніки',
+                    'title': 'Національна поліція України | 20014–2020',
+                    'text': '<p>Керував розбудовою і підтримкою мереж — Інтернет, відеоспостереження, радіозв`язок, сигналізація. Забезпечував безвідмовну роботу критично важливої інфраструктури.</p>
+                    <p>Адміністрування бази даних "Армор", оптимізація доступу та безпеки. Технічне обслуговування спецтехніки.</p>
+                    <p>Інженер-оператор БПЛА. Учасник АТО та сил оборони — офіційний статус ветерана бойових дій.</p>',
+                },
+                {
+                    'class': 'decorBorder leftToTop',
+                    'label': 'Інженер мережевої інфраструктури',
+                    'title': 'Lan-line provider | 2008–2014',
+                    'text': '<p>Проектування та будівництво мереж Інтернет для локального провайдера. Керував проєктами з розбудови інфраструктури — підвищення надійності та ефективності мережі.</p>
+                    <p>Якісна підтримка клієнтів і оперативне вирішення технічних питань.</p>',
+                },
+            ]
+        },
+        },
+
+        {'name': 'project-slider',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up',
+            'interval': 200,
+            'animation': 'flip',
+            'projects': [
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+                {
+                    'title': 'stolen life',
+                    'src' : img_folder ~'projects/stolen-life.jpg',
+                    'description': 'це документально-художній фотопроект, що розкриває життя звичайних українців, чиє життя було жорстоко перервано повномасштабним вторгненням Росії.',
+                    'href': 'https://stolenlife.org/',
+                },
+            ],
+        },
+        },
+
+        {'name': 'single-accordion',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size)',
+            'class': 'tracker up decorBorder leftToTop',
+            'name': 'experience',
+            'title': 'Загальне: ',
+            'text': '<p>Мій шлях почався з інженерії та мереж: паяв дрони, варив оптоволокно, будував інфраструктуру зв’язку та підтримував спецтехніку. Як учасник бойових дій маю офіційний статус ветерана, що сформував дисципліну й стійкість у роботі.</p>
+                    <p>Згодом перейшов у ІТ, де розвиваю себе як Front‑end розробник: створюю сучасні інтерактивні веб‑рішення, поєднуючи технічний досвід із креативом у інтерфейсах.</p>'
+        },
+        },
+
+        {'name': 'contacts',
+            'fields': {
+            'style': 'margin-bottom: var(--secondary-size);',
+            'class': 'tracker up',
+            'inputs': [
+                {'name': 'name', 'type': 'text', 'placeholder': 'введіть ваше ім`я', 'title': 'Ваше Ім`я'},
+                {'name': 'phone', 'type': 'text', 'placeholder': 'введіть ваш номер телефону', 'title': 'номер телефону'},
+                {'name': 'email', 'type': 'email', 'placeholder': 'введіть вашу електронну почту', 'title': 'електронна почта'},
+                {'name': 'message', 'type': 'textarea', 'placeholder': 'введіть ваші побажання', 'title': 'повідомлення'},
+            ],
+            'button': {
+                'title': 'Відправити',
+                'buttonType': 'submit',
+                'type': {
+                    'style' : 'size-xs style-main-transparent',
+                    'icon_position': 'right',
+                    'icon': 'icon-triangle',
                 },
             },
+            'decor': ['icon-segment', 'icon-arrow', 'icon-decor-arrow', 'icon-code' , 'icon-cookie'],
         },
         },
     ] %}

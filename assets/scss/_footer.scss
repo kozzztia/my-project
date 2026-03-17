@@ -1,0 +1,22 @@
+/* footer
+-------------------------------------------------------------- */
+footer {
+	padding: 0 var(--primary-size) var(--primary-size);
+
+	.inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: var(--primary-block-width);
+		height: var(--element-height);
+		padding: var(--primary-size) var(--secondary-size);
+		background-color: var(--element-dark-background);
+		margin-inline: auto;
+		gap: var(--primary-size);
+	}
+
+	svg{
+		fill: var(--color-main);
+	}
+}
+

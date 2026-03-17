@@ -1,0 +1,15 @@
+.main-card-grid {
+	.customBlock {
+		.card-grid {
+			position: relative;
+			display: grid;
+			padding: var(--primary-size) var(--secondary-size);
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: 1fr;
+			gap: var(--primary-size);
+			@media (max-width: 1024px) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+	}
+}

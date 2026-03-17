@@ -1,0 +1,17 @@
+.main-button {
+	.customBlock {
+		.buttonWrapper {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: right;
+			padding: 0 var(--secondary-size);
+			@media (max-width: 768px) {
+				justify-content: center;
+				.overallButton {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
